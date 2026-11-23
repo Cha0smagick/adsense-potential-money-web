@@ -29,9 +29,10 @@ jobs:
       - run: npm test
       - run: npm run build
 
+      # Nota: no existe forma de crear el sitio Pages con GITHUB_TOKEN (es una
+      # operación de administración). Se activa una vez en Settings → Pages → Source:
+      # GitHub Actions; a partir de ahí este flujo funciona siempre.
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - uses: actions/upload-pages-artifact@v3
         with:
