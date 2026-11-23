@@ -1,0 +1,22 @@
+{
+  "name": "adsense-auditor",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Auditor de aptitud para Google AdSense: puntuacion 0-100, bloqueadores, proyeccion de ingresos e informe exportable.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --port 4173",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "audit": "node src/deep/node-audit.ts",
+    "probe": "node scripts/probe.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5",
+    "vitest": "^2.1.8"
+  }
+}
