@@ -145,7 +145,7 @@ export function computeApproval(input: ApprovalInput): ApprovalResult {
     'Estimación, no probabilidad oficial: Google no publica tasas de aprobación.',
     'Anclas del modelo: 95→80 %, 85→72 %, 70→45 %, 55→18 %, 40→7 %.',
     'Tiempo anclado a la única cifra oficial: «unos días; en algunos casos, 2-4 semanas».',
-    `Calibración pública: ${PUBLIC_CALIBRATION.n} casos, AUC ${PUBLIC_CALIBRATION.auc ?? '—'}. El score no separó aprobados de rechazados; la probabilidad es un escenario, no una tasa.`,
+    `Calibración pública: ${PUBLIC_CALIBRATION.n} casos, AUC ${PUBLIC_CALIBRATION.auc ?? '—'} (IC99 ${PUBLIC_CALIBRATION.aucLow ?? '—'}–${PUBLIC_CALIBRATION.aucHigh ?? '—'}). Etiquetas autodeclaradas; el LR por banda ajusta el prior con shrinkage. No es una tasa de Google.`,
   ];
   if (appliedBand) {
     notes.push(`Ajuste por banda ${appliedBand.min}-${appliedBand.max}: LR ${appliedBand.lr} (${appliedBand.pos} positivos / ${appliedBand.neg} negativos).`);

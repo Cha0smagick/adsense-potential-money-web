@@ -79,7 +79,7 @@ test/          99 pruebas + calibration.md
 
 - No lee tu cuenta de AdSense, ni sanciones, ni tráfico real, ni backlinks. Evalúa lo público y verificable.
 - Los proxies CORS gratuitos (`r.jina.ai`, `api.allorigins.win`) son el punto frágil del motor rápido: disyuntor, presupuesto lógico y `unknown` visible.
-- La probabilidad de aprobación es un modelo declarado y **no validado**: con 115 sitios aprobados y 1 rechazo válido, el AUC fue 0,02 (sin separación). El único dato robusto es que el 95 % de los aprobados puntúa ≥40 (99,7 % de confianza), un umbral demasiado bajo para decidir. No es una tasa de Google.
+- La probabilidad de aprobación es un modelo declarado y **no validado**: con 280 aprobados y 44 rechazos válidos, el AUC fue 0,405 (IC99 0,272–0,542); los rechazos puntúan más alto (mediana 91,7 vs 84,0) y la banda 85–100 tiene LR 0,78. El único dato robusto es que el 95 % de los aprobados puntúa ≥15 (100 % de confianza), un umbral demasiado bajo para decidir. No es una tasa de Google.
 - El dataset, las mediciones y el análisis de calibración están publicados en `data/` y se enlazan desde el informe.
 - El PDF es el diálogo de impresión del navegador (A4), no un archivo generado por JavaScript.
 - Para monetizar **este** sitio con AdSense hace falta dominio propio y CMP certificada. `github.io` no es verificable a nivel de dominio.

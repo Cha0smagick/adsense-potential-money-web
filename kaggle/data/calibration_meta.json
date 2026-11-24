@@ -1,0 +1,75 @@
+{
+  "status": "failed",
+  "collectedAt": "2026-11-24",
+  "n": 324,
+  "approved": 280,
+  "rejected": 44,
+  "staleRejected": 171,
+  "auc": 0.405,
+  "aucLow": 0.272,
+  "aucHigh": 0.542,
+  "requiredPerClass": 443,
+  "medianApproved": 84,
+  "medianRejected": 91.7,
+  "positiveFloor": {
+    "value": 15,
+    "n": 280,
+    "confidence": 1,
+    "target": 0.95
+  },
+  "bands": [
+    {
+      "id": "<50",
+      "min": 0,
+      "max": 50,
+      "pos": 8,
+      "neg": 2,
+      "lr": 0.54,
+      "lrLow": 0.12,
+      "lrHigh": 4.01,
+      "prior": 0.051,
+      "posterior": 0.041
+    },
+    {
+      "id": "50-70",
+      "min": 50,
+      "max": 70,
+      "pos": 61,
+      "neg": 9,
+      "lr": 1.04,
+      "lrLow": 0.51,
+      "lrHigh": 2.86,
+      "prior": 0.27,
+      "posterior": 0.273
+    },
+    {
+      "id": "70-85",
+      "min": 70,
+      "max": 85,
+      "pos": 78,
+      "neg": 6,
+      "lr": 1.93,
+      "lrLow": 0.88,
+      "lrHigh": 7.95,
+      "prior": 0.585,
+      "posterior": 0.647
+    },
+    {
+      "id": "85-100",
+      "min": 85,
+      "max": 100,
+      "pos": 133,
+      "neg": 27,
+      "lr": 0.78,
+      "lrLow": 0.57,
+      "lrHigh": 1.2,
+      "prior": 0.78,
+      "posterior": 0.762
+    }
+  ],
+  "note": "Case-control: 280 aprobados (Tranco con AdSense + Reddit autodeclarado) y 44 rechazos que siguen sin AdSense. AUC 0.41 (IC99 0.27–0.54). Etiquetas autodeclaradas y muestra no representativa: se estima el LR, no la prevalencia real. Rechazos descartados por ya mostrar anuncios: 171.",
+  "dataset": "./data/approval-cases.json",
+  "measured": "./data/reddit-measured.json",
+  "report": "./data/calibration.md",
+  "method": "Positivos: Tranco con ca-pub/adsbygoogle + posts de r/Adsense que declaran aprobación. Negativos: posts de r/Adsense y del foro que declaran rechazo y hoy no muestran AdSense. Medición con el motor rápido; LR por banda con suavizado de Laplace y bootstrap 99%."
+}

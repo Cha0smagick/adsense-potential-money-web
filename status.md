@@ -27,8 +27,8 @@ Los informes completos están en `reports/`.
 
 ## Calibración pública (2026-11-24)
 
-Muestra final: **115 sitios aprobados** (Tranco con AdSense) y **1 rechazo válido**; 10 rechazos descartados por ya mostrar anuncios. **AUC 0,02** (IC99 0,00–1,00): el único rechazo puntúa 98,3, más alto que el 98 % de los aprobados. El score **no predice aprobación** en esta muestra. El umbral observado (95 % de aprobados ≥40) es cierto con 99,7 % de confianza, pero es demasiado bajo para decidir. No se aplica la razón de verosimilitud; el modelo sigue **no validado**. Para un IC99 ±5 puntos en AUC hacen falta 442 por clase (884 casos).
-Dataset: `data/approval-cases.json` · mediciones: `data/negatives-measured.json` · análisis: `data/calibration.md`.
+Muestra final: **280 aprobados** (115 de Tranco con AdSense + 38 de Reddit + resto) y **44 rechazos válidos**; 171 rechazos descartados por ya mostrar anuncios. **AUC 0,405** (IC99 0,272–0,542): no discrimina, y la mediana de los rechazos (91,7) es **mayor** que la de los aprobados (84,0). La banda 85–100 tiene LR 0,78: un score alto no protege. El único dato con 99 % de confianza es que el 95 % de los aprobados puntúa ≥15, un umbral inútil para decidir. No se aplica el LR; el modelo sigue **no validado**. Para IC99 ±5 en AUC hacen falta 442 por clase (884 casos).
+Dataset: `data/approval-cases.json` · mediciones: `data/reddit-measured.json` · análisis: `data/calibration.md`.
 
 ## Pendiente
 

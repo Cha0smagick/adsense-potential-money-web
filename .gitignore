@@ -7,3 +7,6 @@ reports/*.log
 data/raw/top-1m.csv
 data/raw/tranco.zip
 data/raw/*.log
+
+kaggle/raw/reddit_posts_full.csv
+data/raw/reddit-posts.json

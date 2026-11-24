@@ -33,21 +33,23 @@ Los informes completos quedan en `reports/`.
 
 ## Calibración pública del modelo de aprobación (2026-11-24)
 
-Se escanearon 1.800 dominios de Tranco (muestra aleatoria del top 1M) y se midieron **115 sitios que hoy sirven AdSense**. De 19 rechazos públicos con URL, **10 ya muestran anuncios** (aprobados después) y la mayoría de los restantes no responde; solo **1** es un negativo válido con contenido.
+Se descargaron **6.000 posts** de r/Adsense desde Arctic Shift (sin login) y se escanearon 1.800 dominios de Tranco. Tras limpiar, quedan **344 sitios únicos** de Reddit (306 rechazos, 38 aprobaciones) y 115 sitios de Tranco con AdSense. Se midieron todos con el auditor ligero.
 
 | Métrica | Valor |
 |---|---|
-| Aprobados medidos | 115 |
-| Rechazos válidos | 1 |
-| AUC | **0,02** (IC99 0,00–1,00) |
-| Puntuación del único rechazo | 98,3 |
-| Mediana aprobados | 88,8 |
-| 95 % de aprobados puntúa ≥ | 40 (n=115, confianza 99,7 %) |
+| Aprobados | **280** |
+| Rechazos válidos | **44** |
+| Rechazos descartados por ya mostrar anuncios | **171** |
+| AUC | **0,405** (IC99 0,272–0,542) |
+| Mediana aprobados | 84,0 |
+| Mediana rechazados | **91,7** |
+| LR banda 85–100 | **0,78** (IC99 0,57–1,20) |
+| 95 % de aprobados ≥ | 15 (n=280, 100 % de confianza) |
 | Muestra por clase para IC99 ±5 | 442 (884 total) |
 
-**Conclusión:** el score no separa aprobados de rechazados; el único negativo puntúa más alto que el 98 % de los aprobados. El umbral de 40 es real pero inútil para decidir. El modelo queda **no validado**; no se aplica la razón de verosimilitud. La paginación del foro está cerrada, Wayback solo devolvió 3 de 30 capturas y Reddit bloquea sin sesión: no hay fuente pública para 442 negativos con features en la fecha de la decisión.
+**Conclusión:** el score **no predice aprobación**. El AUC puntual está por debajo de 0,5, el IC99 cruza 0,5 y los rechazos puntúan más alto. Ninguna banda se distingue de 1; no se aplica corrección. El único dato robusto es el umbral de 15, demasiado bajo para decidir. La causa principal: 171 de 306 rechazos ya muestran anuncios y los restantes suelen ser sitios con mucho contenido rechazados por revisión manual, antigüedad o tráfico, cosas que el auditor no ve.
 
-Dataset: `data/approval-cases.json` · mediciones: `data/negatives-measured.json` · análisis: `data/calibration.md`.
+Dataset: `data/approval-cases.json` · mediciones: `data/reddit-measured.json` · análisis: `data/calibration.md`.
 
 ## v1 (2026-11-23) — histórico
 

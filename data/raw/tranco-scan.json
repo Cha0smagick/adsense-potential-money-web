@@ -1076,303 +1076,23 @@
     "title": ""
   },
   {
-    "domain": "dreamleaguesoccerkits.com\r",
-    "url": "https://dreamleaguesoccerkits.com/",
+    "domain": "zpovednice.cz\r",
+    "url": "https://zpovednice.cz/",
     "adsense": true,
-    "score": 67.2,
-    "confidence": 0.71,
-    "gates": [
-      "no-privacy"
-    ],
-    "words": 485,
-    "contentPages": 2,
-    "privacy": "fail",
-    "canMonetize": true,
-    "title": "Dream League Soccer Kits"
-  },
-  {
-    "domain": "thenewswheel.com\r",
-    "url": "https://thenewswheel.com/",
-    "adsense": true,
-    "score": 87.4,
-    "confidence": 0.79,
-    "gates": [],
-    "words": 879,
-    "contentPages": 22,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "The News Wheel"
-  },
-  {
-    "domain": "tourinews.es\r",
-    "url": "https://tourinews.es/",
-    "adsense": true,
-    "score": 91.1,
-    "confidence": 0.79,
-    "gates": [],
-    "words": 2219,
-    "contentPages": 27,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "Noticias y notas de prensa de turismo - Actualidad turística"
-  },
-  {
-    "domain": "guiadoinvestidor.com.br\r",
-    "url": "https://guiadoinvestidor.com.br/",
-    "adsense": true,
-    "score": 94.4,
+    "score": 70,
     "confidence": 0.74,
-    "gates": [],
-    "words": 1529,
-    "contentPages": 10,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "Guia do Investidor"
-  },
-  {
-    "domain": "gresrv.com\r",
-    "url": "https://gresrv.com/",
-    "adsense": true,
-    "score": 44.7,
-    "confidence": 0.7,
     "gates": [
-      "thin",
       "no-privacy"
     ],
-    "words": 21,
+    "words": 714,
     "contentPages": 0,
     "privacy": "fail",
     "canMonetize": true,
-    "title": ""
+    "title": "ZPOV�DNICE ...::::::www.zpovednice.cz:::::::::::::::................"
   },
   {
-    "domain": "tractor-info.com\r",
-    "url": "https://tractor-info.com/",
-    "adsense": true,
-    "score": 70,
-    "confidence": 0.74,
-    "gates": [
-      "no-privacy"
-    ],
-    "words": 383,
-    "contentPages": 1999,
-    "privacy": "fail",
-    "canMonetize": true,
-    "title": "Tractor Specs — Free Database of 15,000+ Models | Tractor-Info"
-  },
-  {
-    "domain": "lxs.net\r",
-    "url": "https://lxs.net/",
-    "adsense": true,
-    "score": 65,
-    "confidence": 0.79,
-    "gates": [
-      "thin"
-    ],
-    "words": 235,
-    "contentPages": 48,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "留学生网：找学长、院校库与经验市场 · 担保成交"
-  },
-  {
-    "domain": "thegistsports.com\r",
-    "url": "https://thegistsports.com/",
-    "adsense": true,
-    "score": 89,
-    "confidence": 0.74,
-    "gates": [],
-    "words": 1345,
-    "contentPages": 1,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "The GIST"
-  },
-  {
-    "domain": "idiomsmadeeasy.com\r",
-    "url": "https://idiomsmadeeasy.com/",
-    "adsense": true,
-    "score": 70,
-    "confidence": 0.79,
-    "gates": [
-      "no-privacy"
-    ],
-    "words": 491,
-    "contentPages": 5,
-    "privacy": "fail",
-    "canMonetize": true,
-    "title": "Home - Idioms Made Easy"
-  },
-  {
-    "domain": "ilikewallpaper.net\r",
-    "url": "https://ilikewallpaper.net/",
-    "adsense": true,
-    "score": 65,
-    "confidence": 0.79,
-    "gates": [
-      "thin"
-    ],
-    "words": 234,
-    "contentPages": 8,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "Best iPhone And iPad Wallpapers Free HD | iLikeWallpaper"
-  },
-  {
-    "domain": "globowatch.com\r",
-    "url": "https://globowatch.com/",
-    "adsense": true,
-    "score": 91.1,
-    "confidence": 0.79,
-    "gates": [],
-    "words": 697,
-    "contentPages": 94,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "GloboWatch: where to watch movies and TV shows online"
-  },
-  {
-    "domain": "rentumo.be\r",
-    "url": "https://rentumo.be/",
-    "adsense": true,
-    "score": 91.3,
-    "confidence": 0.76,
-    "gates": [],
-    "words": 1505,
-    "contentPages": 0,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "Rentumo | 26.000 Huurwoningen | 1.400+ Nieuwe woningen dagelijks"
-  },
-  {
-    "domain": "keiba-kouryaku.net\r",
-    "url": "https://keiba-kouryaku.net/",
-    "adsense": true,
-    "score": 65,
-    "confidence": 0.73,
-    "gates": [
-      "thin",
-      "no-privacy"
-    ],
-    "words": 183,
-    "contentPages": 200,
-    "privacy": "fail",
-    "canMonetize": true,
-    "title": "うま吉の無料競馬予想！当たる買い目を無料でGET"
-  },
-  {
-    "domain": "sylhetview24.news\r",
-    "url": "https://sylhetview24.news/",
-    "adsense": true,
-    "score": 91.1,
-    "confidence": 0.77,
-    "gates": [],
-    "words": 2321,
-    "contentPages": 2000,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "Sylhet View 24 - Reliable Bangla Newsportal"
-  },
-  {
-    "domain": "quellecompagnie.com\r",
-    "url": "https://quellecompagnie.com/",
-    "adsense": true,
-    "score": 70,
-    "confidence": 0.73,
-    "gates": [
-      "no-privacy"
-    ],
-    "words": 3372,
-    "contentPages": 2000,
-    "privacy": "fail",
-    "canMonetize": true,
-    "title": "Vols low cost : quelle compagnie low cost près de chez moi ?"
-  },
-  {
-    "domain": "periskopi.com\r",
-    "url": "https://periskopi.com/",
-    "adsense": true,
-    "score": 70,
-    "confidence": 0.71,
-    "gates": [
-      "no-privacy"
-    ],
-    "words": 1126,
-    "contentPages": 14,
-    "privacy": "fail",
-    "canMonetize": true,
-    "title": "Periskopi - Lajmet e fundit"
-  },
-  {
-    "domain": "peachtreehoops.com\r",
-    "url": "https://peachtreehoops.com/",
-    "adsense": true,
-    "score": 88.1,
-    "confidence": 0.79,
-    "gates": [],
-    "words": 1315,
-    "contentPages": 3,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "Peachtree Hoops"
-  },
-  {
-    "domain": "macmyths.com\r",
-    "url": "https://macmyths.com/",
-    "adsense": true,
-    "score": 86.7,
-    "confidence": 0.79,
-    "gates": [],
-    "words": 463,
-    "contentPages": 1188,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "MacMyths — apps and Apple hardware, charted"
-  },
-  {
-    "domain": "jusozip.kr\r",
-    "url": "https://jusozip.kr/",
-    "adsense": true,
-    "score": 98.3,
-    "confidence": 0.74,
-    "gates": [],
-    "words": 620,
-    "contentPages": 38,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "우편번호 조회·도로명주소 검색 - 주소집"
-  },
-  {
-    "domain": "libroazul.com\r",
-    "url": "https://libroazul.com/",
-    "adsense": true,
-    "score": 70,
-    "confidence": 0.79,
-    "gates": [
-      "no-privacy"
-    ],
-    "words": 1509,
-    "contentPages": 1999,
-    "privacy": "fail",
-    "canMonetize": true,
-    "title": "Guia EBC Libro Azul Página Oficial | Libro Azul"
-  },
-  {
-    "domain": "ishariki.online\r",
-    "url": "https://ishariki.online/",
-    "adsense": true,
-    "score": 96.1,
-    "confidence": 0.76,
-    "gates": [],
-    "words": 1257,
-    "contentPages": 77,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "Шарики Онлайн - Играть Бесплатно без Регистрации"
-  },
-  {
-    "domain": "wws-channel.com\r",
-    "url": "https://wws-channel.com/",
+    "domain": "tongrenxiaoshuo.com\r",
+    "url": "https://tongrenxiaoshuo.com/",
     "adsense": true,
     "score": 65,
     "confidence": 0.74,
@@ -1380,397 +1100,114 @@
       "thin"
     ],
     "words": 259,
-    "contentPages": 66,
+    "contentPages": 0,
     "privacy": "pass",
     "canMonetize": true,
-    "title": "WWSチャンネル | ファッション・音楽・アイドルの総合情報サイト 無料ネット動画＆写真芸能ニュース"
+    "title": "同人小说-同人小说在线阅读-免费热门-高人气-完结/连载-最新同人小说网站"
   },
   {
-    "domain": "quackr.io\r",
-    "url": "https://quackr.io/",
-    "adsense": true,
-    "score": 95.2,
-    "confidence": 0.79,
-    "gates": [],
-    "words": 2822,
-    "contentPages": 31,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "Free Temporary Phone Numbers for SMS Verification | Receive SMS Online • Quackr"
-  },
-  {
-    "domain": "capetownetc.com\r",
-    "url": "https://capetownetc.com/",
-    "adsense": true,
-    "score": 88.6,
-    "confidence": 0.79,
-    "gates": [],
-    "words": 911,
-    "contentPages": 57,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "Cape Town ETC | News, Events, Food and Lifestyle in the Mother City"
-  },
-  {
-    "domain": "inspectapedia.com\r",
-    "url": "https://inspectapedia.com/",
-    "adsense": true,
-    "score": 94.7,
-    "confidence": 0.79,
-    "gates": [],
-    "words": 3484,
-    "contentPages": 2,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "InspectApedia Building & Indoor Environment Problem Diagnosis & Repair"
-  },
-  {
-    "domain": "jibble.org\r",
-    "url": "https://jibble.org/",
+    "domain": "wiscassetnewspaper.com\r",
+    "url": "https://wiscassetnewspaper.com/",
     "adsense": true,
     "score": 70,
-    "confidence": 0.74,
-    "gates": [
-      "no-privacy"
-    ],
-    "words": 2356,
-    "contentPages": 0,
-    "privacy": "fail",
-    "canMonetize": true,
-    "title": "Jibble - Paul Mutton"
-  },
-  {
-    "domain": "amigoslaspalmas.com\r",
-    "url": "https://amigoslaspalmas.com/",
-    "adsense": true,
-    "score": 82.7,
     "confidence": 0.76,
-    "gates": [],
-    "words": 516,
-    "contentPages": 0,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "Amigos Las Palmas - Conocer gente en Las Palmas, Singles"
-  },
-  {
-    "domain": "kiss104fm.com\r",
-    "url": "https://kiss104fm.com/",
-    "adsense": true,
-    "score": 65,
-    "confidence": 0.78,
-    "gates": [
-      "thin"
-    ],
-    "words": 78,
-    "contentPages": 2,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "This website is unavailable in your location. – KISS 104.1 FM"
-  },
-  {
-    "domain": "chronicleonline.com\r",
-    "url": "https://chronicleonline.com/",
-    "adsense": true,
-    "score": 90.6,
-    "confidence": 0.66,
-    "gates": [],
-    "words": 4057,
-    "contentPages": 6,
-    "privacy": "unknown",
-    "canMonetize": true,
-    "title": "chronicleonline.com | Florida's Best Community Newspaper"
-  },
-  {
-    "domain": "msader-ye.net\r",
-    "url": "https://msader-ye.net/",
-    "adsense": true,
-    "score": 70,
-    "confidence": 0.71,
     "gates": [
       "no-privacy"
     ],
-    "words": 2867,
-    "contentPages": 2,
+    "words": 2476,
+    "contentPages": 1575,
     "privacy": "fail",
     "canMonetize": true,
-    "title": "مصادر نت"
+    "title": "Wiscasset Newspaper | Serving the Lincoln County seat and its neighboring communities"
   },
   {
-    "domain": "cedarnews.net\r",
-    "url": "https://cedarnews.net/",
-    "adsense": true,
-    "score": 70,
-    "confidence": 0.79,
-    "gates": [
-      "no-privacy"
-    ],
-    "words": 2150,
-    "contentPages": 177,
-    "privacy": "fail",
-    "canMonetize": true,
-    "title": "أخبار لبنان والعالم لحظة بلحظة | Cedar News"
-  },
-  {
-    "domain": "kuzeykafkasya.net\r",
-    "url": "https://kuzeykafkasya.net/",
-    "adsense": true,
-    "score": 65,
-    "confidence": 0.71,
-    "gates": [
-      "thin",
-      "no-privacy"
-    ],
-    "words": 206,
-    "contentPages": 5,
-    "privacy": "fail",
-    "canMonetize": true,
-    "title": "Canlı Sohbet, Sohbet Odaları, Mobil Sohbet - KuzeyKafkasya.Net"
-  },
-  {
-    "domain": "androidpure.com\r",
-    "url": "https://androidpure.com/",
-    "adsense": true,
-    "score": 88.3,
-    "confidence": 0.79,
-    "gates": [],
-    "words": 561,
-    "contentPages": 10,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "AndroidPure - NonStop Android"
-  },
-  {
-    "domain": "e-science.co.kr\r",
-    "url": "https://e-science.co.kr/",
-    "adsense": true,
-    "score": 88.9,
-    "confidence": 0.74,
-    "gates": [],
-    "words": 642,
-    "contentPages": 100,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "이코노미사이언스"
-  },
-  {
-    "domain": "jagrutirehab.org\r",
-    "url": "https://jagrutirehab.org/",
-    "adsense": true,
-    "score": 97,
-    "confidence": 0.79,
-    "gates": [],
-    "words": 3326,
-    "contentPages": 733,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "Best Rehab Centre in India for Addiction & Mental Health"
-  },
-  {
-    "domain": "stateofohio.net\r",
-    "url": "https://stateofohio.net/",
-    "adsense": true,
-    "score": 65,
-    "confidence": 0.79,
-    "gates": [
-      "thin"
-    ],
-    "words": 218,
-    "contentPages": 0,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "State of Ohio 巛"
-  },
-  {
-    "domain": "savbit.com\r",
-    "url": "https://savbit.com/",
+    "domain": "navigaweb.net\r",
+    "url": "https://navigaweb.net/",
     "adsense": true,
     "score": 90.8,
-    "confidence": 0.76,
-    "gates": [],
-    "words": 1529,
-    "contentPages": 1997,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "savbit - Advertising Analytics."
-  },
-  {
-    "domain": "malim.kz\r",
-    "url": "https://malim.kz/",
-    "adsense": true,
-    "score": 70,
-    "confidence": 0.71,
-    "gates": [
-      "no-privacy"
-    ],
-    "words": 1475,
-    "contentPages": 15,
-    "privacy": "fail",
-    "canMonetize": true,
-    "title": "Malim.kz - Қоғамдық-саяси сайт"
-  },
-  {
-    "domain": "cappertek.com\r",
-    "url": "https://cappertek.com/",
-    "adsense": true,
-    "score": 93.2,
-    "confidence": 0.79,
-    "gates": [],
-    "words": 2394,
-    "contentPages": 104,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "CapperTek - Make Smarter Sports Betting Picks and Predictions"
-  },
-  {
-    "domain": "olaquiz.com\r",
-    "url": "https://olaquiz.com/",
-    "adsense": true,
-    "score": 40,
-    "confidence": 0.76,
-    "gates": [
-      "mediapartners",
-      "no-privacy"
-    ],
-    "words": 1278,
-    "contentPages": 0,
-    "privacy": "fail",
-    "canMonetize": true,
-    "title": "https://olaquiz.com"
-  },
-  {
-    "domain": "koalasplayground.com\r",
-    "url": "https://koalasplayground.com/",
-    "adsense": true,
-    "score": 94.5,
-    "confidence": 0.77,
-    "gates": [],
-    "words": 2677,
-    "contentPages": 1999,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "A Koala's Playground - I'll talk about dramas if I want to"
-  },
-  {
-    "domain": "tradingpilot.ai\r",
-    "url": "https://tradingpilot.ai/",
-    "adsense": true,
-    "score": 70,
     "confidence": 0.74,
-    "gates": [
-      "no-privacy"
-    ],
-    "words": 459,
-    "contentPages": 7,
-    "privacy": "fail",
-    "canMonetize": true,
-    "title": "TradingPilot — market monitoring"
-  },
-  {
-    "domain": "bleedingfool.com\r",
-    "url": "https://bleedingfool.com/",
-    "adsense": true,
-    "score": 89.7,
-    "confidence": 0.77,
     "gates": [],
-    "words": 1406,
-    "contentPages": 0,
+    "words": 1497,
+    "contentPages": 5,
     "privacy": "pass",
     "canMonetize": true,
-    "title": "BleedingFool.com | Comic Book News, Reviews & All-Things Geek-Culture | BleedingFool.com | Comics, Movies & Geek Culture"
+    "title": "Navigaweb: Guide Tech, AI e App Gratis per PC e Smartphone"
   },
   {
-    "domain": "odpiralnicasi.com\r",
-    "url": "https://odpiralnicasi.com/",
+    "domain": "msubaroda.ac.in\r",
+    "url": "https://msubaroda.ac.in/",
     "adsense": true,
     "score": 70,
+    "confidence": 0.73,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 1603,
+    "contentPages": 500,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "The Maharaja Sayajirao University of Baroda"
+  },
+  {
+    "domain": "smartinvestorsdaily.com\r",
+    "url": "https://smartinvestorsdaily.com/",
+    "adsense": true,
+    "score": 95.8,
     "confidence": 0.79,
-    "gates": [
-      "no-privacy"
-    ],
-    "words": 524,
-    "contentPages": 0,
-    "privacy": "fail",
-    "canMonetize": true,
-    "title": "Odpiralni Časi"
-  },
-  {
-    "domain": "e-grajewo.pl\r",
-    "url": "https://e-grajewo.pl/",
-    "adsense": true,
-    "score": 70,
-    "confidence": 0.76,
-    "gates": [
-      "no-privacy"
-    ],
-    "words": 1503,
-    "contentPages": 27,
-    "privacy": "fail",
-    "canMonetize": true,
-    "title": "e-Grajewo.pl"
-  },
-  {
-    "domain": "redfoxsanakirja.fi\r",
-    "url": "https://redfoxsanakirja.fi/",
-    "adsense": true,
-    "score": 15,
-    "confidence": 0.6,
-    "gates": [
-      "unreachable",
-      "thin"
-    ],
-    "words": 0,
-    "contentPages": 74,
+    "gates": [],
+    "words": 2073,
+    "contentPages": 50,
     "privacy": "pass",
     "canMonetize": true,
-    "title": "Redfox Sanakirja"
+    "title": "Smart Investors Daily"
   },
   {
-    "domain": "rate-driver.co.uk\r",
-    "url": "https://rate-driver.co.uk/",
+    "domain": "icoconverter.com\r",
+    "url": "https://icoconverter.com/",
     "adsense": true,
-    "score": 65,
-    "confidence": 0.76,
+    "score": 61.8,
+    "confidence": 0.71,
     "gates": [
       "thin",
       "no-privacy"
     ],
-    "words": 194,
-    "contentPages": 427,
+    "words": 93,
+    "contentPages": 1,
     "privacy": "fail",
     "canMonetize": true,
-    "title": "Rate driver! - Comments, Photos, Videos from Drive Video Recorders. - rate-driver.co.uk"
+    "title": "Online ICO converter"
   },
   {
-    "domain": "mcpeaddons.com\r",
-    "url": "https://mcpeaddons.com/",
+    "domain": "strategypage.com\r",
+    "url": "https://strategypage.com/",
     "adsense": true,
-    "score": 95.5,
-    "confidence": 0.76,
-    "gates": [],
-    "words": 1652,
-    "contentPages": 2000,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "MCPE Addons — Add-Ons, Maps, Texture Packs & Shaders for Minecraft Bedrock"
-  },
-  {
-    "domain": "scoopersokuhou.com\r",
-    "url": "https://scoopersokuhou.com/",
-    "adsense": true,
-    "score": 66.4,
-    "confidence": 0.71,
+    "score": 70,
+    "confidence": 0.79,
     "gates": [
       "no-privacy"
     ],
-    "words": 844,
-    "contentPages": 2000,
+    "words": 397,
+    "contentPages": 0,
     "privacy": "fail",
     "canMonetize": true,
-    "title": "スコ速＠ネット小説まとめ"
+    "title": "StrategyPage | Military News Humor Photos"
   },
   {
-    "domain": "rajasthanonline.in\r",
-    "url": "https://rajasthanonline.in/",
+    "domain": "forumgratuit.org\r",
+    "url": "https://forumgratuit.org/",
+    "adsense": true,
+    "score": 92.8,
+    "confidence": 0.74,
+    "gates": [],
+    "words": 647,
+    "contentPages": 0,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Créer un forum - forumgratuit.org"
+  },
+  {
+    "domain": "ptdocz.com\r",
+    "url": "https://ptdocz.com/",
     "adsense": true,
     "score": 65,
     "confidence": 0.73,
@@ -1778,43 +1215,962 @@
       "thin",
       "no-privacy"
     ],
-    "words": 262,
-    "contentPages": 1,
+    "words": 59,
+    "contentPages": 84,
     "privacy": "fail",
     "canMonetize": true,
-    "title": "Rajasthan City Guide, Travel Tips & Articles | www.rajasthanonline.in"
+    "title": "PtDocs.com : Document publishing service"
   },
   {
-    "domain": "allampapirkalkulator.hu\r",
-    "url": "https://allampapirkalkulator.hu/",
+    "domain": "vojvodinameteo.rs\r",
+    "url": "https://vojvodinameteo.rs/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.73,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 2200,
+    "contentPages": 12,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Vremenska prognoza: vreme danas, sutra i 10 dana – Vojvodina | VojvodinaMeteo"
+  },
+  {
+    "domain": "sakaryahaber.com\r",
+    "url": "https://sakaryahaber.com/",
     "adsense": true,
     "score": 70,
     "confidence": 0.74,
     "gates": [
       "no-privacy"
     ],
-    "words": 2170,
-    "contentPages": 2000,
+    "words": 521,
+    "contentPages": 239,
     "privacy": "fail",
     "canMonetize": true,
-    "title": "Állampapír-kalkulátor és több: befektetés, ETF, nyugdíj, biztosítás"
+    "title": "Sakarya Haber Sakarya'nın Haber Sitesi"
   },
   {
-    "domain": "comparajogos.com.br\r",
-    "url": "https://comparajogos.com.br/",
+    "domain": "robbreportindia.com\r",
+    "url": "https://robbreportindia.com/",
+    "adsense": true,
+    "score": 65,
+    "confidence": 0.79,
+    "gates": [
+      "thin"
+    ],
+    "words": 226,
+    "contentPages": 32,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Robb Report India | Luxury Cars, Whisky, Travel, Watches, Hotels & Lifestyle News"
+  },
+  {
+    "domain": "midiariodecocina.com\r",
+    "url": "https://midiariodecocina.com/",
+    "adsense": true,
+    "score": 95.5,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 774,
+    "contentPages": 18,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Mi Diario de Cocina – Fáciles y deliciosas recetas de cocina"
+  },
+  {
+    "domain": "jarscr.com\r",
+    "url": "https://jarscr.com/",
+    "adsense": true,
+    "score": 91.1,
+    "confidence": 0.76,
+    "gates": [],
+    "words": 445,
+    "contentPages": 77,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "JARS Costa Rica | Software, miPOS y soluciones empresariales"
+  },
+  {
+    "domain": "thecut.com\r",
+    "url": "https://thecut.com/",
+    "adsense": true,
+    "score": 93.6,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 2086,
+    "contentPages": 21,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": ""
+  },
+  {
+    "domain": "doctorsnews.co.kr\r",
+    "url": "https://doctorsnews.co.kr/",
+    "adsense": true,
+    "score": 92.2,
+    "confidence": 0.74,
+    "gates": [],
+    "words": 1525,
+    "contentPages": 100,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "건강을 위한 바른 소리, 의료를 위한 곧은 소리"
+  },
+  {
+    "domain": "tv.lv\r",
+    "url": "https://tv.lv/",
+    "adsense": true,
+    "score": 93.6,
+    "confidence": 0.77,
+    "gates": [],
+    "words": 4255,
+    "contentPages": 546,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": ""
+  },
+  {
+    "domain": "correiodopovo.com.br\r",
+    "url": "https://correiodopovo.com.br/",
+    "adsense": true,
+    "score": 94.4,
+    "confidence": 0.77,
+    "gates": [],
+    "words": 2133,
+    "contentPages": 37,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Correio do Povo | Notícias do RS, Brasil e Mundo"
+  },
+  {
+    "domain": "thegraillords.net\r",
+    "url": "https://thegraillords.net/",
+    "adsense": true,
+    "score": 65,
+    "confidence": 0.79,
+    "gates": [
+      "thin"
+    ],
+    "words": 172,
+    "contentPages": 0,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "The Grail Lords - Welcome"
+  },
+  {
+    "domain": "thecount.com\r",
+    "url": "https://thecount.com/",
+    "adsense": true,
+    "score": 91,
+    "confidence": 0.76,
+    "gates": [],
+    "words": 683,
+    "contentPages": 7,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "TheCount.com | You Heard It First!"
+  },
+  {
+    "domain": "thecodingforums.com\r",
+    "url": "https://thecodingforums.com/",
+    "adsense": true,
+    "score": 98.3,
+    "confidence": 0.74,
+    "gates": [],
+    "words": 859,
+    "contentPages": 11,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Coding Forums"
+  },
+  {
+    "domain": "goto-japanschool.jp\r",
+    "url": "https://goto-japanschool.jp/",
+    "adsense": true,
+    "score": 79.9,
+    "confidence": 0.77,
+    "gates": [],
+    "words": 1059,
+    "contentPages": 0,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "オンライン進学資料館"
+  },
+  {
+    "domain": "rbxservers.xyz\r",
+    "url": "https://rbxservers.xyz/",
+    "adsense": true,
+    "score": 65,
+    "confidence": 0.74,
+    "gates": [
+      "thin"
+    ],
+    "words": 121,
+    "contentPages": 0,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "RBXServers"
+  },
+  {
+    "domain": "telegraphherald.com\r",
+    "url": "https://telegraphherald.com/",
+    "adsense": true,
+    "score": 89.3,
+    "confidence": 0.64,
+    "gates": [],
+    "words": 1244,
+    "contentPages": 5,
+    "privacy": "unknown",
+    "canMonetize": true,
+    "title": "telegraphherald.com | A product of TH Media."
+  },
+  {
+    "domain": "lebtalks.com\r",
+    "url": "https://lebtalks.com/",
+    "adsense": true,
+    "score": 87.2,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 745,
+    "contentPages": 0,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Lebtalks | مباشر, Breaking News ,آخر أخبار لبنان"
+  },
+  {
+    "domain": "swiatobrazu.pl\r",
+    "url": "https://swiatobrazu.pl/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.76,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 1959,
+    "contentPages": 246,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Fotografia, wideo i testy sprzętu - Canon, Nikon. Szkolenia fotograficzne, kursy i warsztaty - Swiatobrazu.pl"
+  },
+  {
+    "domain": "bonjourpoesie.fr\r",
+    "url": "https://bonjourpoesie.fr/",
+    "adsense": true,
+    "score": 65,
+    "confidence": 0.73,
+    "gates": [
+      "thin",
+      "no-privacy"
+    ],
+    "words": 154,
+    "contentPages": 0,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Poésie française"
+  },
+  {
+    "domain": "lsmnoticias.com.br\r",
+    "url": "https://lsmnoticias.com.br/",
+    "adsense": true,
+    "score": 87.2,
+    "confidence": 0.74,
+    "gates": [],
+    "words": 1342,
+    "contentPages": 19,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "LSM Notícias - A informação na palma da sua mão!"
+  },
+  {
+    "domain": "cricketfastliveline.in\r",
+    "url": "https://cricketfastliveline.in/",
+    "adsense": true,
+    "score": 96.7,
+    "confidence": 0.73,
+    "gates": [],
+    "words": 1053,
+    "contentPages": 1,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Cricket Fast Live Line - Live Match Update & Analysis"
+  },
+  {
+    "domain": "lonefun.com\r",
+    "url": "https://lonefun.com/",
+    "adsense": true,
+    "score": 20,
+    "confidence": 0.76,
+    "gates": [
+      "severe-policy"
+    ],
+    "words": 1342,
+    "contentPages": 8,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "LONEFUN - Home"
+  },
+  {
+    "domain": "dalmiocuore.it\r",
+    "url": "https://dalmiocuore.it/",
+    "adsense": true,
+    "score": 96.1,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 2643,
+    "contentPages": 272,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "💖 DalMioCuore.it - Immagini Nuove, Bellissime e Gratis per WhatsApp e Facebook"
+  },
+  {
+    "domain": "mayyam.com\r",
+    "url": "https://mayyam.com/",
+    "adsense": true,
+    "score": 69.7,
+    "confidence": 0.71,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 1606,
+    "contentPages": 0,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "The Forum Hub - meeting, interaction and collaboration"
+  },
+  {
+    "domain": "kitjob.in\r",
+    "url": "https://kitjob.in/",
+    "adsense": true,
+    "score": 65,
+    "confidence": 0.75,
+    "gates": [
+      "thin"
+    ],
+    "words": 48,
+    "contentPages": 37,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Your next job is just a click away - India | Kit Job"
+  },
+  {
+    "domain": "forktionary.com\r",
+    "url": "https://forktionary.com/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.71,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 2096,
+    "contentPages": 0,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Forktionary: Delicious Recipes, Cooking Tips & Culinary Inspiration"
+  },
+  {
+    "domain": "onlineresult.in\r",
+    "url": "https://onlineresult.in/",
+    "adsense": true,
+    "score": 97.2,
+    "confidence": 0.76,
+    "gates": [],
+    "words": 1183,
+    "contentPages": 6,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Free Educational Tools, Study Calculators & Exam Results Portal | OnlineResult | OnlineResult.in"
+  },
+  {
+    "domain": "wikimezmur.org\r",
+    "url": "https://wikimezmur.org/",
+    "adsense": true,
+    "score": 65,
+    "confidence": 0.79,
+    "gates": [
+      "thin"
+    ],
+    "words": 217,
+    "contentPages": 1997,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Mezmur Lyrics of Amharic, Tigrinya, Oromiffa Songs - WikiMezmur"
+  },
+  {
+    "domain": "clonezilla.org\r",
+    "url": "https://clonezilla.org/",
     "adsense": true,
     "score": 91.1,
     "confidence": 0.77,
     "gates": [],
-    "words": 2556,
+    "words": 762,
+    "contentPages": 0,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Clonezilla - About"
+  },
+  {
+    "domain": "makler.ua\r",
+    "url": "https://makler.ua/",
+    "adsense": true,
+    "score": 78.9,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 415,
+    "contentPages": 350,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Makler.ua – бесплатные объявления в Украине"
+  },
+  {
+    "domain": "nieuwefolder.nl\r",
+    "url": "https://nieuwefolder.nl/",
+    "adsense": true,
+    "score": 84.4,
+    "confidence": 0.76,
+    "gates": [],
+    "words": 455,
+    "contentPages": 18,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Nieuwe Folder 2026 - nieuwste folders en actuele aanbiedingen"
+  },
+  {
+    "domain": "crypticwhimsy.top\r",
+    "url": "https://crypticwhimsy.top/",
+    "adsense": true,
+    "score": 86.4,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 1008,
+    "contentPages": 0,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "crypticwhimsy.top"
+  },
+  {
+    "domain": "cinemauae.com\r",
+    "url": "https://cinemauae.com/",
+    "adsense": true,
+    "score": 91.1,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 1359,
+    "contentPages": 211,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Live Showtimes | Book Tickets | All UAE Cinemas"
+  },
+  {
+    "domain": "copyrighted.com\r",
+    "url": "https://copyrighted.com/",
+    "adsense": true,
+    "score": 65,
+    "confidence": 0.79,
+    "gates": [
+      "thin"
+    ],
+    "words": 193,
+    "contentPages": 2,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Copyright Registration, Protection, and Takedown Services"
+  },
+  {
+    "domain": "iturf.fr\r",
+    "url": "https://iturf.fr/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.73,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 435,
+    "contentPages": 0,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Pronostic et analyse du Quinté du jour, statistiques sur les courses hippiques"
+  },
+  {
+    "domain": "betterfinancepath.com\r",
+    "url": "https://betterfinancepath.com/",
+    "adsense": true,
+    "score": 89.9,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 958,
+    "contentPages": 9,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "BetterFinancepPath.com"
+  },
+  {
+    "domain": "alraimedia.com\r",
+    "url": "https://alraimedia.com/",
+    "adsense": true,
+    "score": 84.9,
+    "confidence": 0.76,
+    "gates": [],
+    "words": 505,
+    "contentPages": 78,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "الراي - الرئيسية"
+  },
+  {
+    "domain": "marham.pk\r",
+    "url": "https://marham.pk/",
+    "adsense": true,
+    "score": 86.1,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 737,
+    "contentPages": 21,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Marham: Find A Doctor | Book Appointment or Consult Online"
+  },
+  {
+    "domain": "423down.com\r",
+    "url": "https://423down.com/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.74,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 316,
+    "contentPages": 0,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "423Down"
+  },
+  {
+    "domain": "cat3movie.club\r",
+    "url": "https://cat3movie.club/",
+    "adsense": true,
+    "score": 20,
+    "confidence": 0.71,
+    "gates": [
+      "severe-policy",
+      "thin",
+      "no-privacy"
+    ],
+    "words": 272,
+    "contentPages": 0,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Cat3Movie | Mov18Plus | Cat3Movies | Cat 3 Movie | Sexy Movie | Nnew Movies | Sexy Film"
+  },
+  {
+    "domain": "virtuallyfun.com\r",
+    "url": "https://virtuallyfun.com/",
+    "adsense": true,
+    "score": 97.2,
+    "confidence": 0.77,
+    "gates": [],
+    "words": 6216,
+    "contentPages": 6,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Virtually Fun | Fun with Virtualization"
+  },
+  {
+    "domain": "muchata.com\r",
+    "url": "https://muchata.com/",
+    "adsense": true,
+    "score": 92.8,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 620,
+    "contentPages": 0,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Muchata - Find Latest News in Telugu from Muchata.com, A leading news portal in Andhra Pradesh and Telangana"
+  },
+  {
+    "domain": "drydenwire.com\r",
+    "url": "https://drydenwire.com/",
+    "adsense": true,
+    "score": 90.8,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 946,
+    "contentPages": 1998,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "DrydenWire | News & Information for Northwest Wisconsin"
+  },
+  {
+    "domain": "mediated.wiki\r",
+    "url": "https://mediated.wiki/",
+    "adsense": true,
+    "score": 65,
+    "confidence": 0.79,
+    "gates": [
+      "thin"
+    ],
+    "words": 258,
+    "contentPages": 737,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Mediated Wiki — community-governed knowledge commons"
+  },
+  {
+    "domain": "postcode-info.co.uk\r",
+    "url": "https://postcode-info.co.uk/",
+    "adsense": true,
+    "score": 88.1,
+    "confidence": 0.77,
+    "gates": [],
+    "words": 341,
+    "contentPages": 2980,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "UK Postcode Information, Maps & Local Area Data | Postcode Info"
+  },
+  {
+    "domain": "glavnoe.in.ua\r",
+    "url": "https://glavnoe.in.ua/",
+    "adsense": true,
+    "score": 94.4,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 991,
+    "contentPages": 0,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Новини України сьогодні | Головне в Україні"
+  },
+  {
+    "domain": "indown.ai\r",
+    "url": "https://indown.ai/",
+    "adsense": true,
+    "score": 93.6,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 882,
+    "contentPages": 270,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Instagram Downloader - Download Video, Photo, Reels, Story - InDown"
+  },
+  {
+    "domain": "expertduturf.net\r",
+    "url": "https://expertduturf.net/",
+    "adsense": true,
+    "score": 64.4,
+    "confidence": 0.71,
+    "gates": [
+      "thin",
+      "no-privacy"
+    ],
+    "words": 207,
+    "contentPages": 2,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "EXPERTDUTURF"
+  },
+  {
+    "domain": "thatericalper.com\r",
+    "url": "https://thatericalper.com/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.76,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 1011,
+    "contentPages": 271,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "That Eric Alper | Home"
+  },
+  {
+    "domain": "entax.news\r",
+    "url": "https://entax.news/",
+    "adsense": true,
+    "score": 65,
+    "confidence": 0.76,
+    "gates": [
+      "thin",
+      "no-privacy"
+    ],
+    "words": 59,
+    "contentPages": 1998,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "entax（エンタックス） -有名人のインタビュー・エンタメニュースサイト"
+  },
+  {
+    "domain": "familylifespace.com\r",
+    "url": "https://familylifespace.com/",
+    "adsense": true,
+    "score": 86.4,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 742,
+    "contentPages": 59,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "family life space"
+  },
+  {
+    "domain": "ekai.pl\r",
+    "url": "https://ekai.pl/",
+    "adsense": true,
+    "score": 93.6,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 2136,
+    "contentPages": 0,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Strona główna | eKAI"
+  },
+  {
+    "domain": "miteshkhatri.com\r",
+    "url": "https://miteshkhatri.com/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.74,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 1139,
+    "contentPages": 10,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Law Of Attraction Coach – Mitesh Khatri – Transforming People To Lead Like An Entreprenaur"
+  },
+  {
+    "domain": "naanugauri.com\r",
+    "url": "https://naanugauri.com/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.74,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 1340,
+    "contentPages": 0,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "ಕನ್ನಡ ಸುದ್ದಿ | ಕನ್ನಡ ಕ್ರಾಂತಿ |ಕನ್ನಡ ಆನ್‌ಲೈನ್ | ನಾನೂ ಗೌರಿ"
+  },
+  {
+    "domain": "indiarace.com\r",
+    "url": "https://indiarace.com/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.74,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 1001,
+    "contentPages": 0,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": ""
+  },
+  {
+    "domain": "cavzodiaco.com.br\r",
+    "url": "https://cavzodiaco.com.br/",
+    "adsense": true,
+    "score": 95.3,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 2044,
+    "contentPages": 479,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Os Cavaleiros do Zod�aco - CavZodiaco.com.br"
+  },
+  {
+    "domain": "rym.fm\r",
+    "url": "https://rym.fm/",
+    "adsense": true,
+    "score": 40,
+    "confidence": 0.7,
+    "gates": [
+      "mediapartners",
+      "thin",
+      "no-privacy"
+    ],
+    "words": 73,
+    "contentPages": 0,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Log In - RYM forums"
+  },
+  {
+    "domain": "pienovels.com\r",
+    "url": "https://pienovels.com/",
+    "adsense": true,
+    "score": 95.8,
+    "confidence": 0.74,
+    "gates": [],
+    "words": 1671,
+    "contentPages": 3,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "PIE NOVELS – Your gateway to endless stories and imagination"
+  },
+  {
+    "domain": "8weekly.nl\r",
+    "url": "https://8weekly.nl/",
+    "adsense": true,
+    "score": 91.3,
+    "confidence": 0.76,
+    "gates": [],
+    "words": 2123,
+    "contentPages": 19,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Home - 8weekly.nl"
+  },
+  {
+    "domain": "koubo.jp\r",
+    "url": "https://koubo.jp/",
+    "adsense": true,
+    "score": 82.2,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 451,
+    "contentPages": 50,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "公募/コンテスト/コンペ情報なら「Koubo」"
+  },
+  {
+    "domain": "farmstandapp.com\r",
+    "url": "https://farmstandapp.com/",
+    "adsense": true,
+    "score": 90.9,
+    "confidence": 0.77,
+    "gates": [],
+    "words": 910,
+    "contentPages": 469,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "FarmstandApp - Learning To Live Out Here"
+  },
+  {
+    "domain": "harmonizers-jp.com\r",
+    "url": "https://harmonizers-jp.com/",
+    "adsense": true,
+    "score": 65,
+    "confidence": 0.74,
+    "gates": [
+      "thin"
+    ],
+    "words": 252,
     "contentPages": 7,
     "privacy": "pass",
     "canMonetize": true,
-    "title": "Compara Jogos | Compare preços de jogos de tabuleiro"
+    "title": "ガンプラ再販情報まとめ - リーチャのガンプラ再販情報"
   },
   {
-    "domain": "radiosa.org\r",
-    "url": "https://radiosa.org/",
+    "domain": "gate2home.com\r",
+    "url": "https://gate2home.com/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.71,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 639,
+    "contentPages": 521,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Virtual Keyboard Online - Type in Your Language, Anywhere"
+  },
+  {
+    "domain": "dealclub.de\r",
+    "url": "https://dealclub.de/",
+    "adsense": true,
+    "score": 91.7,
+    "confidence": 0.76,
+    "gates": [],
+    "words": 1851,
+    "contentPages": 0,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Dealclub.de – Mach deinen Deal. – Unschlagbar günstig."
+  },
+  {
+    "domain": "themetix.com\r",
+    "url": "https://themetix.com/",
+    "adsense": true,
+    "score": 95,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 793,
+    "contentPages": 22,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "THEMETIX - Collection of WP Themes and Plugins with Examples"
+  },
+  {
+    "domain": "bigbizstuff.com\r",
+    "url": "https://bigbizstuff.com/",
+    "adsense": true,
+    "score": 86.1,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 567,
+    "contentPages": 0,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Business Listing Directory - Find Business Listings - BigBizStuff"
+  },
+  {
+    "domain": "onexox.my\r",
+    "url": "https://onexox.my/",
+    "adsense": true,
+    "score": 65,
+    "confidence": 0.74,
+    "gates": [
+      "thin"
+    ],
+    "words": 146,
+    "contentPages": 58,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Home"
+  },
+  {
+    "domain": "weboutride.com\r",
+    "url": "https://weboutride.com/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.74,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 476,
+    "contentPages": 53,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "weboutride"
+  },
+  {
+    "domain": "snapsave.to\r",
+    "url": "https://snapsave.to/",
+    "adsense": true,
+    "score": 94.2,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 606,
+    "contentPages": 120,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "SnapSave | Download Facebook videos 1080p, 2K, 4K online"
+  },
+  {
+    "domain": "caputfrigoris.it\r",
+    "url": "https://caputfrigoris.it/",
     "adsense": true,
     "score": 65,
     "confidence": 0.74,
@@ -1822,202 +2178,504 @@
       "thin"
     ],
     "words": 246,
-    "contentPages": 346,
+    "contentPages": 0,
     "privacy": "pass",
     "canMonetize": true,
-    "title": "Online radio stations South Africa FM/AM/Web | Radiosa.org"
+    "title": "Home Page - AQ Caput Frigoris"
   },
   {
-    "domain": "xpress.jobs\r",
-    "url": "https://xpress.jobs/",
+    "domain": "tecnobits.com\r",
+    "url": "https://tecnobits.com/",
     "adsense": true,
-    "score": 15,
-    "confidence": 0.62,
+    "score": 97.8,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 814,
+    "contentPages": 115,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "TecnoBits ▷➡️ - Tecnología y gadgets, videojuegos, móviles, informática."
+  },
+  {
+    "domain": "syndicat-pharmaciens-marrakech.com\r",
+    "url": "https://syndicat-pharmaciens-marrakech.com/",
+    "adsense": true,
+    "score": 65,
+    "confidence": 0.73,
     "gates": [
-      "unreachable",
+      "thin",
+      "no-privacy"
+    ],
+    "words": 166,
+    "contentPages": 558,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Syndicat des Pharmaciens de Marrakech | Site officiel"
+  },
+  {
+    "domain": "weekendr.info\r",
+    "url": "https://weekendr.info/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.76,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 4704,
+    "contentPages": 5,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Weekendr — Charlottesville Wine Country Events"
+  },
+  {
+    "domain": "allapksmod.com\r",
+    "url": "https://allapksmod.com/",
+    "adsense": true,
+    "score": 90,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 440,
+    "contentPages": 1,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "AllApksMod - Download MOD APK Apps & Games for Android"
+  },
+  {
+    "domain": "siberindo.co\r",
+    "url": "https://siberindo.co/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.71,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 1242,
+    "contentPages": 3,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "SiberIndo.co – Indonesia Siber News – Berita Terkini Hari Ini"
+  },
+  {
+    "domain": "actualite.cd\r",
+    "url": "https://actualite.cd/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.71,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 1552,
+    "contentPages": 44,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Actualite.CD - Première source d'actualité en RD Congo"
+  },
+  {
+    "domain": "sever.bg\r",
+    "url": "https://sever.bg/",
+    "adsense": true,
+    "score": 89.5,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 838,
+    "contentPages": 0,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Начало - sever.bg"
+  },
+  {
+    "domain": "fallout.wiki\r",
+    "url": "https://fallout.wiki/",
+    "adsense": true,
+    "score": 93.4,
+    "confidence": 0.77,
+    "gates": [],
+    "words": 2792,
+    "contentPages": 32,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "The Fallout Wiki"
+  },
+  {
+    "domain": "kiblenerede.com\r",
+    "url": "https://kiblenerede.com/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.71,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 1263,
+    "contentPages": 174,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Kıble Bul – Canlı Kıble Pusulası | Kıble Nerede"
+  },
+  {
+    "domain": "umcastudio.org\r",
+    "url": "https://umcastudio.org/",
+    "adsense": true,
+    "score": 98.1,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 861,
+    "contentPages": 20,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "UMCA Studio - Dance, Singing, Acting & Modeling Talent Platform"
+  },
+  {
+    "domain": "thefuntimesguide.com\r",
+    "url": "https://thefuntimesguide.com/",
+    "adsense": true,
+    "score": 90.5,
+    "confidence": 0.76,
+    "gates": [],
+    "words": 1278,
+    "contentPages": 7,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Home - Fun Times Guide (Awesome Ideas Based On Personal Experience)"
+  },
+  {
+    "domain": "placacr.com\r",
+    "url": "https://placacr.com/",
+    "adsense": true,
+    "score": 100,
+    "confidence": 0.77,
+    "gates": [],
+    "words": 1058,
+    "contentPages": 29,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Consulta de Placa Costa Rica GRATIS 🚗 | Propietario, Historial y Multas"
+  },
+  {
+    "domain": "sportsbite.org\r",
+    "url": "https://sportsbite.org/",
+    "adsense": true,
+    "score": 82.7,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 516,
+    "contentPages": 10,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Football Live Stream Free HD – NFL, NBA & UFC | SportsBite"
+  },
+  {
+    "domain": "songsofpraise.in\r",
+    "url": "https://songsofpraise.in/",
+    "adsense": true,
+    "score": 93.3,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 3955,
+    "contentPages": 1472,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Songs of Praise – Christian Worship Songs: Lyrics & Chords"
+  },
+  {
+    "domain": "miscuentasmedicas.com\r",
+    "url": "https://miscuentasmedicas.com/",
+    "adsense": true,
+    "score": 83.1,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 466,
+    "contentPages": 176,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Mis Cuentas Médicas"
+  },
+  {
+    "domain": "freecollocation.com\r",
+    "url": "https://freecollocation.com/",
+    "adsense": true,
+    "score": 80.8,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 348,
+    "contentPages": 0,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Online OXFORD Collocation Dictionary of English"
+  },
+  {
+    "domain": "saamana.com\r",
+    "url": "https://saamana.com/",
+    "adsense": true,
+    "score": 89.7,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 2348,
+    "contentPages": 186,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Saamana (सामना) | Latest Marathi News | Live Maharashtra, Mumbai, Pune, Nashik News | Marathi Newspaper | ताज्या मराठी बातम्या लाइव"
+  },
+  {
+    "domain": "uhb.jp\r",
+    "url": "https://uhb.jp/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.77,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 401,
+    "contentPages": 2000,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "UHB 北海道文化放送"
+  },
+  {
+    "domain": "fundamentus.com.br\r",
+    "url": "https://fundamentus.com.br/",
+    "adsense": true,
+    "score": 65,
+    "confidence": 0.74,
+    "gates": [
+      "thin",
+      "no-privacy"
+    ],
+    "words": 249,
+    "contentPages": 0,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "FUNDAMENTUS - Invista consciente"
+  },
+  {
+    "domain": "tolbacudetoate.com\r",
+    "url": "https://tolbacudetoate.com/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.71,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 860,
+    "contentPages": 11,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Articole interesante ! Seriale Turcesti si alte cele."
+  },
+  {
+    "domain": "sakaryagazetesi.com.tr\r",
+    "url": "https://sakaryagazetesi.com.tr/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.71,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 875,
+    "contentPages": 85,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Sakarya Gazetesi: Eskişehir Haber - Son Dakika Eskişehir Haberleri"
+  },
+  {
+    "domain": "embarazo-online.com\r",
+    "url": "https://embarazo-online.com/",
+    "adsense": true,
+    "score": 90.6,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 1052,
+    "contentPages": 144,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Inicio - Embarazo Online"
+  },
+  {
+    "domain": "080s.com\r",
+    "url": "https://080s.com/",
+    "adsense": true,
+    "score": 65,
+    "confidence": 0.71,
+    "gates": [
+      "thin",
+      "no-privacy"
+    ],
+    "words": 260,
+    "contentPages": 2000,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "英语句子学习_英语句子小游戏 - 80学习网"
+  },
+  {
+    "domain": "stand.fm\r",
+    "url": "https://stand.fm/",
+    "adsense": true,
+    "score": 65,
+    "confidence": 0.73,
+    "gates": [
       "thin"
     ],
-    "words": 0,
-    "contentPages": 1998,
+    "words": 59,
+    "contentPages": 0,
     "privacy": "pass",
     "canMonetize": true,
-    "title": "XPRESSJOBS : Jobs in Sri Lanka"
+    "title": "stand.fm (スタンドエフエム) 音声配信プラットフォーム | stand.fm"
   },
   {
-    "domain": "modznan.com\r",
-    "url": "https://modznan.com/",
+    "domain": "activo.mx\r",
+    "url": "https://activo.mx/",
     "adsense": true,
-    "score": 91.5,
-    "confidence": 0.79,
+    "score": 92.2,
+    "confidence": 0.74,
     "gates": [],
-    "words": 896,
-    "contentPages": 12,
+    "words": 338,
+    "contentPages": 0,
     "privacy": "pass",
     "canMonetize": true,
-    "title": "Modznan Gaming - Download Game MOD APK & Mod Menu Terbaru"
+    "title": "Crear un foro - activo.mx"
   },
   {
-    "domain": "pngplay.com\r",
-    "url": "https://pngplay.com/",
+    "domain": "taxconcept.net\r",
+    "url": "https://taxconcept.net/",
     "adsense": true,
-    "score": 91.7,
-    "confidence": 0.79,
+    "score": 96.4,
+    "confidence": 0.77,
     "gates": [],
-    "words": 1044,
-    "contentPages": 75,
+    "words": 10088,
+    "contentPages": 35,
     "privacy": "pass",
     "canMonetize": true,
-    "title": "Free PNG Transparent Images Background - PNG Play"
+    "title": "TAX CONCEPT - Tax & Business News, Simplified."
   },
   {
-    "domain": "prime-numbers.info\r",
-    "url": "https://prime-numbers.info/",
+    "domain": "lutsk.one\r",
+    "url": "https://lutsk.one/",
     "adsense": true,
-    "score": 93.9,
+    "score": 70,
+    "confidence": 0.71,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 1021,
+    "contentPages": 33,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Діловий журнал: бізнес, економіка, кар'єра — Луцьк.One"
+  },
+  {
+    "domain": "wienerbezirksblatt.at\r",
+    "url": "https://wienerbezirksblatt.at/",
+    "adsense": true,
+    "score": 54.8,
+    "confidence": 0.71,
+    "gates": [
+      "thin",
+      "no-privacy"
+    ],
+    "words": 199,
+    "contentPages": 79,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Homepage - Wiener Bezirksblatt"
+  },
+  {
+    "domain": "likefm.org\r",
+    "url": "https://likefm.org/",
+    "adsense": true,
+    "score": 65,
+    "confidence": 0.79,
+    "gates": [
+      "thin"
+    ],
+    "words": 266,
+    "contentPages": 0,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "LikeFM.org - Listen to the Best Podcasts Live & Radios Online, Free"
+  },
+  {
+    "domain": "tvquot.es\r",
+    "url": "https://tvquot.es/",
+    "adsense": true,
+    "score": 96.4,
+    "confidence": 0.74,
+    "gates": [],
+    "words": 1500,
+    "contentPages": 1999,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "TV Quotes"
+  },
+  {
+    "domain": "donnael.com\r",
+    "url": "https://donnael.com/",
+    "adsense": true,
+    "score": 95,
     "confidence": 0.76,
     "gates": [],
-    "words": 5061,
-    "contentPages": 338,
+    "words": 836,
+    "contentPages": 125,
     "privacy": "pass",
     "canMonetize": true,
-    "title": "Prime Numbers Library - Prime Numbers"
+    "title": "Eventos Deportivos : Pronósticos, en Vivo, Estadísticas y Resultados, Clasificaciones"
   },
   {
-    "domain": "tomathouse.com\r",
-    "url": "https://tomathouse.com/",
+    "domain": "vremearomania.com\r",
+    "url": "https://vremearomania.com/",
     "adsense": true,
-    "score": 93.5,
+    "score": 97.2,
+    "confidence": 0.74,
+    "gates": [],
+    "words": 965,
+    "contentPages": 13,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Prognoze Meteo Precise | Vremea România - Sursa Ta de Încredere"
+  },
+  {
+    "domain": "best-kyutoki.com\r",
+    "url": "https://best-kyutoki.com/",
+    "adsense": true,
+    "score": 65,
     "confidence": 0.76,
-    "gates": [],
-    "words": 752,
-    "contentPages": 1277,
-    "privacy": "pass",
+    "gates": [
+      "thin",
+      "no-privacy"
+    ],
+    "words": 177,
+    "contentPages": 0,
+    "privacy": "fail",
     "canMonetize": true,
-    "title": "Всичко за доматите. Отглеждане на домати. Сортове и разсад."
+    "title": "ベスト給湯器ナビ-おすすめ業者サイト"
   },
   {
-    "domain": "fraenkischer.de\r",
-    "url": "https://fraenkischer.de/",
-    "adsense": true,
-    "score": 87.2,
-    "confidence": 0.76,
-    "gates": [],
-    "words": 1711,
-    "contentPages": 77,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "fränkischer.de – Online Nachrichten-Magazin für Stadt und Landkreis Ansbach"
-  },
-  {
-    "domain": "mmomakemoneyonline.net\r",
-    "url": "https://mmomakemoneyonline.net/",
-    "adsense": true,
-    "score": 89,
-    "confidence": 0.76,
-    "gates": [],
-    "words": 2627,
-    "contentPages": 23,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "MMO Make Money Online"
-  },
-  {
-    "domain": "macaonews.org\r",
-    "url": "https://macaonews.org/",
-    "adsense": true,
-    "score": 92.8,
-    "confidence": 0.79,
-    "gates": [],
-    "words": 1246,
-    "contentPages": 47,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "Macao News"
-  },
-  {
-    "domain": "freshcalendars.com\r",
-    "url": "https://freshcalendars.com/",
-    "adsense": true,
-    "score": 91.6,
-    "confidence": 0.79,
-    "gates": [],
-    "words": 804,
-    "contentPages": 197,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "Free Printable Calendars for 2026 and 2027 in PDF"
-  },
-  {
-    "domain": "wikitechy.com\r",
-    "url": "https://wikitechy.com/",
+    "domain": "ogportal.com\r",
+    "url": "https://ogportal.com/",
     "adsense": true,
     "score": 70,
     "confidence": 0.74,
     "gates": [
       "no-privacy"
     ],
-    "words": 1173,
-    "contentPages": 8,
+    "words": 1974,
+    "contentPages": 1998,
     "privacy": "fail",
     "canMonetize": true,
-    "title": "Wikitechy - Blog"
+    "title": "OGportal je web-portal grada Ogulina, ogulinskog kraja i Karlovačke županije - OGportal je web portal grada Ogulina, ogulinskog kraja i Karlovačke županije. S vama kroz svaki dan!"
   },
   {
-    "domain": "yoys.in\r",
-    "url": "https://yoys.in/",
+    "domain": "f3fotografiaesportiva.com.br\r",
+    "url": "https://f3fotografiaesportiva.com.br/",
     "adsense": true,
-    "score": 95.8,
-    "confidence": 0.74,
-    "gates": [],
-    "words": 793,
-    "contentPages": 0,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "Yoys - B2B बाज़ार"
-  },
-  {
-    "domain": "blogvisaodemercado.pt\r",
-    "url": "https://blogvisaodemercado.pt/",
-    "adsense": true,
-    "score": 40,
-    "confidence": 0.76,
+    "score": 70,
+    "confidence": 0.77,
     "gates": [
-      "mediapartners",
       "no-privacy"
     ],
-    "words": 732,
-    "contentPages": 76,
+    "words": 331,
+    "contentPages": 0,
     "privacy": "fail",
     "canMonetize": true,
-    "title": "Blog Visão de Mercado | Notícias de Futebol e Desporto"
-  },
-  {
-    "domain": "transvision.co.id\r",
-    "url": "https://transvision.co.id/",
-    "adsense": true,
-    "score": 89.5,
-    "confidence": 0.74,
-    "gates": [],
-    "words": 954,
-    "contentPages": 261,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "TV Berlangganan Transvision"
-  },
-  {
-    "domain": "tabletzona.es\r",
-    "url": "https://tabletzona.es/",
-    "adsense": true,
-    "score": 20,
-    "confidence": 0.79,
-    "gates": [
-      "severe-policy"
-    ],
-    "words": 559,
-    "contentPages": 21,
-    "privacy": "pass",
-    "canMonetize": true,
-    "title": "Tablet Zona : Actualidad, tutoriales y análisis de tablets"
+    "title": "F3 - Fotografia Esportiva"
   },
   {
     "domain": "donpress.com\r",
@@ -2034,3 +2692,939 @@
     "canMonetize": true,
     "title": "DonPress.com"
   },
+  {
+    "domain": "myserieshd.com\r",
+    "url": "https://myserieshd.com/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.71,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 617,
+    "contentPages": 11,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "ดูซีรี่ย์ออนไลน์พากย์ไทย | เว็บรวมซีรี่ย์พากย์ไทย MyseriesHD"
+  },
+  {
+    "domain": "kyiv.name\r",
+    "url": "https://kyiv.name/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.71,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 660,
+    "contentPages": 17,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Екологія, наука й технології: журнал — Київ.Name"
+  },
+  {
+    "domain": "cocomic.co\r",
+    "url": "https://cocomic.co/",
+    "adsense": true,
+    "score": 53.3,
+    "confidence": 0.7,
+    "gates": [
+      "thin",
+      "no-privacy"
+    ],
+    "words": 55,
+    "contentPages": 1999,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "cocomic.co | 502: Bad gateway"
+  },
+  {
+    "domain": "kdminer.com\r",
+    "url": "https://kdminer.com/",
+    "adsense": true,
+    "score": 88.8,
+    "confidence": 0.67,
+    "gates": [],
+    "words": 5112,
+    "contentPages": 5,
+    "privacy": "unknown",
+    "canMonetize": true,
+    "title": "kdminer.com"
+  },
+  {
+    "domain": "mt09.de\r",
+    "url": "https://mt09.de/",
+    "adsense": true,
+    "score": 94.4,
+    "confidence": 0.74,
+    "gates": [],
+    "words": 1015,
+    "contentPages": 0,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Yamaha MT-09 im Test | Technische Daten | Bilder & Videos"
+  },
+  {
+    "domain": "hesgoal.ltd\r",
+    "url": "https://hesgoal.ltd/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.71,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 997,
+    "contentPages": 3,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "HesGoal TV – Free Soccer Streams In HesGoals"
+  },
+  {
+    "domain": "designwizard.com\r",
+    "url": "https://designwizard.com/",
+    "adsense": true,
+    "score": 98.3,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 828,
+    "contentPages": 5,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Free Online Graphic Design Software | Design Wizard"
+  },
+  {
+    "domain": "sassyhongkong.com\r",
+    "url": "https://sassyhongkong.com/",
+    "adsense": true,
+    "score": 93.3,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 1634,
+    "contentPages": 17,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Sassy Hong Kong – The guide to everything Hong Kong"
+  },
+  {
+    "domain": "diariosanrafael.com.ar\r",
+    "url": "https://diariosanrafael.com.ar/",
+    "adsense": true,
+    "score": 93.3,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 1658,
+    "contentPages": 85,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Diario San Rafael - La información justa"
+  },
+  {
+    "domain": "dreamkitsapp.com\r",
+    "url": "https://dreamkitsapp.com/",
+    "adsense": true,
+    "score": 84.4,
+    "confidence": 0.74,
+    "gates": [],
+    "words": 372,
+    "contentPages": 4,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Dream League Soccer Kits 2026-2027 | DREAM KITS"
+  },
+  {
+    "domain": "techtnet.com\r",
+    "url": "https://techtnet.com/",
+    "adsense": true,
+    "score": 89.4,
+    "confidence": 0.77,
+    "gates": [],
+    "words": 710,
+    "contentPages": 1,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "TechTnet | Latest news, top trends in information technology"
+  },
+  {
+    "domain": "mojavon.pl\r",
+    "url": "https://mojavon.pl/",
+    "adsense": true,
+    "score": 68,
+    "confidence": 0.71,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 347,
+    "contentPages": 241,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Avon katalog, Magazyn Focus i Gazetka Rossmann | mojavon.pl"
+  },
+  {
+    "domain": "calculatoredge.com\r",
+    "url": "https://calculatoredge.com/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.73,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 1996,
+    "contentPages": 954,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Free Online Calculators for Engineers – Electrical, Mechanical, Electronics, Chemical, Civil, Physics | CalculatorEdge"
+  },
+  {
+    "domain": "royeditor.com\r",
+    "url": "https://royeditor.com/",
+    "adsense": true,
+    "score": 65,
+    "confidence": 0.79,
+    "gates": [
+      "thin"
+    ],
+    "words": 270,
+    "contentPages": 5,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Roy Editor - Latest Trending Vn & CapCut Templates"
+  },
+  {
+    "domain": "dytyna.media\r",
+    "url": "https://dytyna.media/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.79,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 743,
+    "contentPages": 58,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Dytyna.media - поради для батьків, все про вагітність, пологи та виховання дітей"
+  },
+  {
+    "domain": "taucher.net\r",
+    "url": "https://taucher.net/",
+    "adsense": true,
+    "score": 15,
+    "confidence": 0.54,
+    "gates": [
+      "unreachable",
+      "thin",
+      "no-privacy"
+    ],
+    "words": 0,
+    "contentPages": 2000,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Tauchen auf Taucher.Net - dem Infonetz für Taucher"
+  },
+  {
+    "domain": "manualsbase.com\r",
+    "url": "https://manualsbase.com/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.76,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 449,
+    "contentPages": 0,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "User manuals for your devices. - ManualsBase.com - Solve your problem"
+  },
+  {
+    "domain": "soylanet.com\r",
+    "url": "https://soylanet.com/",
+    "adsense": true,
+    "score": 65,
+    "confidence": 0.79,
+    "gates": [
+      "thin"
+    ],
+    "words": 248,
+    "contentPages": 425,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "WhatsApp & Telegram Stickers: Memes, Animated & Quotes | SoylaNet"
+  },
+  {
+    "domain": "yourtier.com\r",
+    "url": "https://yourtier.com/",
+    "adsense": true,
+    "score": 97.7,
+    "confidence": 0.77,
+    "gates": [],
+    "words": 1589,
+    "contentPages": 15,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Tier · Your gaming journal and game tracker"
+  },
+  {
+    "domain": "libking.ru\r",
+    "url": "https://libking.ru/",
+    "adsense": true,
+    "score": 69.4,
+    "confidence": 0.71,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 364,
+    "contentPages": 7,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Читать книги онлайн бесплатно полностью на ЛибКинг"
+  },
+  {
+    "domain": "transliteral.org\r",
+    "url": "https://transliteral.org/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.79,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 1427,
+    "contentPages": 59,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Home of Ancient Indian Literature - TransLiteral Foundations"
+  },
+  {
+    "domain": "b2bage.com\r",
+    "url": "https://b2bage.com/",
+    "adsense": true,
+    "score": 65,
+    "confidence": 0.79,
+    "gates": [
+      "thin",
+      "no-privacy"
+    ],
+    "words": 233,
+    "contentPages": 0,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "B2BAGE Manufacturer Directory - Free online B2B MarketPlace,Manufacturers and suppliers directory"
+  },
+  {
+    "domain": "fenix951.com.ar\r",
+    "url": "https://fenix951.com.ar/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.77,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 6151,
+    "contentPages": 0,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Fenix | Noticias de La Rioja, Argentina"
+  },
+  {
+    "domain": "5etme.com\r",
+    "url": "https://5etme.com/",
+    "adsense": true,
+    "score": 65,
+    "confidence": 0.79,
+    "gates": [
+      "thin"
+    ],
+    "words": 286,
+    "contentPages": 49,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "ختمه القرآن اونلاين - 5etme online"
+  },
+  {
+    "domain": "tourismbookings.com\r",
+    "url": "https://tourismbookings.com/",
+    "adsense": true,
+    "score": 97.2,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 1768,
+    "contentPages": 83,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Tourism Bookings Book Direct with Owner"
+  },
+  {
+    "domain": "explore.bm\r",
+    "url": "https://explore.bm/",
+    "adsense": true,
+    "score": 65,
+    "confidence": 0.71,
+    "gates": [
+      "thin",
+      "no-privacy"
+    ],
+    "words": 183,
+    "contentPages": 5,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Explore.bm - Explore.bm"
+  },
+  {
+    "domain": "mikeshouts.com\r",
+    "url": "https://mikeshouts.com/",
+    "adsense": true,
+    "score": 95,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 1383,
+    "contentPages": 43,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "- Tech Culture and Lifestyle Stuff. Basically, Cool Stuff."
+  },
+  {
+    "domain": "vrecenze.cz\r",
+    "url": "https://vrecenze.cz/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.73,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 898,
+    "contentPages": 63,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Průvodce světem recenzí a návodů - Vrecenze.cz"
+  },
+  {
+    "domain": "mob4me.com\r",
+    "url": "https://mob4me.com/",
+    "adsense": true,
+    "score": 92.9,
+    "confidence": 0.76,
+    "gates": [],
+    "words": 814,
+    "contentPages": 0,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "أسعار الموبايلات في مصر اليوم نوفمبر 2026 - دليل اسعار الموبايلات"
+  },
+  {
+    "domain": "webcg.net\r",
+    "url": "https://webcg.net/",
+    "adsense": true,
+    "score": 84.7,
+    "confidence": 0.77,
+    "gates": [],
+    "words": 396,
+    "contentPages": 0,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "クルマ好きなら毎日みてる webCG 新車情報・カーグラフィック"
+  },
+  {
+    "domain": "fdo.net.rw\r",
+    "url": "https://fdo.net.rw/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.76,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 2617,
+    "contentPages": 8,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "FREE DIGITAL OPPORTUNITIES -"
+  },
+  {
+    "domain": "infoarchitekta.pl\r",
+    "url": "https://infoarchitekta.pl/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.73,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 1088,
+    "contentPages": 0,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "infoArchitekta.pl - bloki CAD, ARCHITEKTURA, KONKURSY, PROJEKTY"
+  },
+  {
+    "domain": "skysound7.net\r",
+    "url": "https://skysound7.net/",
+    "adsense": true,
+    "score": 66.7,
+    "confidence": 0.71,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 452,
+    "contentPages": 0,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Самые популярные песни | Скачать mp3 бесплатно, слушать онлайн музыку - SkySound7.net"
+  },
+  {
+    "domain": "zeith.org\r",
+    "url": "https://zeith.org/",
+    "adsense": true,
+    "score": 65,
+    "confidence": 0.73,
+    "gates": [
+      "thin",
+      "no-privacy"
+    ],
+    "words": 54,
+    "contentPages": 10,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Main Page -- Zeitheron"
+  },
+  {
+    "domain": "learnpython.org\r",
+    "url": "https://learnpython.org/",
+    "adsense": true,
+    "score": 90.3,
+    "confidence": 0.77,
+    "gates": [],
+    "words": 433,
+    "contentPages": 30,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Learn Python - Free Interactive Python Tutorial"
+  },
+  {
+    "domain": "fajarbali.com\r",
+    "url": "https://fajarbali.com/",
+    "adsense": true,
+    "score": 68.3,
+    "confidence": 0.71,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 1081,
+    "contentPages": 50,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Fajar Bali - FAJAR BALI"
+  },
+  {
+    "domain": "newsbharati.com\r",
+    "url": "https://newsbharati.com/",
+    "adsense": true,
+    "score": 90.2,
+    "confidence": 0.77,
+    "gates": [],
+    "words": 1636,
+    "contentPages": 500,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "NewsBharati"
+  },
+  {
+    "domain": "serieslyawesome.tv\r",
+    "url": "https://serieslyawesome.tv/",
+    "adsense": true,
+    "score": 82.9,
+    "confidence": 0.76,
+    "gates": [],
+    "words": 482,
+    "contentPages": 0,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "seriesly AWESOME - Das Blog-Zuhause deiner Lieblingsserien!"
+  },
+  {
+    "domain": "feedough.com\r",
+    "url": "https://feedough.com/",
+    "adsense": true,
+    "score": 90.5,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 3016,
+    "contentPages": 5,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Feedough: Free AI Agents, AI Tools & AI Guides"
+  },
+  {
+    "domain": "capital.com.tr\r",
+    "url": "https://capital.com.tr/",
+    "adsense": true,
+    "score": 93.3,
+    "confidence": 0.77,
+    "gates": [],
+    "words": 1724,
+    "contentPages": 14,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Capital - Aylık İş Ekonomi Dergisi"
+  },
+  {
+    "domain": "thetradable.pro\r",
+    "url": "https://thetradable.pro/",
+    "adsense": true,
+    "score": 95.6,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 1126,
+    "contentPages": 0,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "TheTradable.Pro - Global Financial News, Markets and Economy"
+  },
+  {
+    "domain": "shockwave.com\r",
+    "url": "https://shockwave.com/",
+    "adsense": true,
+    "score": 88.3,
+    "confidence": 0.77,
+    "gates": [],
+    "words": 2464,
+    "contentPages": 2000,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Games | FREE Online Games & Download Games | Play Games on Shockwave.com"
+  },
+  {
+    "domain": "univision.com\r",
+    "url": "https://univision.com/",
+    "adsense": true,
+    "score": 96.7,
+    "confidence": 0.77,
+    "gates": [],
+    "words": 3453,
+    "contentPages": 45,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Univision | Shows, Noticias, Entretenimiento, Deportes y Novelas - Champions League y Liga MX en vivo | Univision"
+  },
+  {
+    "domain": "gametamashii.com\r",
+    "url": "https://gametamashii.com/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.73,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 385,
+    "contentPages": 0,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "エンタメ＆謎解きGAME魂 | TV番組から謎解き、人気ゲームまで！エンタメの疑問を解き明かす"
+  },
+  {
+    "domain": "ilgiornaledellarte.com\r",
+    "url": "https://ilgiornaledellarte.com/",
+    "adsense": true,
+    "score": 93.6,
+    "confidence": 0.74,
+    "gates": [],
+    "words": 4010,
+    "contentPages": 0,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Il Giornale dell'Arte"
+  },
+  {
+    "domain": "fairfindr.com\r",
+    "url": "https://fairfindr.com/",
+    "adsense": true,
+    "score": 97.8,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 974,
+    "contentPages": 7,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "FairFindR — Collectibles Price Tracker"
+  },
+  {
+    "domain": "racingnews.co\r",
+    "url": "https://racingnews.co/",
+    "adsense": true,
+    "score": 85.5,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 614,
+    "contentPages": 0,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Racing News: NASCAR, Dirt Track & INDYCAR News and Results"
+  },
+  {
+    "domain": "markaicode.com\r",
+    "url": "https://markaicode.com/",
+    "adsense": true,
+    "score": 93.9,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 4463,
+    "contentPages": 11,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "What AI Tells Software Buyers, Checked Against Vendor Pages | Markaicode"
+  },
+  {
+    "domain": "livecombs.com\r",
+    "url": "https://livecombs.com/",
+    "adsense": true,
+    "score": 86.7,
+    "confidence": 0.77,
+    "gates": [],
+    "words": 594,
+    "contentPages": 9,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "ライブカメラHUB"
+  },
+  {
+    "domain": "planomato.com\r",
+    "url": "https://planomato.com/",
+    "adsense": true,
+    "score": 98.9,
+    "confidence": 0.77,
+    "gates": [],
+    "words": 689,
+    "contentPages": 46,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Descubre los mejores eventos y planes en España | Planomato"
+  },
+  {
+    "domain": "toyamadays.com\r",
+    "url": "https://toyamadays.com/",
+    "adsense": true,
+    "score": 60.3,
+    "confidence": 0.71,
+    "gates": [
+      "thin",
+      "no-privacy"
+    ],
+    "words": 279,
+    "contentPages": 124,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "とやま速報 - 富山県富山市の地域情報サイト"
+  },
+  {
+    "domain": "madaradex.org\r",
+    "url": "https://madaradex.org/",
+    "adsense": true,
+    "score": 20,
+    "confidence": 0.71,
+    "gates": [
+      "severe-policy",
+      "no-privacy"
+    ],
+    "words": 1266,
+    "contentPages": 92,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "Read Free Manga, Manhwa & Manhua Online - MadaraDex"
+  },
+  {
+    "domain": "dict.com\r",
+    "url": "https://dict.com/",
+    "adsense": true,
+    "score": 65,
+    "confidence": 0.76,
+    "gates": [
+      "thin"
+    ],
+    "words": 37,
+    "contentPages": 0,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Lingea dictionaries | Look up reliable and apt translations for free"
+  },
+  {
+    "domain": "peachpuff.in\r",
+    "url": "https://peachpuff.in/",
+    "adsense": true,
+    "score": 87.2,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 693,
+    "contentPages": 0,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Home - Peach Puff Translations"
+  },
+  {
+    "domain": "mylittleindiestudio.com\r",
+    "url": "https://mylittleindiestudio.com/",
+    "adsense": true,
+    "score": 15,
+    "confidence": 0.53,
+    "gates": [
+      "unreachable",
+      "thin",
+      "no-privacy"
+    ],
+    "words": 0,
+    "contentPages": 122,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "my little indie studio | Chrome extensions and AI dubbing tools"
+  },
+  {
+    "domain": "tanzaniainvest.com\r",
+    "url": "https://tanzaniainvest.com/",
+    "adsense": true,
+    "score": 87.8,
+    "confidence": 0.76,
+    "gates": [],
+    "words": 1143,
+    "contentPages": 11,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "TanzaniaInvest - The N1 website to invest in Tanzania"
+  },
+  {
+    "domain": "rajasthangyan.com\r",
+    "url": "https://rajasthangyan.com/",
+    "adsense": true,
+    "score": 40,
+    "confidence": 0.79,
+    "gates": [
+      "mediapartners"
+    ],
+    "words": 383,
+    "contentPages": 1999,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "RajasthanGyan- A complete solution of all competitive Exam"
+  },
+  {
+    "domain": "qualcid.com.br\r",
+    "url": "https://qualcid.com.br/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.74,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 818,
+    "contentPages": 2000,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "CID 11 - Pesquisa 100% Gratuita da Classificação Internacional de Doenças - Qual CID"
+  },
+  {
+    "domain": "waterkant.net\r",
+    "url": "https://waterkant.net/",
+    "adsense": true,
+    "score": 87.4,
+    "confidence": 0.76,
+    "gates": [],
+    "words": 974,
+    "contentPages": 62,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Waterkant - Nieuws over Suriname en Surinaamse zaken"
+  },
+  {
+    "domain": "gtaweb.eu\r",
+    "url": "https://gtaweb.eu/",
+    "adsense": true,
+    "score": 55.7,
+    "confidence": 0.71,
+    "gates": [
+      "thin",
+      "no-privacy"
+    ],
+    "words": 197,
+    "contentPages": 2000,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "GTAWeb.eu - Homepage"
+  },
+  {
+    "domain": "sharesansar.com\r",
+    "url": "https://sharesansar.com/",
+    "adsense": true,
+    "score": 70,
+    "confidence": 0.79,
+    "gates": [
+      "no-privacy"
+    ],
+    "words": 3367,
+    "contentPages": 0,
+    "privacy": "fail",
+    "canMonetize": true,
+    "title": "No.1 online financial portal of Nepal with a complete information of Stock market. - || ShareSansar ||"
+  },
+  {
+    "domain": "djournal.com\r",
+    "url": "https://djournal.com/",
+    "adsense": true,
+    "score": 91.7,
+    "confidence": 0.67,
+    "gates": [],
+    "words": 1582,
+    "contentPages": 5,
+    "privacy": "unknown",
+    "canMonetize": true,
+    "title": "Daily Journal | Northeast Mississippi news & sports"
+  },
+  {
+    "domain": "agenpress.it\r",
+    "url": "https://agenpress.it/",
+    "adsense": true,
+    "score": 88.1,
+    "confidence": 0.74,
+    "gates": [],
+    "words": 3444,
+    "contentPages": 410,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Agenpress - Ultime notizie di politica, cronaca, economia e cultura - Agenpress"
+  },
+  {
+    "domain": "ahrn.com\r",
+    "url": "https://ahrn.com/",
+    "adsense": true,
+    "score": 65,
+    "confidence": 0.79,
+    "gates": [
+      "thin"
+    ],
+    "words": 144,
+    "contentPages": 644,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Find Military Housing with AHRN - Automated Housing Referral Network"
+  },
+  {
+    "domain": "thesite.org\r",
+    "url": "https://thesite.org/",
+    "adsense": true,
+    "score": 91.5,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 759,
+    "contentPages": 8,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "TheSite - News Magazine 2024"
+  },
+  {
+    "domain": "bluepillow.it\r",
+    "url": "https://bluepillow.it/",
+    "adsense": true,
+    "score": 86.1,
+    "confidence": 0.79,
+    "gates": [],
+    "words": 846,
+    "contentPages": 14,
+    "privacy": "pass",
+    "canMonetize": true,
+    "title": "Appartamenti e Casa Vacanze in affitto - Bluepillow"
+  }
+]

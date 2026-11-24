@@ -73,13 +73,20 @@ function moneyStrip(r: AuditReport): string {
     : e.gapLabel === 'bloqueado'
       ? 'sin anuncios posibles'
       : 'sin RPM propio: no se mide';
+  const calLabel = a.validation.status === 'validated'
+    ? 'modelo validado'
+    : a.validation.status === 'weak'
+      ? 'modelo débil'
+      : a.validation.status === 'pilot'
+        ? 'modelo piloto'
+        : 'modelo no validado';
   return `<div class="money-strip">
     <div class="money-cell"><small>Potencial esperado</small><b>${usd(e.expectedMonthly)}</b><span>USD/mes</span></div>
     <div class="money-cell"><small>${gapName}</small><b class="loss">${usd(gapValue)}</b><span>${gapNote}</span></div>
     <div class="money-cell"><small>Probabilidad de aprobación</small><b>${pct(a.probability.base, 0)}</b><span>${pct(a.probability.low, 0)} – ${pct(a.probability.high, 0)}</span></div>
     <div class="money-cell"><small>Tiempo hasta cobrar</small><b>${a.days.p50} d</b><span>P80 ${a.days.p80} d · P90 ${a.days.p90} d</span></div>
   </div>
-  <div class="approval-wrap">${approvalBar(a.probability)}<span class="approval-note">modelo no validado · AUC ${a.validation.auc ?? '—'} en ${a.validation.n} casos públicos · no es una tasa de Google</span></div>`;
+  <div class="approval-wrap">${approvalBar(a.probability)}<span class="approval-note">${calLabel} · AUC ${a.validation.auc ?? '—'} (IC99 ${a.validation.aucLow ?? '—'}–${a.validation.aucHigh ?? '—'}) en ${a.validation.n} casos · no es una tasa de Google</span></div>`;
 }
 
 function blockers(r: AuditReport): string {
@@ -257,6 +264,9 @@ function calibrationCard(r: AuditReport): string {
   const floor = v.positiveFloor
     ? `<p class="notice"><b>Umbral observado en sitios aprobados:</b> el 95 % puntúa <b>≥ ${v.positiveFloor.value}</b> (n=${v.positiveFloor.n}, confianza ${(v.positiveFloor.confidence * 100).toFixed(1)} %). Un score menor es señal de alarma; uno mayor no garantiza aprobación.</p>`
     : '';
+  const bandWarning = v.status === 'failed'
+    ? '<p class="notice"><b>No se aplica ninguna banda:</b> el AUC no discrimina y todos los IC99 del LR incluyen 1. La tabla se publica solo como evidencia.</p>'
+    : '';
   return `<section class="card"><h2>Calibración pública <span class="hint">${v.n} casos · AUC ${v.auc ?? '—'}</span></h2>
   <p class="notice"><b>Estado: ${esc(CAL_LABEL[v.status] ?? v.status)}.</b> ${esc(v.note)}</p>
   <div class="facts">
@@ -270,6 +280,7 @@ function calibrationCard(r: AuditReport): string {
     <div><small>Mediana rechazados</small><b>${v.medianRejected ?? '—'}</b></div>
   </div>
   ${floor}
+  ${bandWarning}
   ${bands}
   <p class="notice">${esc(v.method)}</p>
   <p class="notice"><a href="${esc(v.dataset)}" target="_blank" rel="noopener">Dataset de casos</a> · <a href="${esc(v.measured)}" target="_blank" rel="noopener">Mediciones</a> · <a href="${esc(v.report)}" target="_blank" rel="noopener">Informe de calibración</a></p>

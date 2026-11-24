@@ -1,46 +1,82 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { xorshift32 } from '../src/core/sample.ts';
+import { normalizeUrl } from '../src/core/normalize.ts';
 
-// Calibración case-control: positivos = sitios que hoy sirven AdSense;
-// negativos = rechazos públicos que siguen sin AdSense. El LR por banda se
-// combina con el prior del producto; la prevalencia de la muestra NO es la real.
+// Calibración case-control con dos fuentes:
+//  - Positivos: sitios de Tranco que hoy sirven AdSense + aprobaciones autodeclaradas de Reddit.
+//  - Negativos: rechazos de Reddit y del foro que siguen sin AdSense.
+// Los foros no son una cohorte representativa: se estima el LR, no la prevalencia.
 
 interface Row {
   url?: string;
   site?: string;
-  domain?: string;
+  host?: string;
   score?: number;
+  outcome?: string;
   adsense?: boolean;
   stale?: boolean;
   reachable?: boolean;
-  outcome?: string;
   gates?: string[];
   words?: number;
 }
 
-const positives = (JSON.parse(await readFile('data/raw/tranco-scan.json', 'utf8').catch(() => '[]')) as Row[])
-  .filter((r) => r.adsense === true && typeof r.score === 'number' && r.url)
-  .map((r) => ({ url: r.url as string, score: r.score as number }));
+const SHARED = /\.(blogspot\.[a-z.]+|wordpress\.com|github\.io|gitlab\.io|netlify\.app|vercel\.app|pages\.dev|web\.app|wixsite\.com|weebly\.com|tumblr\.com|substack\.com|medium\.com)$/;
 
-const allNegatives = (JSON.parse(await readFile('data/raw/negatives-measured.json', 'utf8').catch(() => '[]')) as Row[])
-  .filter((r) => (r.url || r.site) && typeof r.score === 'number');
-const negatives = allNegatives
-  .filter(
-    (r) =>
-      r.reachable &&
-      !r.stale &&
-      r.outcome !== 'approved' &&
-      !(r.gates ?? []).includes('unreachable') &&
-      typeof r.words === 'number' &&
-      r.words > 0,
-  )
-  .map((r) => ({ url: (r.url ?? r.site) as string, score: r.score as number }));
+function keyOf(site: string): string | null {
+  try {
+    const n = normalizeUrl(site);
+    return SHARED.test(n.host) ? n.host : n.registrable;
+  } catch {
+    return null;
+  }
+}
 
-const posHosts = new Set(positives.map((p) => new URL(p.url).hostname.replace(/^www\./, '')));
-const cleanNegatives = negatives.filter((n) => !posHosts.has(new URL(n.url).hostname.replace(/^www\./, '')));
+function readJson(path: string): Promise<Row[]> {
+  return readFile(path, 'utf8').then((s) => JSON.parse(s) as Row[]).catch(() => []);
+}
 
-const pos = positives.map((p) => p.score);
-const neg = cleanNegatives.map((n) => n.score);
+const tranco = (await readJson('data/raw/tranco-scan.json')).filter(
+  (r) => r.adsense === true && typeof r.score === 'number' && r.url,
+);
+const reddit = await readJson('data/raw/reddit-measured.json');
+const forum = await readJson('data/raw/negatives-measured.json');
+
+const posMap = new Map<string, { url: string; score: number; source: string }>();
+for (const r of tranco) {
+  const key = keyOf(r.url as string);
+  if (key && !posMap.has(key)) posMap.set(key, { url: r.url as string, score: r.score as number, source: 'tranco' });
+}
+for (const r of reddit) {
+  if (r.outcome !== 'approved' || !r.reachable || typeof r.score !== 'number') continue;
+  const site = r.url ?? r.site;
+  const key = site ? keyOf(site) : null;
+  if (key && !posMap.has(key)) posMap.set(key, { url: site as string, score: r.score, source: 'reddit' });
+}
+
+const negMap = new Map<string, { url: string; score: number; source: string }>();
+const staleKeys = new Set<string>();
+for (const r of reddit) {
+  if (r.outcome !== 'rejected') continue;
+  const site = r.url ?? r.site;
+  const key = site ? keyOf(site) : null;
+  if (!key) continue;
+  if (r.stale || r.adsense) staleKeys.add(key);
+  if (!r.reachable || r.stale || (r.gates ?? []).includes('unreachable') || !(r.words && r.words > 0)) continue;
+  if (!negMap.has(key)) negMap.set(key, { url: site as string, score: r.score as number, source: 'reddit' });
+}
+for (const r of forum) {
+  const site = r.url ?? r.site;
+  const key = site ? keyOf(site) : null;
+  if (!key) continue;
+  if (r.stale) { staleKeys.add(key); continue; }
+  if (!r.reachable || (r.gates ?? []).includes('unreachable') || !(r.words && r.words > 0) || typeof r.score !== 'number') continue;
+  if (!negMap.has(key)) negMap.set(key, { url: site as string, score: r.score, source: 'forum' });
+}
+
+for (const key of posMap.keys()) negMap.delete(key);
+
+const pos = Array.from(posMap.values()).map((p) => p.score);
+const neg = Array.from(negMap.values()).map((n) => n.score);
 
 function auc(a: number[], b: number[]): number {
   if (!a.length || !b.length) return 0.5;
@@ -50,13 +86,13 @@ function auc(a: number[], b: number[]): number {
 }
 
 function quantile(sorted: number[], q: number): number {
-  const pos = (sorted.length - 1) * q;
-  const base = Math.floor(pos);
-  const rest = pos - base;
+  const p = (sorted.length - 1) * q;
+  const base = Math.floor(p);
+  const rest = p - base;
   return base + 1 < sorted.length ? sorted[base] + rest * (sorted[base + 1] - sorted[base]) : sorted[base];
 }
 
-function bootstrapAuc(a: number[], b: number[], iterations = 2000): { low: number; high: number } {
+function bootstrapAuc(a: number[], b: number[], iterations = 3000): { low: number; high: number } {
   if (a.length < 5 || b.length < 5) return { low: 0, high: 1 };
   const rand = xorshift32(20261124);
   const values: number[] = [];
@@ -85,7 +121,6 @@ function priorAt(x: number): number {
   }
   return ANCHORS[ANCHORS.length - 1][1];
 }
-
 function bandLr(a: number[], b: number[], band: { min: number; max: number }): number {
   const pa = a.filter((s) => s >= band.min && s < band.max).length;
   const pb = b.filter((s) => s >= band.min && s < band.max).length;
@@ -94,13 +129,11 @@ function bandLr(a: number[], b: number[], band: { min: number; max: number }): n
 
 const rawAuc = auc(pos, neg);
 const ci = bootstrapAuc(pos, neg);
-const status = cleanNegatives.length >= 300 && ci.low > 0.6
-  ? 'validated'
-  : cleanNegatives.length >= 50 && ci.low > 0.55
-    ? 'weak'
-    : cleanNegatives.length >= 15
-      ? 'pilot'
-      : 'failed';
+const status = neg.length >= 250 && ci.low > 0.6
+  ? 'weak'
+  : neg.length >= 60 && ci.low > 0.55
+    ? 'pilot'
+    : 'failed';
 
 const bands = BANDS.map((band) => {
   const pa = pos.filter((s) => s >= band.min && s < band.max).length;
@@ -116,7 +149,7 @@ const bands = BANDS.map((band) => {
   lrs.sort((x, y) => x - y);
   const mid = (band.min + Math.min(band.max, 100)) / 2;
   const prior = priorAt(mid);
-  const shrink = status === 'validated' ? 1 : status === 'weak' ? 0.7 : 0.4;
+  const shrink = status === 'weak' ? 0.7 : 0.4;
   const posterior = (() => {
     const odd = (prior / (1 - prior)) * Math.pow(lr, shrink);
     return odd / (1 + odd);
@@ -136,7 +169,6 @@ const bands = BANDS.map((band) => {
 });
 
 const median = (v: number[]) => (v.length ? v.slice().sort((a, b) => a - b)[Math.floor(v.length / 2)] : null);
-const stale = allNegatives.filter((r) => r.stale).length;
 const requiredPerClass = Math.ceil((2.576 / 0.05) ** 2 / 6);
 const positiveFloor = (() => {
   if (!pos.length) return null;
@@ -152,10 +184,10 @@ const positiveFloor = (() => {
 const data = {
   status,
   collectedAt: new Date().toISOString().slice(0, 10),
-  n: pos.length + cleanNegatives.length,
+  n: pos.length + neg.length,
   approved: pos.length,
-  rejected: cleanNegatives.length,
-  staleRejected: stale,
+  rejected: neg.length,
+  staleRejected: staleKeys.size,
   auc: Math.round(rawAuc * 1000) / 1000,
   aucLow: Math.round(ci.low * 1000) / 1000,
   aucHigh: Math.round(ci.high * 1000) / 1000,
@@ -165,16 +197,16 @@ const data = {
   positiveFloor,
   bands,
   note:
-    `Muestra case-control: ${pos.length} sitios que hoy sirven AdSense y ${cleanNegatives.length} rechazos públicos que siguen sin AdSense. ` +
+    `Case-control: ${pos.length} aprobados (Tranco con AdSense + Reddit autodeclarado) y ${neg.length} rechazos que siguen sin AdSense. ` +
     `AUC ${rawAuc.toFixed(2)} (IC99 ${ci.low.toFixed(2)}–${ci.high.toFixed(2)}). ` +
-    `La prevalencia de la muestra no es la real; el LR por banda se combina con el prior del producto. ` +
-    (positiveFloor ? `Umbral observado: el 95% de los aprobados puntúa ≥${positiveFloor.value} (n=${positiveFloor.n}, confianza ${(positiveFloor.confidence * 100).toFixed(1)}%).` : ''),
+    `Etiquetas autodeclaradas y muestra no representativa: se estima el LR, no la prevalencia real. ` +
+    `Rechazos descartados por ya mostrar anuncios: ${staleKeys.size}.`,
   dataset: './data/approval-cases.json',
-  measured: './data/negatives-measured.json',
+  measured: './data/reddit-measured.json',
   report: './data/calibration.md',
   method:
-    'Positivos: muestra aleatoria de Tranco con código de AdSense en el HTML. Negativos: rechazos públicos del foro de AdSense con URL, medidos hoy y excluyendo los que ya muestran anuncios. ' +
-    'LR por banda con suavizado de Laplace y bootstrap 99%.',
+    'Positivos: Tranco con ca-pub/adsbygoogle + posts de r/Adsense que declaran aprobación. Negativos: posts de r/Adsense y del foro que declaran rechazo y hoy no muestran AdSense. ' +
+    'Medición con el motor rápido; LR por banda con suavizado de Laplace y bootstrap 99%.',
 };
 
 const ts = `// Generado por scripts/calibrate.ts el ${data.collectedAt}. No editar a mano.
@@ -199,16 +231,17 @@ await writeFile('data/calibration-latest.json', JSON.stringify(data, null, 2), '
 const md = `# Calibración pública (case-control)\n\n` +
   `Generado: ${data.collectedAt}\n\n` +
   `| Métrica | Valor |\n|---|---|\n` +
-  `| Positivos (AdSense hoy) | ${pos.length} |\n` +
-  `| Negativos (rechazo, sin AdSense) | ${cleanNegatives.length} |\n` +
-  `| Rechazos excluidos por ya tener anuncios | ${stale} |\n` +
+  `| Aprobados | ${pos.length} (Tranco + Reddit) |\n` +
+  `| Rechazos válidos | ${neg.length} |\n` +
+  `| Rechazos descartados por ya tener anuncios | ${staleKeys.size} |\n` +
   `| AUC | ${data.auc} (IC99 ${data.aucLow}–${data.aucHigh}) |\n` +
   `| Mediana aprobados | ${data.medianApproved} |\n` +
   `| Mediana rechazados | ${data.medianRejected} |\n` +
+  `| 95 % de aprobados ≥ | ${positiveFloor?.value ?? '—'} (n=${positiveFloor?.n ?? 0}, confianza ${positiveFloor ? (positiveFloor.confidence * 100).toFixed(1) : '—'} %) |\n` +
   `| Muestra por clase para IC99 ±0,05 en AUC | ${requiredPerClass} |\n\n` +
   `| Banda | Pos | Neg | LR | IC99 LR | Prior | Posterior |\n|---|---:|---:|---:|---|---:|---:|\n` +
   bands.map((b) => `| ${b.id} | ${b.pos} | ${b.neg} | ${b.lr} | ${b.lrLow}–${b.lrHigh} | ${b.prior} | ${b.posterior} |`).join('\n') +
   `\n\n${data.note}\n`;
-await writeFile('data/calibration.md', md, 'utf8');
+await writeFile('data/calibration-latest.md', md, 'utf8');
 
 console.log(JSON.stringify(data, null, 2));

@@ -1,0 +1,105 @@
+{
+  "generated_at": "2026-11-24T20:08:08.714Z",
+  "dataset": "AdSense Approval & Rejection (case-control)",
+  "counts": {
+    "cases": 618,
+    "unique_site_keys": 618,
+    "outcomes": {
+      "approved": 300,
+      "rejected": 318
+    },
+    "included_in_calibration": 326,
+    "posts": 6000,
+    "calibration_bands": 4,
+    "auc": 0.405,
+    "auc_low": 0.272,
+    "auc_high": 0.542
+  },
+  "files": [
+    {
+      "path": "kaggle/adsense_approval.xlsx",
+      "bytes": 687134,
+      "sha256": "b8bcbb77b853081d1f4d78a9b0a8f38292388cd6b355e7333c0542bac3aa7363"
+    },
+    {
+      "path": "kaggle/data/calibration_bands.csv",
+      "bytes": 326,
+      "sha256": "154fa551c48b70ba5a1723bc0ded9cbc61c5ac04fe143e94ac0897e5d6605691"
+    },
+    {
+      "path": "kaggle/data/calibration_meta.csv",
+      "bytes": 1018,
+      "sha256": "74fc6ce63d25bddc79b6ccd2e2eb6b68dad634053c83f7a7894507fd523b1846"
+    },
+    {
+      "path": "kaggle/data/calibration_meta.json",
+      "bytes": 1909,
+      "sha256": "3290336157c93d5f08081ed223363dc85895a0eb44e8f0391e5e2d50648e6fcc"
+    },
+    {
+      "path": "kaggle/data/cases.csv",
+      "bytes": 207873,
+      "sha256": "79811c06bc4199c628eaa5444429daa17c1d0a52a9efbe095e36323f4d328348"
+    },
+    {
+      "path": "kaggle/data/forum_cases.csv",
+      "bytes": 2067,
+      "sha256": "f37d75d070bded0b0aff9338951141b4168611efc6f8778e1c46ed7ae77d4a01"
+    },
+    {
+      "path": "kaggle/data/posts.csv",
+      "bytes": 1223405,
+      "sha256": "8844e00fab39ab55a4ae1d178672d3047ba95bcb2b2f56fce1795eef1cb38e9c"
+    },
+    {
+      "path": "kaggle/data/tranco_sites.csv",
+      "bytes": 37793,
+      "sha256": "40ea543ba09aa872126327fe548e2bf78badf53a6c4aa531773381a0aad42adb"
+    },
+    {
+      "path": "kaggle/dataset-card.md",
+      "bytes": 2753,
+      "sha256": "c230a1c16d701fb0a1827a1a2288cda3c3fc4a0d8734c9b588dfd74743bba1d4"
+    },
+    {
+      "path": "kaggle/db/adsense_approval.sqlite",
+      "bytes": 1789952,
+      "sha256": "43f5d8716c7bc0e092bd3b9d6ddb4f822a74198bf226ffe909ac89396d04cd31"
+    },
+    {
+      "path": "kaggle/raw/forum_cases_raw.json",
+      "bytes": 12414,
+      "sha256": "d1bcdbf4054fe62426d1ed8adaa35b2f362d467f1b096458fcb780d43cfc8813"
+    },
+    {
+      "path": "kaggle/raw/README.md",
+      "bytes": 314,
+      "sha256": "3d6297317f1d41307b0cdd929ee1f9a89a25f05f59f9e945375c5fd0362360f4"
+    },
+    {
+      "path": "kaggle/raw/reddit_cases_raw.json",
+      "bytes": 124699,
+      "sha256": "039792a187073e12bc8dcd64da5281dec360c896e51bd1c6d9778423b8148c39"
+    },
+    {
+      "path": "kaggle/raw/reddit_posts_full.csv",
+      "bytes": 3572782,
+      "sha256": "d3645d6e8b9e575273880f49b4bb376ffafc95dd94260f6b0e499abd911764f1"
+    },
+    {
+      "path": "kaggle/raw/tranco_scan_raw.json",
+      "bytes": 86389,
+      "sha256": "54884c45db7ddc172383d2fc976a49c5d6ec677c86fd763e8984624083a06c81"
+    },
+    {
+      "path": "kaggle/README.md",
+      "bytes": 2423,
+      "sha256": "4f654d51cea93481c64b572f66e065e6531ea0b42c5fa76d8ada8464748ca95a"
+    },
+    {
+      "path": "kaggle/schema.sql",
+      "bytes": 2031,
+      "sha256": "389a58a22abadd470c9a221c2e7dc1f1f5cfa7ccd3080ec06ac2cd636b6a1f6d"
+    }
+  ]
+}
