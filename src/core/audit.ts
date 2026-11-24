@@ -299,8 +299,12 @@ export async function runAudit(fetcher: Fetcher, input: string, partial: Partial
     notes,
   };
 
+  const canMonetize = canMonetizeWithAdsense(normalized.ownership, normalized.platform);
+  const contentPageCount = sitemap.pages.filter((u) => !isUtilityUrl(u)).length;
+  const contentPages = contentPageCount > 0 ? contentPageCount : sitemap.urls > 0 ? sitemap.urls : extraPages.length || null;
+
   const rawSignals = buildSignals(context);
-  const score = scoreSignals(rawSignals);
+  const score = scoreSignals(rawSignals, { canMonetize });
 
   const nicheId = opts.nicheId === 'auto'
     ? detectNicheId(home?.title ?? '', home?.metaDescription ?? '', `${home?.text ?? ''}`)
@@ -322,9 +326,6 @@ export async function runAudit(fetcher: Fetcher, input: string, partial: Partial
     notes.push('El CTR aportado no es válido (0 < CTR < 0,25): se usa el valor de industria.');
     ownCtr = null;
   }
-
-  const contentPages = sitemap.urls > 0 ? sitemap.urls : extraPages.length || null;
-  const canMonetize = canMonetizeWithAdsense(normalized.ownership, normalized.platform);
 
   const monetization = project({
     sessions: opts.sessions,
@@ -410,6 +411,7 @@ export async function runAudit(fetcher: Fetcher, input: string, partial: Partial
       wordsPerPage: avgWords,
       sitemapUrls: sitemap.urls,
       sitemapPages: sitemap.pages.length,
+      contentPages: contentPages ?? 0,
       sampleSeed: opts.engine === 'deep' ? sampleSeed : null,
       sampledUrls: sampled.length ? sampled.join(' ') : null,
       niche: niche.label,

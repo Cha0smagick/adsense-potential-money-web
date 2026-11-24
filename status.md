@@ -19,7 +19,7 @@ Producción actual: `https://cha0smagick.github.io/adsense-potential-money-web/`
 | Sitio | Resultado | Observación |
 |---|---|---|
 | xataka.com (profundo, 3 páginas) | **95/100**, confianza 90 %, aprobación 80 % (72-85 %), P50 5 d, esperado 269 USD/mes | La brecha se marca «potencial» porque no se aportó RPM real |
-| Producción actual (antes de este cambio) | 15/100, «faltan datos», 0 palabras visibles | El HTML era una SPA vacía: por eso F6 era obligatorio |
+| Producción actual (después de F6) | **98.8/100**, «Contenido apto, dominio pendiente», confianza 87 % | 688 palabras en el HTML, 0 bloqueadores, privacidad detectada. Aprobación 12 % (4-20 %) y P50 37 d por el subdominio `github.io` |
 
 Los informes completos están en `reports/`.
 

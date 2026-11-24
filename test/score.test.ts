@@ -85,4 +85,11 @@ describe('scoreSignals', () => {
     const mid = scoreSignals(all('pass', { 'ux-nav': 'fail', 'ux-mobile': 'fail', 'essential-about': 'warn' }));
     expect(['caveats', 'fix-first']).toContain(mid.verdict.band);
   });
+
+  it('un subdominio no verificable no se declara apto', () => {
+    const r = scoreSignals(all('pass'), { canMonetize: false });
+    expect(r.score).toBe(100);
+    expect(r.verdict.band).toBe('caveats');
+    expect(r.verdict.label).toMatch(/dominio/i);
+  });
 });

@@ -7,9 +7,9 @@ Ejecutado con el motor profundo (`node src/deep/node-audit.ts`) y datos público
 | Sitio | Puntuación | Confianza | Aprobación | P50 | Esperado | Brecha | Bloqueadores |
 |---|---|---|---|---|---|---|---|
 | xataka.com (3 páginas) | **95/100** | 90 % | **80 %** (72-85) | 5 d | 269 USD/mes | «potencial»: sin RPM real | ninguno |
-| Producción antes de F6 (`cha0smagick.github.io/adsense-potential-money-web/`) | **15/100** | 47 % | 2 % (1-10) | 54 d | 22 USD/mes | 100 % bloqueado | sin contenido legible; thin |
+| Producción después de F6 (`cha0smagick.github.io/adsense-potential-money-web/`) | **98.8/100** | 87 % | **12 %** (4-20) | 37 d | 22,4 USD/mes | «bloqueado»: sin dominio verificable | ninguno de contenido; falta dominio propio |
 
-**Lectura:** xataka puntúa como apto y la proyección es coherente con su nicho (tecnología, ES). La producción se puntuó a sí misma con 15/100 porque el HTML era una SPA vacía: exactamente lo que AdSense llama «página sin contenido». F6 añade 688 palabras visibles en el HTML inicial; falta desplegar para re-medir.
+**Lectura:** xataka puntúa como apto y la proyección es coherente con su nicho (tecnología, ES). La producción pasó de 15/100 (SPA vacía) a **98.8/100** con 688 palabras en el HTML y las páginas legales detectadas. El contenido ya está listo; lo que falta es un **dominio propio**: en `github.io` AdSense no puede verificar la propiedad a nivel de sitio, así que el veredicto es «Contenido apto, dominio pendiente» y la aprobación se capa al 12 %.
 
 La brecha de xataka se marca **«potencial»**, no «pérdida medida», porque no se aportó un RPM real. Es la distinción que evita vender humo: sin RPM propio no se puede saber cuánto se está dejando.
 

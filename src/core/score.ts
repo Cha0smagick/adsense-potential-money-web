@@ -103,48 +103,59 @@ function computeTotal(signals: SignalResult[]): { score: number; confidence: num
   };
 }
 
-function verdictOf(score: number, confidence: number): Verdict {
-  if (confidence < 0.6) {
+function verdictOf(score: number, confidence: number, canMonetize = true): Verdict {
+  const base = (): Verdict => {
+    if (confidence < 0.6) {
+      return {
+        band: 'insufficient',
+        label: 'Faltan datos para un veredicto',
+        summary: `Solo se pudo evaluar el ${Math.round(confidence * 100)} % del peso. Las señales sin datos no penalizan: vuelve a analizar o revisa manualmente lo que no se pudo medir.`,
+        capApplied: null,
+      };
+    }
+    if (score >= 85) {
+      return {
+        band: 'ready',
+        label: 'Apto para solicitar AdSense',
+        summary: 'Los fundamentos que evalúa Google están cubiertos. Solicita la revisión y corrige cualquier aviso antes de que llegue.',
+        capApplied: null,
+      };
+    }
+    if (score >= 70) {
+      return {
+        band: 'caveats',
+        label: 'Apto con reservas',
+        summary: 'El sitio es defendible, pero hay debilidades que un revisor humano puede convertir en rechazo. Corrige los puntos marcados antes de solicitar.',
+        capApplied: null,
+      };
+    }
+    if (score >= 50) {
+      return {
+        band: 'fix-first',
+        label: 'Corrige antes de solicitar',
+        summary: 'Una solicitud en este estado consume el intento y refuerza una impresión negativa. Arregla primero los bloqueadores y lo esencial.',
+        capApplied: null,
+      };
+    }
     return {
-      band: 'insufficient',
-      label: 'Faltan datos para un veredicto',
-      summary: `Solo se pudo evaluar el ${Math.round(confidence * 100)} % del peso. Las señales sin datos no penalizan: vuelve a analizar o revisa manualmente lo que no se pudo medir.`,
+      band: 'not-ready',
+      label: 'No apto todavía',
+      summary: 'Faltan los mínimos que Google exige: contenido real, páginas legales o acceso del rastreador. Solicitar ahora garantiza el rechazo.',
       capApplied: null,
     };
-  }
-  if (score >= 85) {
-    return {
-      band: 'ready',
-      label: 'Apto para solicitar AdSense',
-      summary: 'Los fundamentos que evalúa Google están cubiertos. Solicita la revisión y corrige cualquier aviso antes de que llegue.',
-      capApplied: null,
-    };
-  }
-  if (score >= 70) {
-    return {
-      band: 'caveats',
-      label: 'Apto con reservas',
-      summary: 'El sitio es defendible, pero hay debilidades que un revisor humano puede convertir en rechazo. Corrige los puntos marcados antes de solicitar.',
-      capApplied: null,
-    };
-  }
-  if (score >= 50) {
-    return {
-      band: 'fix-first',
-      label: 'Corrige antes de solicitar',
-      summary: 'Una solicitud en este estado consume el intento y refuerza una impresión negativa. Arregla primero los bloqueadores y lo esencial.',
-      capApplied: null,
-    };
-  }
-  return {
-    band: 'not-ready',
-    label: 'No apto todavía',
-    summary: 'Faltan los mínimos que Google exige: contenido real, páginas legales o acceso del rastreador. Solicitar ahora garantiza el rechazo.',
-    capApplied: null,
   };
+
+  const verdict = base();
+  if (!canMonetize && (verdict.band === 'ready' || verdict.band === 'caveats')) {
+    verdict.band = 'caveats';
+    verdict.label = 'Contenido apto, dominio pendiente';
+    verdict.summary =
+      'El contenido está listo, pero AdSense no puede verificar la propiedad de este subdominio. Publica en un dominio propio (o en Blogger) antes de solicitar; el resto del trabajo ya está hecho.';
+  }
+  return verdict;
 }
 
-export function scoreSignals(raw: RawSignal[]): ScoreResult {
+export function scoreSignals(raw: RawSignal[], options: { canMonetize?: boolean } = {}): ScoreResult {
   // Orden estable por categoria y peso: el informe se lee de lo grave a lo leve.
   const signals: SignalResult[] = raw.map((s) => ({ ...s, impact: 0 }));
 
@@ -171,7 +182,7 @@ export function scoreSignals(raw: RawSignal[]): ScoreResult {
     s.impact = Math.max(0, Math.round((after.score - base.score) * 10) / 10);
   }
 
-  const verdict = verdictOf(score, base.confidence);
+  const verdict = verdictOf(score, base.confidence, options.canMonetize ?? true);
   const triggeredCaps = gates.filter((g) => g.triggered).map((g) => g.cap);
   verdict.capApplied = base.capBound && triggeredCaps.length ? Math.min(...triggeredCaps) : null;
   if (verdict.capApplied !== null && verdict.band !== 'insufficient') {
