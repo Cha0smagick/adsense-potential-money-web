@@ -1,13 +1,15 @@
 ﻿# Estado del proyecto — adsense-auditor v2
 
 Actualizado: 2026-11-24 · Raíz: `D:\Paginas web\Validador de adsense web`
-Producción actual: `https://cha0smagick.github.io/adsense-potential-money-web/`
+Producción actual: `https://cha0smagick.github.io/adsense-potential-money-web/` (desplegada el 2026-11-24, commit `cae9083`).
+
+**Verificado en vivo:** 98.8/100 · «Contenido apto, dominio pendiente» · 87 % de confianza · 0 bloqueadores · 688 palabras en el HTML · privacidad detectada. Aprobación estimada **12 % (4-20 %)** y P50 37 días **por el subdominio `github.io`**, no por el contenido.
 
 ## Hecho y verificado
 
 | Fase | Entrega | Verificación real |
 |---|---|---|
-| F1 | 15 defectos del plan v2: robots 5xx, URL final, fallback HTTP, confianza mínima, presupuesto lógico, X-Robots-Tag, marca en keyword stuffing, píxeles, enlaces rotos, SSRF, topes, RPM/CTR inválidos, muestreo, typos | `npm test` → **97 pruebas en verde** (9 archivos) |
+| F1 | 15 defectos del plan v2: robots 5xx, URL final, fallback HTTP, confianza mínima, presupuesto lógico, X-Robots-Tag, marca en keyword stuffing, píxeles, enlaces rotos, SSRF, topes, RPM/CTR inválidos, muestreo, typos | `npm test` → **98 pruebas en verde** (9 archivos) |
 | F2 | Economía (bruto/esperado/actual/brecha), atribución por mecanismo, aprobación con probabilidad y P50/P80/P90, decisión aplicar/preparar, estadística descriptiva e inferencial | `test/money.test.ts`, `test/stats.test.ts`, `test/pipeline.test.ts` |
 | F3 | Datos públicos: RDAP, DNS (A/NS/MX/TXT/SPF/DMARC), Tranco, Wayback, con timeout y degradación | CORS verificado el 2026-11-24; `xataka-v2.json` con datos reales |
 | F6 | 9 páginas estáticas (home + metodología + 3 guías + legales + sobre/contacto), CTA de adquisición, créditos, `robots.txt`, `sitemap.xml`, `ads.txt`, `og.png` | `npm run build` → 9 HTML; `dist/index.html` con **688 palabras**, 1 H1, 6 H2, 0 mojibake |
@@ -25,7 +27,7 @@ Los informes completos están en `reports/`.
 
 ## Pendiente
 
-1. **Desplegar** (commit + push a `main`) y volver a auditar la URL de producción. Sin desplegar, la web sigue siendo la SPA de 15/100.
+1. **Re-auditar tras cada cambio** (hecho: producción en 98.8/100). El contenido ya está; el bloqueador es el dominio.
 2. **Verificación visual en navegador real**: el MCP de BrowserOS no está conectado en esta sesión. Revisar formulario, informe, waterfall y PDF A4.
 3. **F4 cohorte de referencia** (B7): 8 nichos × 8 sitios medidos con el parser; percentiles honestos.
 4. **GSC CSV** (B8/B9): import local de consultas, CTR y posiciones.
@@ -42,4 +44,4 @@ Los informes completos están en `reports/`.
 
 ## Próximo paso
 
-Commit y push. Después, auditar la URL publicada y comprobar que el contenido estático aparece con ≥600 palabras y que la privacidad se detecta desde el menú.
+El contenido de producción está listo. Para monetizar **este** sitio: comprar un dominio, publicarlo en Cloudflare Pages/Netlify, añadir la CMP certificada y solicitar AdSense. Después, cerrar F4 (cohorte de referencia) y B8/B9 (import de Search Console para CTR y posiciones reales).

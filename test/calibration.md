@@ -15,7 +15,7 @@ La brecha de xataka se marca **«potencial»**, no «pérdida medida», porque n
 
 ### Verificación automática
 
-- `npm test` → **97 pruebas** en 9 archivos.
+- `npm test` → **98 pruebas** en 9 archivos.
 - `npm run build` → 9 HTML, 116 kB JS (44 kB gzip), 15 kB CSS.
 - `dist/index.html` → 688 palabras, 1 H1, 6 H2, 9 enlaces internos, 0 mojibake.
 - CORS comprobado el 2026-11-24: RDAP, DNS, Tranco, Wayback y Common Crawl (`*`). CDX de Wayback no envía CORS: en el navegador queda sin datos.

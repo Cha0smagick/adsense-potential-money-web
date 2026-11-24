@@ -54,7 +54,7 @@ Necesita el repositorio publicado y un PAT *fine-grained* con **Actions: write**
 ```bash
 npm install
 npm run dev            # servidor local
-npm test               # 97 pruebas del núcleo determinista
+npm test               # 98 pruebas del núcleo determinista
 npm run build          # typecheck + build multi-página a dist/
 npm run audit -- https://sitio.com --pages 12 --sessions 20000 --country ES
 npm run probe -- https://sitio.com   # cadena de proveedores del navegador
@@ -72,7 +72,7 @@ src/ui/        render · charts · export
 public/        robots.txt · sitemap.xml · ads.txt · og.png
 *.html         portada + metodología + guías + legales + sobre/contacto
 .github/       deploy.yml y deep-audit.yml
-test/          97 pruebas + calibration.md
+test/          98 pruebas + calibration.md
 ```
 
 ## Límites y honestidad
