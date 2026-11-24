@@ -1,8 +1,8 @@
 # ads.txt del proyecto.
 # AdSense exige que el archivo esté en la raíz del dominio verificado.
-# En GitHub Pages la raíz del host pertenece a GitHub: mientras el sitio viva en
-# cha0smagick.github.io/adsense-potential-money-web/, este archivo no sirve para
-# autorizar inventario. Tras mover el sitio a un dominio propio, añade aquí:
+# En Cloudflare Pages se sirve en la raíz del host
+# (adsense-auditor-3kh.pages.dev/ads.txt y, más adelante, el dominio propio).
+# AdSense solo cuenta el ads.txt del dominio verificado: añade aquí:
 #
 # google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
 #

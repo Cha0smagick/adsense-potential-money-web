@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
 
-# Este robots.txt vive en la raíz del proyecto de GitHub Pages. Los rastreadores
-# buscan primero https://cha0smagick.github.io/robots.txt (raíz del host, ajena).
-Sitemap: https://cha0smagick.github.io/adsense-potential-money-web/sitemap.xml
+Sitemap: https://adsense-auditor-3kh.pages.dev/sitemap.xml

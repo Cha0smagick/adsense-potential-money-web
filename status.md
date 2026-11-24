@@ -1,9 +1,9 @@
 ﻿# Estado del proyecto — adsense-auditor v2
 
 Actualizado: 2026-11-24 · Raíz: `D:\Paginas web\Validador de adsense web`
-Producción actual: `https://cha0smagick.github.io/adsense-potential-money-web/` (desplegada el 2026-11-24, commit `cae9083`).
+Producción actual: **`https://adsense-auditor-3kh.pages.dev/`** (Cloudflare Pages, proyecto `adsense-auditor`, cuenta Cloudflare `b0e0d06a…`). El antiguo GitHub Pages sigue vivo, pero su canonical ya apunta a Pages.
 
-**Verificado en vivo:** 98.8/100 · «Contenido apto, dominio pendiente» · 90 % de confianza · 0 bloqueadores · 688 palabras en el HTML · privacidad detectada. Aprobación estimada **12 % (1-32 %)** —modelo no validado— y P50 37 días **por el subdominio `github.io`**, no por el contenido.
+**Verificado en vivo en Pages:** `200`, 745 palabras en el HTML, canonical y `og:url` al dominio nuevo, `robots.txt`/`sitemap.xml`/`ads.txt` en la raíz, assets y `data/*.json` con su `Content-Type` correcto. Auditoría ejecutada en el navegador contra el propio sitio: **98.3/100**, «Contenido apto, dominio pendiente», aprobación **1-32 % (base 12 %)**, 0 bloqueadores. Sigue pendiente el **dominio propio**: `pages.dev` también es subdominio de plataforma.
 
 ## Hecho y verificado
 
@@ -38,7 +38,13 @@ Dataset: `data/approval-cases.json` · mediciones: `data/reddit-measured.json` �
 4. **GSC CSV** (B8/B9): import local de consultas, CTR y posiciones.
 5. **Checklist por tipo de sitio** (B10) y heatmap de políticas (B11).
 6. **CMP y consentimiento** (C9) antes de activar anuncios; **hosting con dominio propio** (C10).
-7. **AdSense**: la URL actual es `github.io`, un subdominio de plataforma. AdSense trabaja a nivel de dominio y no se puede verificar la raíz. Para monetizar este sitio hace falta dominio propio (Cloudflare Pages/Netlify) o publicar en Blogger.
+7. **AdSense**: `pages.dev` es subdominio de plataforma, igual que `github.io`. AdSense trabaja a nivel de dominio: hace falta **dominio propio** apuntando a Pages (registro CNAME a `adsense-auditor-3kh.pages.dev`) y, después, cambiar el host en 12 archivos (`index.html`, páginas, guías, `public/robots.txt`, `public/sitemap.xml`).
+
+## Despliegue en Cloudflare Pages
+
+- Proyecto `adsense-auditor` creado por **direct upload** (sin Git): el repo está en la cuenta `Cha0smagick` y la sesión de GitHub era `MagiaCaotica`, así que la integración Git no estaba disponible.
+- Redesplegar: `npm run build` y subir un zip de `dist` (entradas con `/`, no `\`) en *Create deployment*. El zip hecho con `Compress-Archive` de PowerShell 5.1 usa `\` y **pierde las carpetas**: el primer intento dejó solo los 22 archivos planos y el sitio sin CSS/JS.
+- Limpieza hecha: token `adsense-pages-deploy` **eliminado** y app de GitHub «Cloudflare Workers and Pages» **desinstalada** (se había concedido acceso a 23 repos y no se usó).
 
 ## Riesgos
 

@@ -202,7 +202,7 @@ const data = {
     `Etiquetas autodeclaradas y muestra no representativa: se estima el LR, no la prevalencia real. ` +
     `Rechazos descartados por ya mostrar anuncios: ${staleKeys.size}.`,
   dataset: './data/approval-cases.json',
-  measured: './data/reddit-measured.json',
+  measured: './data/approval-cases.measured.json',
   report: './data/calibration.md',
   method:
     'Positivos: Tranco con ca-pub/adsbygoogle + posts de r/Adsense que declaran aprobación. Negativos: posts de r/Adsense y del foro que declaran rechazo y hoy no muestran AdSense. ' +
