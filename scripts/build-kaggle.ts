@@ -316,7 +316,7 @@ for (const c of redditCases) {
   if (!c.id) continue;
   const e = byPost.get(c.id) ?? { outcomes: new Set<string>(), sites: new Set<string>() };
   e.outcomes.add(c.outcome);
-  for (const s of c.sites ?? []) e.sites.add(s);
+  for (const s of c.sites ?? (c.site ? [c.site] : [])) e.sites.add(s);
   byPost.set(c.id, e);
 }
 const posts = redditPosts.map((p) => {

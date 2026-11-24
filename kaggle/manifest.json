@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T20:08:08.714Z",
+  "generated_at": "2026-11-24T20:41:28.795Z",
   "dataset": "AdSense Approval & Rejection (case-control)",
   "counts": {
     "cases": 618,
@@ -18,8 +18,13 @@
   "files": [
     {
       "path": "kaggle/adsense_approval.xlsx",
-      "bytes": 687134,
-      "sha256": "b8bcbb77b853081d1f4d78a9b0a8f38292388cd6b355e7333c0542bac3aa7363"
+      "bytes": 692480,
+      "sha256": "8d48020daee02b8f4da896d4ea5a016d97f01b0495a482cc69eaed6cbd987d46"
+    },
+    {
+      "path": "kaggle/coverage-report.md",
+      "bytes": 4135,
+      "sha256": "74c48b0d84067fc6ab34feda15309a5799d9b50d4dfd743d84f09366a3656f33"
     },
     {
       "path": "kaggle/data/calibration_bands.csv",
@@ -48,8 +53,8 @@
     },
     {
       "path": "kaggle/data/posts.csv",
-      "bytes": 1223405,
-      "sha256": "8844e00fab39ab55a4ae1d178672d3047ba95bcb2b2f56fce1795eef1cb38e9c"
+      "bytes": 1231996,
+      "sha256": "8dceb2981df74218d1e5c139041dcf7131125d73d37d8d5aa575f938229a8dbd"
     },
     {
       "path": "kaggle/data/tranco_sites.csv",
@@ -63,8 +68,13 @@
     },
     {
       "path": "kaggle/db/adsense_approval.sqlite",
-      "bytes": 1789952,
-      "sha256": "43f5d8716c7bc0e092bd3b9d6ddb4f822a74198bf226ffe909ac89396d04cd31"
+      "bytes": 1794048,
+      "sha256": "55cce5dc95d79c2228e446cdb3620b48386c71a87ab9d7b5796906ac87a7a7e8"
+    },
+    {
+      "path": "kaggle/manifest.json",
+      "bytes": 3491,
+      "sha256": "90aa04f4e9411024d86d9d4b67992ebcaf26ee22760e1fb888e5648191ce9b1e"
     },
     {
       "path": "kaggle/raw/forum_cases_raw.json",
@@ -93,13 +103,18 @@
     },
     {
       "path": "kaggle/README.md",
-      "bytes": 2423,
-      "sha256": "4f654d51cea93481c64b572f66e065e6531ea0b42c5fa76d8ada8464748ca95a"
+      "bytes": 2658,
+      "sha256": "eeeec20715149e90248e41b4fdfe3a9950eb0358a2d48c7a2455db30c49cd958"
     },
     {
       "path": "kaggle/schema.sql",
       "bytes": 2031,
       "sha256": "389a58a22abadd470c9a221c2e7dc1f1f5cfa7ccd3080ec06ac2cd636b6a1f6d"
+    },
+    {
+      "path": "kaggle/validation-report.md",
+      "bytes": 1508,
+      "sha256": "7b7a24e3427847ec7f194f77b086460c84c18c4318c0d1969da49e776dc10224"
     }
   ]
 }

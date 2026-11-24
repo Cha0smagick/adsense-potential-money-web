@@ -16,6 +16,7 @@ medidos con el auditor. Generado el 2026-11-24.
 | `db/adsense_approval.sqlite` | — | Misma base en SQLite, con índices y vista `calibration_ready` |
 | `adsense_approval.xlsx` | — | Excel multi-hoja |
 | `raw/` | — | Crudo completo: selftext de Reddit sin autores. **Local, no publicar sin anonimizar** |
+| `coverage-report.md` | — | Cobertura campo a campo y límites |
 
 ## Base única: `cases.csv`
 

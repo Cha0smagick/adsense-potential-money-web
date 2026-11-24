@@ -19,9 +19,6 @@
 | Stale (rechazo que hoy muestra anuncios) | 171 |
 | Conflictos de etiqueta | 1 |
 
-> La tabla de calibración se generó con 44 rechazos; esta base limpia tiene 46 tras la
-> deduplicación final. El AUC (0,405) no cambia de forma material.
-
 ## Metodología
 
 1. Descarga de 6.000 posts de r/Adsense desde Arctic Shift (archivo público).

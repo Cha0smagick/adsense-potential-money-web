@@ -1,6 +1,6 @@
 # Validación del paquete
 
-Generado: 2026-11-24T20:08:08.714Z
+Generado: 2026-11-24T20:41:28.795Z
 
 | Comprobación | Resultado |
 |---|---|
@@ -31,20 +31,23 @@ Generado: 2026-11-24T20:08:08.714Z
 
 ## Archivos
 
-- `kaggle/adsense_approval.xlsx` — 671.0 KB
+- `kaggle/adsense_approval.xlsx` — 676.3 KB
+- `kaggle/coverage-report.md` — 4.0 KB
 - `kaggle/data/calibration_bands.csv` — 0.3 KB
 - `kaggle/data/calibration_meta.csv` — 1.0 KB
 - `kaggle/data/calibration_meta.json` — 1.9 KB
 - `kaggle/data/cases.csv` — 203.0 KB
 - `kaggle/data/forum_cases.csv` — 2.0 KB
-- `kaggle/data/posts.csv` — 1194.7 KB
+- `kaggle/data/posts.csv` — 1203.1 KB
 - `kaggle/data/tranco_sites.csv` — 36.9 KB
 - `kaggle/dataset-card.md` — 2.7 KB
-- `kaggle/db/adsense_approval.sqlite` — 1748.0 KB
+- `kaggle/db/adsense_approval.sqlite` — 1752.0 KB
+- `kaggle/manifest.json` — 3.4 KB
 - `kaggle/raw/forum_cases_raw.json` — 12.1 KB
 - `kaggle/raw/README.md` — 0.3 KB
 - `kaggle/raw/reddit_cases_raw.json` — 121.8 KB
 - `kaggle/raw/reddit_posts_full.csv` — 3489.0 KB
 - `kaggle/raw/tranco_scan_raw.json` — 84.4 KB
-- `kaggle/README.md` — 2.4 KB
+- `kaggle/README.md` — 2.6 KB
 - `kaggle/schema.sql` — 2.0 KB
+- `kaggle/validation-report.md` — 1.5 KB
