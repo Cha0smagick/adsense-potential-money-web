@@ -27,11 +27,8 @@ Los informes completos están en `reports/`.
 
 ## Calibración pública (2026-11-24)
 
-Se midieron 15 casos públicos (9 rechazos del foro con URL y fecha, 6 aprobaciones verificables).
-**AUC 0,51**: el score no separó aprobados de rechazados. Siete de los nueve rechazos ya muestran
-código de anuncios (fueron aprobados después) y las features se midieron hoy, no en la fecha de la
-decisión. El modelo queda **no validado**; el informe lo declara y ensancha el intervalo a ±20 puntos.
-Dataset: `data/approval-cases.json` · análisis: `data/calibration.md`.
+Muestra final: **115 sitios aprobados** (Tranco con AdSense) y **1 rechazo válido**; 10 rechazos descartados por ya mostrar anuncios. **AUC 0,02** (IC99 0,00–1,00): el único rechazo puntúa 98,3, más alto que el 98 % de los aprobados. El score **no predice aprobación** en esta muestra. El umbral observado (95 % de aprobados ≥40) es cierto con 99,7 % de confianza, pero es demasiado bajo para decidir. No se aplica la razón de verosimilitud; el modelo sigue **no validado**. Para un IC99 ±5 puntos en AUC hacen falta 442 por clase (884 casos).
+Dataset: `data/approval-cases.json` · mediciones: `data/negatives-measured.json` · análisis: `data/calibration.md`.
 
 ## Pendiente
 

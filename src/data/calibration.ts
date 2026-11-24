@@ -1,0 +1,88 @@
+// Generado por scripts/calibrate.ts el 2026-11-24. No editar a mano.
+export type CalibrationStatus = 'unvalidated' | 'pilot' | 'weak' | 'validated' | 'failed';
+export interface CalibrationBand {
+  id: string; min: number; max: number; pos: number; neg: number;
+  lr: number; lrLow: number; lrHigh: number; prior: number; posterior: number;
+}
+export interface PublicCalibrationData {
+  status: CalibrationStatus; collectedAt: string; n: number; approved: number; rejected: number;
+  staleRejected: number; auc: number | null; aucLow: number | null; aucHigh: number | null;
+  requiredPerClass: number; medianApproved: number | null; medianRejected: number | null;
+  positiveFloor: { value: number; n: number; confidence: number; target: number } | null;
+  bands: CalibrationBand[]; note: string; dataset: string; measured: string; report: string; method: string;
+}
+export const CALIBRATION: PublicCalibrationData = {
+  "status": "failed",
+  "collectedAt": "2026-11-24",
+  "n": 116,
+  "approved": 115,
+  "rejected": 1,
+  "staleRejected": 10,
+  "auc": 0.022,
+  "aucLow": 0,
+  "aucHigh": 1,
+  "requiredPerClass": 443,
+  "medianApproved": 83.9,
+  "medianRejected": 98.3,
+  "positiveFloor": {
+    "value": 40,
+    "n": 115,
+    "confidence": 0.997,
+    "target": 0.95
+  },
+  "bands": [
+    {
+      "id": "<50",
+      "min": 0,
+      "max": 50,
+      "pos": 2,
+      "neg": 0,
+      "lr": 0.09,
+      "lrLow": 0.02,
+      "lrHigh": 0.26,
+      "prior": 0.051,
+      "posterior": 0.02
+    },
+    {
+      "id": "50-70",
+      "min": 50,
+      "max": 70,
+      "pos": 24,
+      "neg": 0,
+      "lr": 0.84,
+      "lrLow": 0.5,
+      "lrHigh": 1.22,
+      "prior": 0.27,
+      "posterior": 0.257
+    },
+    {
+      "id": "70-85",
+      "min": 70,
+      "max": 85,
+      "pos": 35,
+      "neg": 0,
+      "lr": 1.22,
+      "lrLow": 0.74,
+      "lrHigh": 1.64,
+      "prior": 0.585,
+      "posterior": 0.604
+    },
+    {
+      "id": "85-100",
+      "min": 85,
+      "max": 100,
+      "pos": 54,
+      "neg": 1,
+      "lr": 0.63,
+      "lrLow": 0.49,
+      "lrHigh": 0.78,
+      "prior": 0.78,
+      "posterior": 0.746
+    }
+  ],
+  "note": "Muestra case-control: 115 sitios que hoy sirven AdSense y 1 rechazos públicos que siguen sin AdSense. AUC 0.02 (IC99 0.00–1.00). La prevalencia de la muestra no es la real; el LR por banda se combina con el prior del producto. Umbral observado: el 95% de los aprobados puntúa ≥40 (n=115, confianza 99.7%).",
+  "dataset": "./data/approval-cases.json",
+  "measured": "./data/negatives-measured.json",
+  "report": "./data/calibration.md",
+  "method": "Positivos: muestra aleatoria de Tranco con código de AdSense en el HTML. Negativos: rechazos públicos del foro de AdSense con URL, medidos hoy y excluyendo los que ya muestran anuncios. LR por banda con suavizado de Laplace y bootstrap 99%."
+};

@@ -1,4 +1,4 @@
-import type { AuditContext, AuditReport, Fetcher, FetchLogEntry, LegalProbe, NicheKey, PsiMetrics, SitemapInfo } from './types.ts';
+import type { AuditContext, AuditReport, Fetcher, FetchLogEntry, FetchResult, LegalProbe, NicheKey, PsiMetrics, SitemapInfo } from './types.ts';
 import { detectPlatformFromHtml, isUtilityUrl, normalizeUrl } from './normalize.ts';
 import { parseHtml } from './html.ts';
 import { parseRobots } from './robots.ts';
@@ -29,6 +29,10 @@ export interface AuditOptions {
   seed?: number;
   /** Consulta RDAP/DNS/Tranco/Wayback. Apagado por defecto: los tests no tocan la red. */
   publicData?: boolean;
+  /** Limite de sondas legales (por defecto 6). Para calibracion se baja. */
+  maxLegalProbes?: number;
+  /** Omite ads.txt en la calibracion masiva. */
+  skipAdsTxt?: boolean;
 }
 
 export const DEFAULT_OPTIONS: AuditOptions = {
@@ -157,8 +161,10 @@ export async function runAudit(fetcher: Fetcher, input: string, partial: Partial
   const robotsParsed = robots?.found ? parseRobots(robots.text) : null;
 
   // 4. ads.txt: raíz del host y, en project pages, también la raíz del sitio.
-  let adsRes = await call(`${hostRoot}/ads.txt`, 'text');
-  if (adsRes.status !== 200 && siteRoot !== `${hostRoot}/`) {
+  let adsRes: FetchResult = opts.skipAdsTxt
+    ? { ok: false, status: 404, body: '', provider: 'skip', ms: 0, bytes: 0 }
+    : await call(`${hostRoot}/ads.txt`, 'text');
+  if (!opts.skipAdsTxt && adsRes.status !== 200 && siteRoot !== `${hostRoot}/`) {
     const alt = await call(`${siteRoot}ads.txt`, 'text');
     if (alt.status === 200) adsRes = alt;
   }
@@ -204,7 +210,7 @@ export async function runAudit(fetcher: Fetcher, input: string, partial: Partial
   // 6. Páginas legales: primero enlaces del menú, después rutas conocidas bajo la raíz del sitio.
   const legal: LegalProbe[] = [];
   const keys: LegalProbe['key'][] = ['privacy', 'terms', 'about', 'contact'];
-  let probesLeft = 6;
+  let probesLeft = opts.maxLegalProbes ?? 6;
   const underSiteRoot = (path: string) => `${siteRoot.replace(/\/$/, '')}${path}`;
 
   for (const key of keys) {

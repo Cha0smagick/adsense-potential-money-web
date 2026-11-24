@@ -33,20 +33,21 @@ Los informes completos quedan en `reports/`.
 
 ## Calibración pública del modelo de aprobación (2026-11-24)
 
-Se midieron **15 casos públicos** con URL y fecha: 9 rechazos del foro de AdSense y 6 aprobaciones verificables.
+Se escanearon 1.800 dominios de Tranco (muestra aleatoria del top 1M) y se midieron **115 sitios que hoy sirven AdSense**. De 19 rechazos públicos con URL, **10 ya muestran anuncios** (aprobados después) y la mayoría de los restantes no responde; solo **1** es un negativo válido con contenido.
 
 | Métrica | Valor |
 |---|---|
-| Casos | 15 (6 aprobados / 9 rechazados) |
-| AUC (Mann-Whitney) | **0,51** |
-| Mediana aprobados | 92,2 |
-| Mediana rechazados | 83,5 |
-| Rechazos que hoy muestran anuncios | 7 de 9 |
-| Capturas históricas disponibles | 1 de 4 comprobadas |
+| Aprobados medidos | 115 |
+| Rechazos válidos | 1 |
+| AUC | **0,02** (IC99 0,00–1,00) |
+| Puntuación del único rechazo | 98,3 |
+| Mediana aprobados | 88,8 |
+| 95 % de aprobados puntúa ≥ | 40 (n=115, confianza 99,7 %) |
+| Muestra por clase para IC99 ±5 | 442 (884 total) |
 
-**Conclusión:** el score actual **no discrimina** aprobados de rechazados en esta muestra. Las etiquetas están desactualizadas (siete rechazos fueron aprobados después) y las features se midieron hoy, no en la fecha de la decisión. El modelo queda **no validado**; el informe lo declara, ensancha el intervalo a ±20 puntos y publica el dataset. No se usa para ajustar la probabilidad.
+**Conclusión:** el score no separa aprobados de rechazados; el único negativo puntúa más alto que el 98 % de los aprobados. El umbral de 40 es real pero inútil para decidir. El modelo queda **no validado**; no se aplica la razón de verosimilitud. La paginación del foro está cerrada, Wayback solo devolvió 3 de 30 capturas y Reddit bloquea sin sesión: no hay fuente pública para 442 negativos con features en la fecha de la decisión.
 
-Dataset: `data/approval-cases.json` · Mediciones: `data/approval-cases.measured.json` · Análisis: `data/calibration.md`.
+Dataset: `data/approval-cases.json` · mediciones: `data/negatives-measured.json` · análisis: `data/calibration.md`.
 
 ## v1 (2026-11-23) — histórico
 

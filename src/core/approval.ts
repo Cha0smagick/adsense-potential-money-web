@@ -1,5 +1,6 @@
 import type { ApprovalResult, GateResult, Ownership, Platform, SignalResult } from './types.ts';
 import { PUBLIC_CALIBRATION, probabilityWidth } from './calibration.ts';
+import type { CalibrationBand } from './calibration.ts';
 
 // Modelo declarado de aprobacion. Google NO publica tasas de aprobacion ni un SLA:
 // esto es una estimacion con anclas impresas, no un hecho. La unica cifra oficial es
@@ -97,7 +98,19 @@ export function computeApproval(input: ApprovalInput): ApprovalResult {
   if (!canMonetize) base = Math.min(base, 0.12);
   if (worst?.id === 'severe-policy') base = Math.min(base, 0.05);
   if (worst?.id === 'unreachable' || worst?.id === 'parked') base = Math.min(base, 0.03);
-  base = clamp(round(base), 0.01, 0.85);
+  let appliedBand: CalibrationBand | null = null;
+  const rawScore = input.score;
+  if (PUBLIC_CALIBRATION.status !== 'failed' && PUBLIC_CALIBRATION.rejected >= 30 && PUBLIC_CALIBRATION.bands.length) {
+    const band = PUBLIC_CALIBRATION.bands.find((b) => rawScore >= b.min && rawScore < b.max) ?? PUBLIC_CALIBRATION.bands[PUBLIC_CALIBRATION.bands.length - 1];
+    if (band && band.lr > 0) {
+      const shrink = PUBLIC_CALIBRATION.status === 'validated' ? 1 : PUBLIC_CALIBRATION.status === 'weak' ? 0.7 : 0.4;
+      const priorOdds = base / (1 - base);
+      const postOdds = priorOdds * Math.pow(band.lr, shrink);
+      base = clamp(postOdds / (1 + postOdds), 0.01, 0.92);
+      appliedBand = band;
+    }
+  }
+  base = clamp(round(base), 0.01, 0.92);
 
   const low = clamp(round(base - probabilityWidth(PUBLIC_CALIBRATION)), 0.01, 0.85);
   const high = clamp(round(base + probabilityWidth(PUBLIC_CALIBRATION)), 0.01, 0.95);
@@ -134,6 +147,9 @@ export function computeApproval(input: ApprovalInput): ApprovalResult {
     'Tiempo anclado a la única cifra oficial: «unos días; en algunos casos, 2-4 semanas».',
     `Calibración pública: ${PUBLIC_CALIBRATION.n} casos, AUC ${PUBLIC_CALIBRATION.auc ?? '—'}. El score no separó aprobados de rechazados; la probabilidad es un escenario, no una tasa.`,
   ];
+  if (appliedBand) {
+    notes.push(`Ajuste por banda ${appliedBand.min}-${appliedBand.max}: LR ${appliedBand.lr} (${appliedBand.pos} positivos / ${appliedBand.neg} negativos).`);
+  }
   if (!input.adsCode) notes.push('Falta el código de AdSense en la página: es requisito previo a la revisión del sitio.');
   if (!canMonetize) notes.push('Mientras no haya dominio propio, la solicitud no puede aprobarse a nivel de sitio.');
 

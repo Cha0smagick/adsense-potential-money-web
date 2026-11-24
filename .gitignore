@@ -4,3 +4,6 @@ dist/
 *.log
 reports/*.log
 .DS_Store
+data/raw/top-1m.csv
+data/raw/tranco.zip
+data/raw/*.log

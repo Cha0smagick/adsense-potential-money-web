@@ -239,19 +239,38 @@ function signals(r: AuditReport): string {
   </section>`;
 }
 
+const CAL_LABEL: Record<string, string> = {
+  validated: 'Validado',
+  weak: 'Débil',
+  pilot: 'Piloto',
+  failed: 'No validado',
+  unvalidated: 'Sin validar',
+};
+
 function calibrationCard(r: AuditReport): string {
   const v = r.approval.validation;
+  const bands = v.rejected >= 30 && v.bands.length
+    ? `<div class="table-scroll" style="margin-top:12px"><table><thead><tr><th>Banda de score</th><th class="num">Positivos</th><th class="num">Negativos</th><th class="num">LR</th><th class="num">IC99 LR</th><th class="num">Prior</th><th class="num">Posterior</th></tr></thead><tbody>
+      ${v.bands.map((b) => `<tr><td>${esc(b.id)}</td><td class="num">${b.pos}</td><td class="num">${b.neg}</td><td class="num">${b.lr}</td><td class="num">${b.lrLow}–${b.lrHigh}</td><td class="num">${pct(b.prior, 0)}</td><td class="num">${pct(b.posterior, 0)}</td></tr>`).join('')}
+    </tbody></table></div>`
+    : `<p class="notice">Sin suficientes rechazos medibles (${v.rejected}) para estimar una razón de verosimilitud por banda. La probabilidad no se ajusta: se queda en el prior.</p>`;
+  const floor = v.positiveFloor
+    ? `<p class="notice"><b>Umbral observado en sitios aprobados:</b> el 95 % puntúa <b>≥ ${v.positiveFloor.value}</b> (n=${v.positiveFloor.n}, confianza ${(v.positiveFloor.confidence * 100).toFixed(1)} %). Un score menor es señal de alarma; uno mayor no garantiza aprobación.</p>`
+    : '';
   return `<section class="card"><h2>Calibración pública <span class="hint">${v.n} casos · AUC ${v.auc ?? '—'}</span></h2>
-  <p class="notice"><b>Estado: no validado.</b> ${esc(v.note)}</p>
+  <p class="notice"><b>Estado: ${esc(CAL_LABEL[v.status] ?? v.status)}.</b> ${esc(v.note)}</p>
   <div class="facts">
-    <div><small>Casos medidos</small><b>${v.n}</b></div>
-    <div><small>Aprobados</small><b>${v.approved}</b></div>
-    <div><small>Rechazados</small><b>${v.rejected}</b></div>
-    <div><small>Etiquetas desactualizadas</small><b>${v.staleRejected}</b></div>
+    <div><small>Positivos (AdSense hoy)</small><b>${v.approved}</b></div>
+    <div><small>Negativos (rechazo sin anuncios)</small><b>${v.rejected}</b></div>
+    <div><small>Rechazos descartados</small><b>${v.staleRejected}</b></div>
     <div><small>AUC</small><b>${v.auc ?? '—'}</b></div>
+    <div><small>IC99 AUC</small><b>${v.aucLow ?? '—'}–${v.aucHigh ?? '—'}</b></div>
+    <div><small>Muestra por clase para IC99 ±5</small><b>${v.requiredPerClass}</b></div>
     <div><small>Mediana aprobados</small><b>${v.medianApproved ?? '—'}</b></div>
     <div><small>Mediana rechazados</small><b>${v.medianRejected ?? '—'}</b></div>
   </div>
+  ${floor}
+  ${bands}
   <p class="notice">${esc(v.method)}</p>
   <p class="notice"><a href="${esc(v.dataset)}" target="_blank" rel="noopener">Dataset de casos</a> · <a href="${esc(v.measured)}" target="_blank" rel="noopener">Mediciones</a> · <a href="${esc(v.report)}" target="_blank" rel="noopener">Informe de calibración</a></p>
   </section>`;
