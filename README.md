@@ -54,7 +54,7 @@ Necesita el repositorio publicado y un PAT *fine-grained* con **Actions: write**
 ```bash
 npm install
 npm run dev            # servidor local
-npm test               # 98 pruebas del núcleo determinista
+npm test               # 99 pruebas del núcleo determinista
 npm run build          # typecheck + build multi-página a dist/
 npm run audit -- https://sitio.com --pages 12 --sessions 20000 --country ES
 npm run probe -- https://sitio.com   # cadena de proveedores del navegador
@@ -72,14 +72,15 @@ src/ui/        render · charts · export
 public/        robots.txt · sitemap.xml · ads.txt · og.png
 *.html         portada + metodología + guías + legales + sobre/contacto
 .github/       deploy.yml y deep-audit.yml
-test/          98 pruebas + calibration.md
+test/          99 pruebas + calibration.md
 ```
 
 ## Límites y honestidad
 
 - No lee tu cuenta de AdSense, ni sanciones, ni tráfico real, ni backlinks. Evalúa lo público y verificable.
 - Los proxies CORS gratuitos (`r.jina.ai`, `api.allorigins.win`) son el punto frágil del motor rápido: disyuntor, presupuesto lógico y `unknown` visible.
-- La probabilidad de aprobación es un modelo declarado; se etiqueta «sin calibrar» hasta tener resultados reales.
+- La probabilidad de aprobación es un modelo declarado y **no validado**: la calibración con 15 casos públicos dio AUC 0,51 (sin discriminación). Se muestra con intervalo ±20 puntos y la etiqueta correspondiente. No es una tasa de Google.
+- El dataset de calibración y su análisis están publicados en `data/` y se enlazan desde el informe.
 - El PDF es el diálogo de impresión del navegador (A4), no un archivo generado por JavaScript.
 - Para monetizar **este** sitio con AdSense hace falta dominio propio y CMP certificada. `github.io` no es verificable a nivel de dominio.
 

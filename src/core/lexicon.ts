@@ -175,16 +175,16 @@ export const PARKED_PATTERNS = [
 export const LEGAL_HINTS: Record<'privacy' | 'terms' | 'about' | 'contact', string[]> = {
   privacy: ['privacidad', 'privacy', 'politica de privacidad', 'aviso de privacidad', 'proteccion de datos', 'datenschutz'],
   terms: ['terminos', 'condiciones', 'aviso legal', 'legal notice', 'terms', 'tos', 'terminos de uso'],
-  about: ['sobre nosotros', 'sobre mi', 'quienes somos', 'about', 'acerca de', 'quien soy', 'company'],
+  about: ['sobre', 'sobre nosotros', 'sobre mi', 'quienes somos', 'about', 'acerca de', 'quien soy', 'company'],
   contact: ['contacto', 'contact', 'kontakt', 'escribenos'],
 };
 
 /** Rutas probadas directamente si el menu no las enlaza. */
 export const LEGAL_PROBES: Record<'privacy' | 'terms' | 'about' | 'contact', string[]> = {
-  privacy: ['/privacidad', '/politica-de-privacidad', '/privacy-policy', '/privacy', '/aviso-legal/privacy'],
-  terms: ['/terminos', '/terminos-y-condiciones', '/aviso-legal', '/terms', '/terms-of-service'],
-  about: ['/sobre-nosotros', '/sobre-mi', '/about', '/quienes-somos'],
-  contact: ['/contacto', '/contact'],
+  privacy: ['/privacidad', '/politica-de-privacidad', '/privacy-policy', '/privacy', '/privacidad.html', '/privacy.html'],
+  terms: ['/terminos', '/terminos-y-condiciones', '/aviso-legal', '/terms', '/terms-of-service', '/terminos.html'],
+  about: ['/sobre-nosotros', '/sobre-mi', '/sobre', '/about', '/quienes-somos', '/sobre.html'],
+  contact: ['/contacto', '/contact', '/contacto.html'],
 };
 
 export interface NicheDef {

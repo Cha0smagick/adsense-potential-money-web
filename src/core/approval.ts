@@ -1,4 +1,5 @@
 import type { ApprovalResult, GateResult, Ownership, Platform, SignalResult } from './types.ts';
+import { PUBLIC_CALIBRATION, probabilityWidth } from './calibration.ts';
 
 // Modelo declarado de aprobacion. Google NO publica tasas de aprobacion ni un SLA:
 // esto es una estimacion con anclas impresas, no un hecho. La unica cifra oficial es
@@ -98,8 +99,8 @@ export function computeApproval(input: ApprovalInput): ApprovalResult {
   if (worst?.id === 'unreachable' || worst?.id === 'parked') base = Math.min(base, 0.03);
   base = clamp(round(base), 0.01, 0.85);
 
-  const low = clamp(round(base - 0.08), 0.01, 0.85);
-  const high = clamp(round(base + 0.08), 0.01, 0.85);
+  const low = clamp(round(base - probabilityWidth(PUBLIC_CALIBRATION)), 0.01, 0.85);
+  const high = clamp(round(base + probabilityWidth(PUBLIC_CALIBRATION)), 0.01, 0.95);
 
   const median = clamp(4 + (100 - readiness) * 0.12 + (worst ? 8 : 0) + (canMonetize ? 0 : 30), 2, 90);
   const sigma = 0.85;
@@ -129,8 +130,9 @@ export function computeApproval(input: ApprovalInput): ApprovalResult {
 
   const notes = [
     'Estimación, no probabilidad oficial: Google no publica tasas de aprobación.',
-    'Anclas del modelo: 95→80 %, 85→72 %, 70→45 %, 55→18 %, 40→7 %. Rango ±8 puntos.',
+    'Anclas del modelo: 95→80 %, 85→72 %, 70→45 %, 55→18 %, 40→7 %.',
     'Tiempo anclado a la única cifra oficial: «unos días; en algunos casos, 2-4 semanas».',
+    `Calibración pública: ${PUBLIC_CALIBRATION.n} casos, AUC ${PUBLIC_CALIBRATION.auc ?? '—'}. El score no separó aprobados de rechazados; la probabilidad es un escenario, no una tasa.`,
   ];
   if (!input.adsCode) notes.push('Falta el código de AdSense en la página: es requisito previo a la revisión del sitio.');
   if (!canMonetize) notes.push('Mientras no haya dominio propio, la solicitud no puede aprobarse a nivel de sitio.');
@@ -144,6 +146,7 @@ export function computeApproval(input: ApprovalInput): ApprovalResult {
     prepareFirst,
     recommendation,
     calibrated: false,
+    validation: PUBLIC_CALIBRATION,
     notes,
   };
 }

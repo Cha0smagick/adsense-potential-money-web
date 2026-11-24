@@ -179,4 +179,12 @@ describe('approval', () => {
     const a = approval({ score: 100, confidence: 1, fixHours: 0.2 });
     expect(a.recommendation).toBe('apply-now');
   });
+
+  it('declara la calibración pública como no validada y ensancha el rango', () => {
+    const a = approval();
+    expect(a.validation.status).toBe('failed');
+    expect(a.validation.auc).toBeLessThan(0.6);
+    expect(a.probability.high - a.probability.low).toBeGreaterThanOrEqual(0.3);
+    expect(a.notes.join(' ')).toContain('AUC');
+  });
 });

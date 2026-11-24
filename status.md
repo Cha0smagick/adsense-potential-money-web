@@ -3,13 +3,13 @@
 Actualizado: 2026-11-24 · Raíz: `D:\Paginas web\Validador de adsense web`
 Producción actual: `https://cha0smagick.github.io/adsense-potential-money-web/` (desplegada el 2026-11-24, commit `cae9083`).
 
-**Verificado en vivo:** 98.8/100 · «Contenido apto, dominio pendiente» · 87 % de confianza · 0 bloqueadores · 688 palabras en el HTML · privacidad detectada. Aprobación estimada **12 % (4-20 %)** y P50 37 días **por el subdominio `github.io`**, no por el contenido.
+**Verificado en vivo:** 98.8/100 · «Contenido apto, dominio pendiente» · 90 % de confianza · 0 bloqueadores · 688 palabras en el HTML · privacidad detectada. Aprobación estimada **12 % (1-32 %)** —modelo no validado— y P50 37 días **por el subdominio `github.io`**, no por el contenido.
 
 ## Hecho y verificado
 
 | Fase | Entrega | Verificación real |
 |---|---|---|
-| F1 | 15 defectos del plan v2: robots 5xx, URL final, fallback HTTP, confianza mínima, presupuesto lógico, X-Robots-Tag, marca en keyword stuffing, píxeles, enlaces rotos, SSRF, topes, RPM/CTR inválidos, muestreo, typos | `npm test` → **98 pruebas en verde** (9 archivos) |
+| F1 | 15 defectos del plan v2: robots 5xx, URL final, fallback HTTP, confianza mínima, presupuesto lógico, X-Robots-Tag, marca en keyword stuffing, píxeles, enlaces rotos, SSRF, topes, RPM/CTR inválidos, muestreo, typos | `npm test` → **99 pruebas en verde** (9 archivos) |
 | F2 | Economía (bruto/esperado/actual/brecha), atribución por mecanismo, aprobación con probabilidad y P50/P80/P90, decisión aplicar/preparar, estadística descriptiva e inferencial | `test/money.test.ts`, `test/stats.test.ts`, `test/pipeline.test.ts` |
 | F3 | Datos públicos: RDAP, DNS (A/NS/MX/TXT/SPF/DMARC), Tranco, Wayback, con timeout y degradación | CORS verificado el 2026-11-24; `xataka-v2.json` con datos reales |
 | F6 | 9 páginas estáticas (home + metodología + 3 guías + legales + sobre/contacto), CTA de adquisición, créditos, `robots.txt`, `sitemap.xml`, `ads.txt`, `og.png` | `npm run build` → 9 HTML; `dist/index.html` con **688 palabras**, 1 H1, 6 H2, 0 mojibake |
@@ -20,10 +20,18 @@ Producción actual: `https://cha0smagick.github.io/adsense-potential-money-web/`
 
 | Sitio | Resultado | Observación |
 |---|---|---|
-| xataka.com (profundo, 3 páginas) | **95/100**, confianza 90 %, aprobación 80 % (72-85 %), P50 5 d, esperado 269 USD/mes | La brecha se marca «potencial» porque no se aportó RPM real |
-| Producción actual (después de F6) | **98.8/100**, «Contenido apto, dominio pendiente», confianza 87 % | 688 palabras en el HTML, 0 bloqueadores, privacidad detectada. Aprobación 12 % (4-20 %) y P50 37 d por el subdominio `github.io` |
+| xataka.com (profundo, 3 páginas) | **95/100**, confianza 90 %, aprobación 80 % (60-95 %), P50 5 d, esperado 269 USD/mes | La brecha se marca «potencial» porque no se aportó RPM real |
+| Producción actual (después de F6) | **98.8/100**, «Contenido apto, dominio pendiente», confianza 90 % | 688 palabras en el HTML, 0 bloqueadores, privacidad detectada. Aprobación 12 % (1-32 %) y P50 37 d por el subdominio `github.io` |
 
 Los informes completos están en `reports/`.
+
+## Calibración pública (2026-11-24)
+
+Se midieron 15 casos públicos (9 rechazos del foro con URL y fecha, 6 aprobaciones verificables).
+**AUC 0,51**: el score no separó aprobados de rechazados. Siete de los nueve rechazos ya muestran
+código de anuncios (fueron aprobados después) y las features se midieron hoy, no en la fecha de la
+decisión. El modelo queda **no validado**; el informe lo declara y ensancha el intervalo a ±20 puntos.
+Dataset: `data/approval-cases.json` · análisis: `data/calibration.md`.
 
 ## Pendiente
 
@@ -37,7 +45,7 @@ Los informes completos están en `reports/`.
 
 ## Riesgos
 
-- **Aprobación**: el modelo es una estimación con anclas declaradas; Google no publica tasas. Se etiqueta «sin calibrar» hasta tener resultados reales.
+- **Aprobación**: la calibración pública con 15 casos no discriminó (AUC 0,51); siete de nueve rechazos ya mostraban anuncios. El modelo se declara **no validado**, con intervalo ±20 puntos. No es una tasa de Google.
 - **Datos públicos**: Common Crawl devolvió 504 en la primera prueba; RDAP/Tranco/Wayback responden. Todo degrada a `unknown`, nunca a `fail`.
 - **Proxies del motor rápido**: disyuntor + presupuesto lógico; si caen, el informe pierde confianza pero no inventa.
 - **PDF**: sigue siendo el diálogo de impresión del navegador (A4), no un archivo generado.

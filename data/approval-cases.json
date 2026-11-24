@@ -1,0 +1,137 @@
+[
+  {
+    "id": "uksalarycalculator",
+    "site": "https://uksalarycalculator.io",
+    "outcome": "rejected",
+    "date": "2026-04-05",
+    "reason": "not approved",
+    "kind": "forum",
+    "source": "https://support.google.com/adsense/thread/422489879?hl=en"
+  },
+  {
+    "id": "vumaths",
+    "site": "https://vumaths.com",
+    "outcome": "rejected",
+    "date": "2026-07-25",
+    "reason": "low value content (2nd rejection)",
+    "kind": "forum",
+    "source": "https://support.google.com/adsense/thread/454368122?hl=en"
+  },
+  {
+    "id": "aivatcalc",
+    "site": "https://aivatcalc.com",
+    "outcome": "rejected",
+    "date": "2026-10-25",
+    "reason": "low value content (single-page tool)",
+    "kind": "forum",
+    "source": "https://support.google.com/adsense/thread/474546329?hl=en"
+  },
+  {
+    "id": "theconversionhub",
+    "site": "https://theconversionhub.net",
+    "outcome": "rejected",
+    "date": "2026-04-30",
+    "reason": "low value content",
+    "kind": "forum",
+    "source": "https://support.google.com/adsense/thread/429406274?hl=en"
+  },
+  {
+    "id": "onegocube",
+    "site": "https://onegocube.com",
+    "outcome": "rejected",
+    "date": "2026-11-08",
+    "reason": "not approved after several submissions",
+    "kind": "forum",
+    "source": "https://support.google.com/adsense/thread/476912019?hl=en"
+  },
+  {
+    "id": "azeemarchitects",
+    "site": "https://azeemarchitects.com",
+    "outcome": "rejected",
+    "date": "2026-09-09",
+    "reason": "disapproved twice",
+    "kind": "forum",
+    "source": "https://support.google.com/adsense/thread/466181250?hl=en"
+  },
+  {
+    "id": "infojano",
+    "site": "https://infojano.com",
+    "outcome": "rejected",
+    "date": "2026-11-15",
+    "reason": "disapproved",
+    "kind": "forum",
+    "source": "https://support.google.com/adsense/thread/477752497?hl=en"
+  },
+  {
+    "id": "localbuzz24",
+    "site": "https://localbuzz24.com",
+    "outcome": "rejected",
+    "date": "2026-01-16",
+    "reason": "disapproved twice",
+    "kind": "forum",
+    "source": "https://support.google.com/adsense/thread/402527406?hl=en"
+  },
+  {
+    "id": "yourbeautybug",
+    "site": "https://yourbeautybug.blogspot.com",
+    "outcome": "rejected",
+    "date": "2022-03-28",
+    "reason": "disapproved",
+    "kind": "forum",
+    "source": "https://support.google.com/adsense/thread/157658865?hl=en"
+  },
+  {
+    "id": "chaosgoo",
+    "site": "https://chaosgoo.com",
+    "outcome": "approved",
+    "date": "2025-01-01",
+    "reason": "approved after repeated rejections (case study)",
+    "kind": "case",
+    "source": "https://chaosgoo.com/en/how-to-pass-adsense-from-rejection-to-approval/"
+  },
+  {
+    "id": "adsenseaproval",
+    "site": "https://adsenseaproval.tistory.com",
+    "outcome": "approved",
+    "date": "2025-06-01",
+    "reason": "approved in 7 days (case study)",
+    "kind": "case",
+    "source": "https://adsenseaproval.tistory.com/entry/Case-Study-How-I-Got-Approved-by-AdSense-in-7-Days-Full-Breakdown"
+  },
+  {
+    "id": "roadtoblogging",
+    "site": "https://roadtoblogging.com",
+    "outcome": "approved",
+    "date": "2026-11-24",
+    "reason": "site serving AdSense today (live proxy)",
+    "kind": "live-ads",
+    "source": "https://roadtoblogging.com"
+  },
+  {
+    "id": "shoutmeloud",
+    "site": "https://www.shoutmeloud.com",
+    "outcome": "approved",
+    "date": "2026-11-24",
+    "reason": "site serving AdSense today (live proxy)",
+    "kind": "live-ads",
+    "source": "https://www.shoutmeloud.com"
+  },
+  {
+    "id": "xataka",
+    "site": "https://www.xataka.com",
+    "outcome": "approved",
+    "date": "2026-11-24",
+    "reason": "site serving ads today (live proxy)",
+    "kind": "live-ads",
+    "source": "https://www.xataka.com"
+  },
+  {
+    "id": "genbeta",
+    "site": "https://www.genbeta.com",
+    "outcome": "approved",
+    "date": "2026-11-24",
+    "reason": "site serving ads today (live proxy)",
+    "kind": "live-ads",
+    "source": "https://www.genbeta.com"
+  }
+]

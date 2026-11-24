@@ -79,7 +79,7 @@ function moneyStrip(r: AuditReport): string {
     <div class="money-cell"><small>Probabilidad de aprobación</small><b>${pct(a.probability.base, 0)}</b><span>${pct(a.probability.low, 0)} – ${pct(a.probability.high, 0)}</span></div>
     <div class="money-cell"><small>Tiempo hasta cobrar</small><b>${a.days.p50} d</b><span>P80 ${a.days.p80} d · P90 ${a.days.p90} d</span></div>
   </div>
-  <div class="approval-wrap">${approvalBar(a.probability)}<span class="approval-note">estimación sin calibrar · no es una tasa de Google</span></div>`;
+  <div class="approval-wrap">${approvalBar(a.probability)}<span class="approval-note">modelo no validado · AUC ${a.validation.auc ?? '—'} en ${a.validation.n} casos públicos · no es una tasa de Google</span></div>`;
 }
 
 function blockers(r: AuditReport): string {
@@ -239,6 +239,24 @@ function signals(r: AuditReport): string {
   </section>`;
 }
 
+function calibrationCard(r: AuditReport): string {
+  const v = r.approval.validation;
+  return `<section class="card"><h2>Calibración pública <span class="hint">${v.n} casos · AUC ${v.auc ?? '—'}</span></h2>
+  <p class="notice"><b>Estado: no validado.</b> ${esc(v.note)}</p>
+  <div class="facts">
+    <div><small>Casos medidos</small><b>${v.n}</b></div>
+    <div><small>Aprobados</small><b>${v.approved}</b></div>
+    <div><small>Rechazados</small><b>${v.rejected}</b></div>
+    <div><small>Etiquetas desactualizadas</small><b>${v.staleRejected}</b></div>
+    <div><small>AUC</small><b>${v.auc ?? '—'}</b></div>
+    <div><small>Mediana aprobados</small><b>${v.medianApproved ?? '—'}</b></div>
+    <div><small>Mediana rechazados</small><b>${v.medianRejected ?? '—'}</b></div>
+  </div>
+  <p class="notice">${esc(v.method)}</p>
+  <p class="notice"><a href="${esc(v.dataset)}" target="_blank" rel="noopener">Dataset de casos</a> · <a href="${esc(v.measured)}" target="_blank" rel="noopener">Mediciones</a> · <a href="${esc(v.report)}" target="_blank" rel="noopener">Informe de calibración</a></p>
+  </section>`;
+}
+
 function statistics(r: AuditReport): string {
   const s = r.stats;
   if (!s) return '';
@@ -347,6 +365,7 @@ export function renderReport(r: AuditReport): string {
   return `${hero(r)}
   ${whyNotEarning(r)}
   ${decision(r)}
+  ${calibrationCard(r)}
   ${plan(r)}
   ${money(r)}
   ${statistics(r)}

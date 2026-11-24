@@ -315,6 +315,7 @@ export interface ApprovalResult {
   prepareFirst: { expectedDays: number; expectedCost: number; fixDays: number };
   recommendation: 'apply-now' | 'prepare-first';
   calibrated: false;
+  validation: import('./calibration.ts').PublicCalibration;
   notes: string[];
 }
 
