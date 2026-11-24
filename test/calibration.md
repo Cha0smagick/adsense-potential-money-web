@@ -1,46 +1,54 @@
 # Calibración — batería de sitios reales
 
-Ejecutado el 2026-11-23 con el motor profundo (`node src/deep/node-audit.ts`), `--pages 4`,
-`--sessions 20000`, `--country ES`. Los informes completos quedaron en `reports/`.
+## v2 (2026-11-24)
 
-## Resultados
+Ejecutado con el motor profundo (`node src/deep/node-audit.ts`) y datos públicos activados.
 
-| # | Sitio | Puntuación | Confianza | Bloqueadores | Nicho detectado | Juicio esperado | Veredicto |
-|---|-------|-----------|-----------|--------------|-----------------|-----------------|-----------|
-| 1 | xataka.com | 93.3 | 90% | — | Tecnología (9.61 USD) | medio grande con AdSense activo y contenido denso | correcto |
-| 2 | es.wikipedia.org | 92.1 | 90% | — | General (3.2 USD) | contenido masivo, sin anuncios, sin política de privacidad propia | correcto con matiz ¹ |
-| 3 | googleblog.blogspot.com | 86.6 | 78% | — | General (3.2 USD) | blog corporativo en Blogspot, plantilla pesada | correcto |
-| 4 | bbc.com | 88.6 | 90% | — | Noticias (2.14 USD) | medio de noticias, contenido amplio | correcto |
-| 5 | mozilla.org | 93.9 | 90% | — | General (3.2 USD) | fundación tecnológica, muy cuidado técnicamente | correcto |
-| 6 | shopify.com | 87.5 | 88% | — | General (3.2 USD) | e-commerce corporativo | correcto |
-| 7 | dominio inexistente (DNS secuestrado por el router local) | 15 | 11% | Sin contenido accesible (15), Contenido insuficiente (65) | General | no debe puntuar alto | correcto |
+| Sitio | Puntuación | Confianza | Aprobación | P50 | Esperado | Brecha | Bloqueadores |
+|---|---|---|---|---|---|---|---|
+| xataka.com (3 páginas) | **95/100** | 90 % | **80 %** (72-85) | 5 d | 269 USD/mes | «potencial»: sin RPM real | ninguno |
+| Producción antes de F6 (`cha0smagick.github.io/adsense-potential-money-web/`) | **15/100** | 47 % | 2 % (1-10) | 54 d | 22 USD/mes | 100 % bloqueado | sin contenido legible; thin |
 
-¹ Wikipedia no tiene política de privacidad en el dominio del artículo: la señal queda en aviso,
-no en bloqueador, porque Google evalúa el sitio tal como se publica. Es un falso negativo aceptado.
+**Lectura:** xataka puntúa como apto y la proyección es coherente con su nicho (tecnología, ES). La producción se puntuó a sí misma con 15/100 porque el HTML era una SPA vacía: exactamente lo que AdSense llama «página sin contenido». F6 añade 688 palabras visibles en el HTML inicial; falta desplegar para re-medir.
 
-## Falsos positivos corregidos durante la calibración
+La brecha de xataka se marca **«potencial»**, no «pérdida medida», porque no se aportó un RPM real. Es la distinción que evita vender humo: sin RPM propio no se puede saber cuánto se está dejando.
+
+### Verificación automática
+
+- `npm test` → **97 pruebas** en 9 archivos.
+- `npm run build` → 9 HTML, 116 kB JS (44 kB gzip), 15 kB CSS.
+- `dist/index.html` → 688 palabras, 1 H1, 6 H2, 9 enlaces internos, 0 mojibake.
+- CORS comprobado el 2026-11-24: RDAP, DNS, Tranco, Wayback y Common Crawl (`*`). CDX de Wayback no envía CORS: en el navegador queda sin datos.
+
+### Cómo repetir
+
+```bash
+npm run audit -- https://www.xataka.com --pages 3 --sessions 20000 --country ES
+node src/deep/node-audit.ts https://cha0smagick.github.io/adsense-potential-money-web/ --pages 6 --sessions 5000 --country ES
+```
+
+Los informes completos quedan en `reports/`.
+
+---
+
+## v1 (2026-11-23) — histórico
+
+| # | Sitio | Puntuación | Confianza | Bloqueadores | Juicio |
+|---|---|---|---|---|---|
+| 1 | xataka.com | 93.3 | 90 % | — | correcto |
+| 2 | es.wikipedia.org | 92.1 | 90 % | — | correcto con matiz ¹ |
+| 3 | googleblog.blogspot.com | 86.6 | 78 % | — | correcto |
+| 4 | bbc.com | 88.6 | 90 % | — | correcto |
+| 5 | mozilla.org | 93.9 | 90 % | — | correcto |
+| 6 | shopify.com | 87.5 | 88 % | — | correcto |
+| 7 | dominio inexistente | 15 | 11 % | sin contenido, thin | correcto |
+
+¹ Wikipedia no tiene política de privacidad en el dominio del artículo: queda en aviso, no en bloqueador.
+
+### Falsos positivos corregidos en v1
 
 | Síntoma | Causa real | Corrección |
 |---|---|---|
-| Blogspot puntuaba "contenido vacío" | la densidad se medía sobre el HTML bruto y la plantilla lleva cientos de KB de JS inline | `textRatio` se mide sobre el marcado (HTML menos scripts) y los umbrales bajan a 5 %/2 % |
-| Xataka aparecía con tope 70 (sin privacidad) de forma intermitente | un fallo de red transitorio en la sonda legal se trataba como "no existe" | `LegalProbe.verifiable`: sin respuesta o 5xx ⇒ señal `unknown`, no `fail`; además reintento en el fetcher directo |
-| Noticias y enciclopedias recibían nichos absurdos | ganaba el nicho con más coincidencias, aunque fueran tangenciales | normalización por tamaño del diccionario + desempate: sin ventaja del 30 % o con 3+ verticales fuertes ⇒ `general` |
-
-## Límites conocidos del modelo
-
-- **Sin PSI** (falta API key) el bloque de rendimiento queda `unknown`: la puntuación se reparte
-  sobre 90 puntos y la confianza baja al 79-90 %. No se penaliza lo que no se mide.
-- **Sitios renderizados por JS**: en el motor rápido depende de que jina renderice. Si no,
-  el contenido aparece vacío y la señal baja a `unknown` en vez de declarar thin content.
-- **Nicho**: es una heurística de léxico. En portales transversales acierta poco por diseño
-  (devuelve `general`) y el selector manual manda cuando el usuario lo cambia.
-- **Prohibiciones de Google no verificables desde fuera**: historial de sanciones, tráfico real,
-  Safe Browsing, propiedad de la cuenta. El informe lo declara en «Base normativa aplicada».
-
-## Cómo repetir la batería
-
-```bash
-npm run audit -- https://sitio.com --pages 4 --sessions 20000 --country ES
-```
-
-Cada ejecución escribe un JSON en `reports/` con todas las señales y su evidencia.
+| Blogspot puntuaba «contenido vacío» | densidad medida sobre HTML bruto con cientos de KB de JS inline | `textRatio` sobre el marcado y umbrales 5 %/2 % |
+| Xataka con tope 70 intermitente | fallo de red transitorio tratado como «no existe» | `LegalProbe.verifiable`: 5xx/0 ⇒ `unknown` |
+| Noticias y enciclopedias con nichos absurdos | ganaba el nicho con más coincidencias tangenciales | normalización por tamaño + desempate ⇒ `general` |

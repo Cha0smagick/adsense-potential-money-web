@@ -65,3 +65,93 @@ export function legend(): string {
     <span><i style="background:${COLORS.optimistic}"></i>Optimista</span>
   </div>`;
 }
+
+const money = (n: number): string => (n >= 1000 ? `${(n / 1000).toFixed(1)}k` : String(Math.round(n)));
+
+/**
+ * Cascada de dinero: primer paso = situacion actual, siguientes = perdidas,
+ * ultimo = potencial esperado. Los valores negativos restan.
+ */
+export function waterfallSvg(steps: { label: string; value: number }[]): string {
+  const W = 720;
+  const H = 220;
+  const padL = 64;
+  const padB = 62;
+  const padT = 16;
+  const padR = 16;
+  const gap = 8;
+  let cumulative = steps.length ? Math.max(0, steps[0].value) : 0;
+  const points: { label: string; start: number; end: number; positive: boolean }[] = [];
+  for (const step of steps) {
+    if (step === steps[0]) {
+      points.push({ label: step.label, start: 0, end: cumulative, positive: true });
+      continue;
+    }
+    const end = Math.max(0, cumulative + step.value);
+    points.push({ label: step.label, start: cumulative, end, positive: step.value >= 0 });
+    cumulative = end;
+  }
+  const max = Math.max(1, ...points.map((p) => Math.max(p.start, p.end)));
+  const barW = (W - padL - padR - gap * (points.length - 1)) / Math.max(1, points.length);
+  const y = (v: number) => H - padB - (v / (max * 1.08)) * (H - padB - padT);
+
+  const bars = points
+    .map((p, i) => {
+      const x = padL + i * (barW + gap);
+      const top = y(Math.max(p.start, p.end));
+      const height = Math.max(1, Math.abs(y(p.start) - y(p.end)));
+      const fill = p.positive ? '#25d0a0' : '#ef5f5f';
+      const label = p.label.length > 16 ? `${p.label.slice(0, 15)}…` : p.label;
+      return `<rect x="${x.toFixed(1)}" y="${top.toFixed(1)}" width="${barW.toFixed(1)}" height="${height.toFixed(1)}" rx="3" fill="${fill}" opacity="${p.positive ? 0.9 : 0.75}"/>
+        <text x="${(x + barW / 2).toFixed(1)}" y="${(H - padB + 14).toFixed(1)}" text-anchor="middle" font-size="9.5" fill="#93a7a1">${label}</text>
+        <text x="${(x + barW / 2).toFixed(1)}" y="${(top - 4).toFixed(1)}" text-anchor="middle" font-size="10" fill="#e8f1ee">${money(Math.abs(p.end - p.start))}</text>`;
+    })
+    .join('');
+
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Cascada de ingresos: actual, pérdidas y potencial">
+  <line x1="${padL}" x2="${W - padR}" y1="${H - padB}" y2="${H - padB}" stroke="#223330"/>
+  ${bars}
+  <text x="${padL}" y="${padT}" font-size="10" fill="#7d8b87">USD / mes</text>
+</svg>`;
+}
+
+export function approvalBar(p: { low: number; base: number; high: number }): string {
+  const pct = (n: number) => `${Math.round(n * 100)}%`;
+  const left = Math.round(p.low * 100);
+  const width = Math.max(2, Math.round((p.high - p.low) * 100));
+  const mark = Math.round(p.base * 100);
+  return `<div class="approval-bar" role="img" aria-label="Probabilidad estimada ${pct(p.low)} a ${pct(p.high)}, base ${pct(p.base)}">
+    <span class="range" style="left:${left}%;width:${width}%"></span>
+    <span class="mark" style="left:${mark}%"></span>
+    <span class="scale low">0%</span><span class="scale high">100%</span>
+  </div>`;
+}
+
+export function histogramSvg(bins: { start: number; end: number; count: number }[]): string {
+  if (!bins.length) return '';
+  const W = 720;
+  const H = 180;
+  const padL = 36;
+  const padB = 34;
+  const padT = 12;
+  const padR = 12;
+  const max = Math.max(1, ...bins.map((b) => b.count));
+  const barW = (W - padL - padR) / bins.length;
+  const bars = bins
+    .map((b, i) => {
+      const h = (b.count / max) * (H - padB - padT);
+      const x = padL + i * barW + 1;
+      const y = H - padB - h;
+      const label = bins.length <= 8 || i % 2 === 0 ? `${Math.round(b.start)}` : '';
+      return `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${Math.max(1, barW - 2).toFixed(1)}" height="${h.toFixed(1)}" rx="2" fill="#25d0a0" opacity="0.75"/>
+        <text x="${(x + barW / 2).toFixed(1)}" y="${(H - padB + 12).toFixed(1)}" text-anchor="middle" font-size="9" fill="#93a7a1">${label}</text>`;
+    })
+    .join('');
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Histograma de la muestra">
+    <line x1="${padL}" x2="${W - padR}" y1="${H - padB}" y2="${H - padB}" stroke="#223330"/>
+    ${bars}
+    <text x="${padL}" y="${padT}" font-size="10" fill="#7d8b87">frecuencia</text>
+  </svg>`;
+}
+
+

@@ -1,14 +1,200 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Auditor AdSense — puntuación, bloqueadores y proyección de ingresos</title>
-    <meta name="description" content="Audita cualquier web y obtén su aptitud para Google AdSense de 0 a 100, con bloqueadores, evidencias, proyección de ingresos e informe exportable." />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23111'/%3E%3Cpath d='M50 18 78 34v32L50 82 22 66V34z' fill='none' stroke='%2325d0a0' stroke-width='7'/%3E%3C/svg%3E" />
+    <title>Auditor AdSense — cuánto puedes ganar y por qué no te aprueban</title>
+    <meta name="description" content="Audita cualquier web o blog: puntuación de aptitud para AdSense, dinero que dejas sobre la mesa, probabilidad y tiempo de aprobación, y un enlace oficial para corregir cada fallo." />
+    <link rel="canonical" href="https://cha0smagick.github.io/adsense-potential-money-web/" />
+    <meta name="theme-color" content="#0b1210" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Auditor AdSense — dinero, riesgo y aprobación" />
+    <meta property="og:description" content="Puntuación 0-100, pérdida mensual cuantificada, probabilidad de aprobación y un enlace de arreglo por cada hallazgo." />
+    <meta property="og:url" content="https://cha0smagick.github.io/adsense-potential-money-web/" />
+    <meta property="og:image" content="./og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Auditor AdSense: dinero, riesgo y aprobación" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Auditor AdSense — dinero, riesgo y aprobación" />
+    <meta name="twitter:description" content="Cuánto puedes ganar, por qué no te aprueban y qué hacer exactamente para corregirlo." />
+    <meta name="twitter:image" content="./og.png" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b1210'/%3E%3Cpath d='M50 18 78 34v32L50 82 22 66V34z' fill='none' stroke='%2325d0a0' stroke-width='7'/%3E%3C/svg%3E" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Auditor AdSense",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "Auditoría de aptitud para AdSense con puntuación, pérdida económica, probabilidad de aprobación y plan de corrección con enlaces oficiales.",
+        "url": "https://cha0smagick.github.io/adsense-potential-money-web/",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": { "@type": "Organization", "name": "Cha0sMagick Labs" }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Esta herramienta garantiza que me aprueben AdSense?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Es una herramienta independiente: mide lo que es público y verificable y estima una probabilidad con un modelo declarado. La decisión final es de Google." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Sirve para blogspot, wordpress.com o una página de GitHub?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Sí. Detecta la plataforma y separa la subruta cuando el sitio vive en una carpeta, como usuario.github.io/mi-proyecto. También indica si el dominio es verificable para AdSense." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿De dónde salen las cifras de dinero?",
+            "acceptedAnswer": { "@type": "Answer", "text": "De una fórmula con RPM de industria por nicho, país y dispositivo, capacidad de contenido y tráfico que declara el usuario. Si aportas tu RPM real, manda el tuyo. Cada supuesto se imprime junto a la cifra." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Se envían mis datos a algún servidor?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No hay backend propio. El análisis se ejecuta en tu navegador; las consultas públicas (RDAP, DNS, Tranco, Wayback) van directas a su fuente. Tu RPM, tu CTR y tus claves se quedan en tu navegador." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Por qué a veces dice «sin datos»?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Porque no se pudo medir. Una señal no medida nunca se trata como fallo: baja la confianza y se lista aparte. Es la diferencia entre un informe honesto y uno que inventa." }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
-    <div id="app"></div>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="./index.html" aria-label="Auditor AdSense, inicio">
+          <svg width="34" height="34" viewBox="0 0 100 100" aria-hidden="true">
+            <rect width="100" height="100" rx="22" fill="#111c1a"></rect>
+            <path d="M50 18 78 34v32L50 82 22 66V34z" fill="none" stroke="#25d0a0" stroke-width="7"></path>
+            <path d="M50 40v20M50 68v2" stroke="#25d0a0" stroke-width="7" stroke-linecap="round"></path>
+          </svg>
+          <span>Auditor AdSense</span>
+        </a>
+        <nav class="main-nav" aria-label="Navegación principal">
+          <a href="./metodologia.html">Metodología</a>
+          <a href="./guias/por-que-adsense-rechaza.html">Guías</a>
+          <a href="./contacto.html">Contacto</a>
+          <a class="nav-cta" href="mailto:magiadelcaospractica@gmail.com?subject=Quiero%20adquirir%20el%20Auditor%20AdSense">¿Quieres adquirirlo?</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="hero-static">
+        <p class="eyebrow">Herramienta gratuita y open source · Frater Alek0s · Cha0sMagick Labs</p>
+        <h1>Descubre en 30 segundos por qué AdSense rechaza tu web — y cuánto dinero te cuesta.</h1>
+        <p class="lede">
+          Puntuación de 0 a 100, pérdida mensual cuantificada, probabilidad y tiempo de aprobación,
+          y un enlace oficial para corregir cada fallo. Sin registro. Sin servidor. Sin promesas.
+        </p>
+        <ul class="trust-row">
+          <li>Se ejecuta en tu navegador</li>
+          <li>No guarda tus datos</li>
+          <li>Licencia MIT</li>
+          <li>Funciona con blogspot, wordpress.com, GitHub Pages y dominio propio</li>
+        </ul>
+      </section>
+
+      <div id="app"></div>
+
+      <section class="static-block">
+        <h2>Qué te llevas</h2>
+        <div class="grid-4">
+          <article class="mini-card">
+            <h3>El dinero primero</h3>
+            <p>Potencial esperado al mes, techo con el RPM alto de tu nicho y brecha. Si aportas tu RPM real, la cifra deja de ser potencial y pasa a ser medida.</p>
+          </article>
+          <article class="mini-card">
+            <h3>Por qué no llega</h3>
+            <p>Cada pérdida con su mecanismo: bloqueo del rastreador, contenido fino, rendimiento. Lo que no tiene mecanismo demostrable se queda como riesgo, no como dólares inventados.</p>
+          </article>
+          <article class="mini-card">
+            <h3>Aprobación y tiempo</h3>
+            <p>Probabilidad en rango y días P50/P80/P90, con las anclas del modelo impresas. Google no publica tasas: esto es una estimación, no una promesa.</p>
+          </article>
+          <article class="mini-card">
+            <h3>Qué hacer ahora</h3>
+            <p>Plan ordenado por puntos recuperables y, en cada hallazgo, un enlace a la documentación oficial. También la decisión «aplicar ya o preparar primero» con días esperados.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="static-block">
+        <h2>Cómo funciona</h2>
+        <ol class="steps">
+          <li><b>Pega la URL.</b> Detecta el dominio, la plataforma y la subruta. Si es un project page de GitHub, audita la carpeta correcta, no la raíz ajena.</li>
+          <li><b>Mide lo público.</b> Portada, robots.txt, ads.txt, sitemap, páginas legales, muestra aleatoria de URLs y datos públicos del dominio (RDAP, DNS, Tranco, Wayback).</li>
+          <li><b>Traduce a decisiones.</b> Puntuación, bloqueadores, pérdida con mecanismo, probabilidad de aprobación y plan con enlaces. Exporta PDF, JSON o CSV.</li>
+        </ol>
+      </section>
+
+      <section class="static-block">
+        <h2>Qué se mide</h2>
+        <div class="grid-3">
+          <div class="mini-card"><h3>Contenido y originalidad</h3><p>Volumen, densidad, estructura, autoría, repetición y duplicados entre páginas.</p></div>
+          <div class="mini-card"><h3>Cumplimiento de políticas</h3><p>Diez categorías de riesgo con la política de Google citada: sexual, violencia, armas, drogas, apuestas, farmacia, piratería, engaño, ilegal y propiedad intelectual.</p></div>
+          <div class="mini-card"><h3>Páginas esenciales</h3><p>Privacidad, términos, sobre el sitio y contacto, verificadas por HTTP, no solo por el menú.</p></div>
+          <div class="mini-card"><h3>Navegación y experiencia</h3><p>Enlaces internos, capas intrusivas, viewport y enlaces rotos en la muestra.</p></div>
+          <div class="mini-card"><h3>Rastreo técnico</h3><p>HTTPS, Mediapartners-Google, AdsBot, noindex, sitemap, canonical, meta description, idioma y favicon.</p></div>
+          <div class="mini-card"><h3>Rendimiento</h3><p>PageSpeed con tu clave: LCP, CLS y TBT. Sin clave queda «sin datos», no se penaliza.</p></div>
+        </div>
+      </section>
+
+      <section class="static-block prose">
+        <h2>Lo que esta herramienta no puede hacer</h2>
+        <p>
+          No lee tu cuenta de AdSense, ni tu historial de sanciones, ni tu tráfico real. No conoce el CTR de tu sitio:
+          eso solo lo tienes tú. No puede ver el tráfico de tus competidores ni los volúmenes de búsqueda, porque no existe
+          una fuente pública gratuita que los dé. Cuando falta un dato, lo dice: <b>una señal no medida nunca se convierte en fallo</b>.
+        </p>
+        <p>
+          Tampoco promete aprobación. La decisión es de Google y depende de factores que no son públicos. Lo que sí hace es
+          quitar de la ecuación todo lo que sí se puede comprobar y poner precio a cada defecto con un mecanismo declarado.
+        </p>
+      </section>
+
+      <section class="static-block">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq">
+          <details><summary>¿Sirve para blogspot, wordpress.com o una página de GitHub?</summary><p>Sí. Detecta la plataforma y, en GitHub Pages, separa la subruta del proyecto. También indica si el dominio es verificable para AdSense y qué hacer si no lo es.</p></details>
+          <details><summary>¿De dónde salen las cifras de dinero?</summary><p>De una fórmula con RPM de industria por nicho, país y dispositivo, capacidad de contenido y tráfico declarado. Si aportas tu RPM real, manda el tuyo. Cada supuesto se imprime junto a la cifra.</p></details>
+          <details><summary>¿Por qué la probabilidad es un rango?</summary><p>Porque Google no publica tasas de aprobación. El modelo usa anclas declaradas y se calibra con resultados reales cuando el usuario los registra. Un número único sería una mentira con decimales.</p></details>
+          <details><summary>¿Se envían mis datos a algún servidor?</summary><p>No hay backend propio. El análisis se ejecuta en tu navegador y las consultas públicas van directas a su fuente. Tu RPM, tu CTR y tus claves se quedan en tu navegador.</p></details>
+          <details><summary>¿Puedo usarlo en mi agencia o revenderlo?</summary><p>El código es abierto con licencia MIT. Si quieres una versión con tu marca, soporte o una integración a medida, escribe a <a href="mailto:magiadelcaospractica@gmail.com">magiadelcaospractica@gmail.com</a>.</p></details>
+        </div>
+      </section>
+
+      <section class="static-block cta-block">
+        <h2>¿Quieres adquirir esta herramienta?</h2>
+        <p>Versión white-label, integración en tu agencia, soporte o una auditoría hecha por nosotros. Cuéntanos qué necesitas y te respondemos con una propuesta concreta.</p>
+        <a class="button-primary" href="mailto:magiadelcaospractica@gmail.com?subject=Quiero%20adquirir%20el%20Auditor%20AdSense">Escríbenos · magiadelcaospractica@gmail.com</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <div>
+          <p><b>Auditor AdSense</b> — herramienta independiente, sin afiliación con Google. No sustituye la revisión de AdSense ni garantiza aprobación.</p>
+          <p>Creada por <b>Frater Alek0s</b> para <b>Cha0sMagick Labs</b>. Código abierto con licencia MIT.</p>
+        </div>
+        <nav aria-label="Enlaces legales">
+          <a href="./metodologia.html">Metodología</a>
+          <a href="./privacidad.html">Privacidad</a>
+          <a href="./terminos.html">Términos</a>
+          <a href="./sobre.html">Sobre</a>
+          <a href="./contacto.html">Contacto</a>
+        </nav>
+      </div>
+    </footer>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

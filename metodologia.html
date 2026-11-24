@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Metodología — Auditor AdSense</title>
+    <meta name="description" content="Cómo se calcula la puntuación, la pérdida económica y la probabilidad de aprobación: fórmulas, muestreo, fuentes y límites del modelo." />
+    <link rel="canonical" href="https://cha0smagick.github.io/adsense-potential-money-web/metodologia.html" />
+    <meta name="theme-color" content="#0b1210" />
+    <link rel="stylesheet" href="./src/pages.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="./index.html"><span>Auditor AdSense</span></a>
+        <nav class="main-nav" aria-label="Navegación principal">
+          <a href="./metodologia.html">Metodología</a>
+          <a href="./guias/por-que-adsense-rechaza.html">Guías</a>
+          <a href="./contacto.html">Contacto</a>
+          <a class="nav-cta" href="mailto:magiadelcaospractica@gmail.com?subject=Quiero%20adquirir%20el%20Auditor%20AdSense">¿Quieres adquirirlo?</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <div class="page-title">
+        <h1>Metodología</h1>
+        <p>Todo número que publica el auditor tiene una fórmula, una fuente o un supuesto declarado. Si algo no se pudo medir, aparece como «sin datos» y baja la confianza; nunca se convierte en fallo.</p>
+      </div>
+
+      <article class="prose">
+        <h2>1. Puntuación de aptitud (0-100)</h2>
+        <p>Seis categorías con peso fijo. Cada señal se evalúa como <b>ok</b>, <b>aviso</b>, <b>fallo</b> o <b>sin datos</b>. Las señales sin datos no puntúan y reducen la confianza.</p>
+        <table>
+          <thead><tr><th>Categoría</th><th>Peso</th><th>Qué mide</th></tr></thead>
+          <tbody>
+            <tr><td>Contenido y originalidad</td><td>30</td><td>Volumen, densidad, estructura, autoría, repetición y duplicados.</td></tr>
+            <tr><td>Cumplimiento de políticas</td><td>20</td><td>Diez categorías de riesgo con su política de Google citada.</td></tr>
+            <tr><td>Páginas esenciales</td><td>15</td><td>Privacidad, términos, sobre el sitio y contacto, verificadas por HTTP.</td></tr>
+            <tr><td>Navegación y experiencia</td><td>15</td><td>Enlaces internos, capas intrusivas, viewport y enlaces rotos.</td></tr>
+            <tr><td>Rastreo técnico</td><td>10</td><td>HTTPS, Mediapartners-Google, AdsBot, noindex, sitemap, canonical.</td></tr>
+            <tr><td>Rendimiento</td><td>10</td><td>PageSpeed: LCP, CLS y TBT. Sin clave queda sin datos.</td></tr>
+          </tbody>
+        </table>
+        <p>Los <b>bloqueadores</b> no suman: acotan. Un rastreador bloqueado limita la puntuación a 40; una portada con menos de 300 palabras, a 65; la ausencia de política de privacidad, a 70. Se aplica el tope más severo y se explica cuál.</p>
+        <p>La <b>confianza</b> es el porcentaje del peso que se pudo resolver. Si queda por debajo del 60 %, el veredicto es «faltan datos» y no se declara apto. La edad del dominio y la popularidad <b>no</b> puntúan: no son requisitos de AdSense.</p>
+
+        <h2>2. Dinero</h2>
+        <p>El potencial esperado sale de:</p>
+        <pre><code>ingreso_mes = sesiones × páginas_por_visita × RPM / 1000</code></pre>
+        <p>El RPM base depende del nicho, del país y de la mezcla de dispositivos. Si aportas tu RPM real, manda el tuyo y el resultado deja de ser potencial para convertirse en una cifra medida. El <b>techo</b> usa el RPM alto del nicho y la capacidad de contenido: cada página aporta 120, 300 o 500 sesiones/mes según tenga menos de 300, entre 300 y 800, o más de 800 palabras.</p>
+        <p>La pérdida solo se cuantifica cuando hay un mecanismo:</p>
+        <ul>
+          <li><b>Binaria:</b> sin aprobación, con Mediapartners bloqueado, con <code>noindex</code> o con idioma no admitido, el ingreso de esas páginas es cero.</li>
+          <li><b>Medida:</b> el rendimiento y el viewport aplican un factor declarado sobre el ingreso.</li>
+          <li><b>Esperada:</b> contenido fino, duplicados o políticas sensibles usan un rango de riesgo impreso. No son pérdidas ciertas.</li>
+          <li><b>Sin mecanismo:</b> meta description, favicon o canonical no se convierten en dólares. Se quedan como recomendación.</li>
+        </ul>
+
+        <h2>3. Probabilidad y tiempo de aprobación</h2>
+        <p>Google no publica tasas de aprobación. Lo que existe es una frase oficial sobre el proceso: «suele tardar unos días; en algunos casos, de 2 a 4 semanas» (<a href="https://developers.google.com/adsense/platforms/transparent/approvals" target="_blank" rel="noopener">AdSense approval process</a>).</p>
+        <p>El modelo construye un índice de preparación a partir de la puntuación, los bloqueadores, la confianza, el número de páginas y la propiedad del dominio. Lo traduce a un rango con estas anclas impresas: 95→80 %, 85→72 %, 70→45 %, 55→18 %, 40→7 %. El rango es de ±8 puntos. Un bloqueador severo o un subdominio no verificable recortan la probabilidad.</p>
+        <p>El tiempo se modela como una distribución, no como un número: se publican P50, P80 y P90. La recomendación «aplicar ya o preparar primero» compara los días esperados hasta el primer dólar en cada caso, incluyendo la probabilidad de rechazo y la re-revisión.</p>
+        <p><b>Calibración:</b> el modelo se etiqueta «sin calibrar» hasta que haya resultados reales. Cuando el usuario registra aprobaciones y rechazos, se puede medir el Brier score y ajustar los priors. Sin esos datos, cualquier probabilidad es una estimación, no un hecho.</p>
+
+        <h2>4. Muestreo y estadística</h2>
+        <p>En el motor profundo, la población son las URLs del <code>sitemap.xml</code>. La muestra es aleatoria uniforme sin reemplazo (máximo 24), con semilla reproducible que se imprime en el informe. Si no hay sitemap, se usa una muestra de conveniencia por enlaces internos y <b>no</b> se hace inferencia.</p>
+        <p>Se calculan media, mediana, desviación típica, coeficiente de variación, cuartiles, rango intercuartílico, asimetría, curtosis e histograma. Con muestra suficiente se aplican Mann-Whitney U (portada frente a internas), Kruskal-Wallis (profundidad), Spearman con permutación (palabras frente a latencia), chi-cuadrado 2×2 y Jarque-Bera. Los p-valores se ajustan con Holm y se acompaña siempre el tamaño del efecto.</p>
+        <p>Límite impreso: la muestra describe el sitemap, no el tráfico, y con muestras pequeñas solo se detectan efectos grandes. No prueba causalidad.</p>
+
+        <h2>5. Datos públicos</h2>
+        <table>
+          <thead><tr><th>Fuente</th><th>Qué aporta</th><th>Coste</th></tr></thead>
+          <tbody>
+            <tr><td><a href="https://rdap.org" target="_blank" rel="noopener">RDAP</a></td><td>Alta, caducidad, registrador y edad del dominio.</td><td>Público</td></tr>
+            <tr><td><a href="https://dns.google" target="_blank" rel="noopener">DNS de Google</a></td><td>A, NS, MX, TXT, SPF y DMARC.</td><td>Público</td></tr>
+            <tr><td><a href="https://tranco-list.eu" target="_blank" rel="noopener">Tranco</a></td><td>Puesto de popularidad y su histórico reciente.</td><td>Público</td></tr>
+            <tr><td><a href="https://archive.org/wayback/available" target="_blank" rel="noopener">Wayback</a></td><td>Primera y última captura del sitio.</td><td>Público</td></tr>
+            <tr><td><a href="https://index.commoncrawl.org" target="_blank" rel="noopener">Common Crawl</a></td><td>Cobertura de URLs indexadas (intermitente).</td><td>Público</td></tr>
+            <tr><td><a href="https://developers.google.com/speed/docs/insights/v5/get-started" target="_blank" rel="noopener">PageSpeed</a></td><td>LCP, CLS y TBT reales.</td><td>Gratis con clave</td></tr>
+          </tbody>
+        </table>
+        <p>En subdominios de plataforma (blogspot, wordpress.com, github.io) RDAP y Tranco describen el dominio raíz, que no es del usuario: se marcan como no aplicables en lugar de fingir que describen tu sitio.</p>
+
+        <h2>6. Lo que no se puede saber</h2>
+        <ul>
+          <li>El tráfico real, las keywords y los backlinks: no hay fuente pública gratuita legal.</li>
+          <li>El CTR de tu cuenta: solo lo tienes tú.</li>
+          <li>El historial de sanciones y las decisiones internas de Google.</li>
+          <li>La aprobación futura. La decisión es de Google.</li>
+        </ul>
+        <p>Cuando el informe dice «sin datos», lo dice porque no se pudo medir. Esa es la regla que separa un diagnóstico de una adivinanza.</p>
+      </article>
+
+      <section class="static-block cta-block">
+        <h2>¿Quieres adquirir esta herramienta?</h2>
+        <p>White-label, integración, soporte o una auditoría hecha por nosotros.</p>
+        <a class="button-primary" href="mailto:magiadelcaospractica@gmail.com?subject=Quiero%20adquirir%20el%20Auditor%20AdSense">magiadelcaospractica@gmail.com</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <p>Herramienta independiente, sin afiliación con Google. Creada por Frater Alek0s para Cha0sMagick Labs. Licencia MIT.</p>
+        <nav aria-label="Enlaces legales"><a href="./privacidad.html">Privacidad</a><a href="./terminos.html">Términos</a><a href="./sobre.html">Sobre</a><a href="./contacto.html">Contacto</a></nav>
+      </div>
+    </footer>
+  </body>
+</html>

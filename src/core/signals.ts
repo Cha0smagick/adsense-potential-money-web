@@ -2,6 +2,7 @@ import type { AuditContext, SignalResult, Status } from './types.ts';
 import { ADSENSE_LANGS, detectLanguage } from './normalize.ts';
 import { LEGAL_HINTS, NICHES, POLICY_CATEGORIES, PARKED_PATTERNS } from './lexicon.ts';
 import { ADSENSE_CRAWLERS, isAllowed, parseRobots } from './robots.ts';
+import { REMEDIATION } from './remediation.ts';
 
 export type RawSignal = Omit<SignalResult, 'impact'>;
 
@@ -25,8 +26,9 @@ function termHits(text: string, terms: string[]): string[] {
   return hits;
 }
 
-export function topTermShare(text: string): { term: string; share: number } {
-  const words = norm(text).split(' ').filter((w) => w.length > 3);
+export function topTermShare(text: string, exclude: string[] = []): { term: string; share: number } {
+  const banned = new Set(exclude.map((w) => norm(w)).filter((w) => w.length > 2));
+  const words = norm(text).split(' ').filter((w) => w.length > 3 && !banned.has(w));
   if (words.length < 100) return { term: '', share: 0 };
   const counts = new Map<string, number>();
   for (const w of words) counts.set(w, (counts.get(w) ?? 0) + 1);
@@ -96,7 +98,7 @@ function mk(
   evidence: string,
   advice: string,
 ): RawSignal {
-  return { id, label, category, weight, status, value, evidence, advice };
+  return { id, label, category, weight, status, value, evidence, advice, fix: REMEDIATION[id] ?? null };
 }
 
 const pct = (n: number) => `${(n * 100).toFixed(1)}%`;
@@ -107,15 +109,33 @@ export function buildSignals(ctx: AuditContext): RawSignal[] {
   const text = home?.text ?? '';
   const words = home?.wordCount ?? 0;
   const body = `${home?.title ?? ''} ${home?.metaDescription ?? ''} ${text}`;
+  // La marca propia no cuenta como keyword stuffing: repetir el nombre del sitio es normal.
+  const brandTokens = Array.from(
+    new Set(
+      [ctx.normalized.host, ctx.normalized.registrable, ctx.normalized.subject]
+        .flatMap((x) => norm(x).split(/[\s./-]+/))
+        .filter((w) => w.length > 3),
+    ),
+  );
 
   // ---------- C1 Contenido y originalidad ----------
+  const reachableStatus: Status = !home ? 'fail' : words >= 10 ? 'pass' : 'fail';
+  const reachableEvidence = !home
+    ? 'No se pudo obtener el HTML de la portada.'
+    : words >= 10
+      ? `HTML de ${home.htmlLength.toLocaleString('es')} caracteres con ${words} palabras visibles.`
+      : `HTML de ${home.htmlLength.toLocaleString('es')} caracteres pero ${words} palabras visibles: el contenido llega por JavaScript o la página está vacía.`;
   out.push(
     mk(
       'content-reachable', 'La página devuelve contenido legible', 'content', 3,
-      !home ? 'fail' : words >= 10 ? 'pass' : 'fail',
+      reachableStatus,
       !home ? null : `${words} palabras`,
-      !home ? 'No se pudo obtener el HTML de la portada.' : `HTML de ${home.htmlLength.toLocaleString('es')} caracteres con ${words} palabras visibles.`,
-      'Comprueba que el dominio responde, no está aparcado y no bloquea a los rastreadores.',
+      reachableEvidence,
+      !home
+        ? 'Comprueba que el dominio responde y que no bloquea a los rastreadores.'
+        : words >= 10
+          ? 'El contenido se sirve en el HTML inicial: es lo que Google evalúa.'
+          : 'Sirve el contenido en el HTML inicial (SSR, prerender o generador estático). Si no, Google y AdSense ven una página vacía.',
     ),
     mk(
       'content-words', 'Volumen de contenido en la portada', 'content', 8,
@@ -149,10 +169,10 @@ export function buildSignals(ctx: AuditContext): RawSignal[] {
       'content-keyword-stuffing', 'Sin repetición artificial de palabras clave', 'content', 4,
       (() => {
         if (!home) return 'unknown' as Status;
-        const t = topTermShare(text);
+        const t = topTermShare(text, brandTokens);
         return t.share > 0.07 ? 'fail' : t.share > 0.05 ? 'warn' : 'pass';
       })(),
-      home ? (() => { const t = topTermShare(text); return t.term ? `"${t.term}" ${pct(t.share)}` : 'sin repetición anómala'; })() : null,
+      home ? (() => { const t = topTermShare(text, brandTokens); return t.term ? `"${t.term}" ${pct(t.share)}` : 'sin repetición anómala'; })() : null,
       'La repetición forzada entra en "contenido engañoso" y degrada la calidad percibida.',
       'Escribe con sinónimos y variantes naturales; revisa el término más repetido.',
     ),
@@ -181,19 +201,31 @@ export function buildSignals(ctx: AuditContext): RawSignal[] {
     ),
     mk(
       'content-thin-pages', 'Las páginas internas no son finas', 'content', 5,
-      ctx.extraPages.length === 0 ? 'unknown' : Math.min(...ctx.extraPages.map((p) => p.words)) < 250 ? 'fail' : 'pass',
-      ctx.extraPages.length ? `mínimo ${Math.min(...ctx.extraPages.map((p) => p.words))} palabras en ${ctx.extraPages.length} páginas` : null,
-      'Una web con muchas páginas de 50 palabras se rechaza por contenido de bajo valor aunque la portada esté bien.',
+      (() => {
+        const pages = ctx.extraPages.filter((p) => !p.utility);
+        return pages.length === 0 ? 'unknown' : Math.min(...pages.map((p) => p.words)) < 250 ? 'fail' : 'pass';
+      })(),
+      (() => {
+        const pages = ctx.extraPages.filter((p) => !p.utility);
+        return pages.length ? `mínimo ${Math.min(...pages.map((p) => p.words))} palabras en ${pages.length} páginas de contenido` : null;
+      })(),
+      'Una web con muchas páginas de 50 palabras se rechaza por contenido de bajo valor aunque la portada esté bien. Las páginas legales se excluyen: son cortas por diseño.',
       'Amplía o elimina las páginas con menos de 250 palabras. La cantidad no sustituye a la profundidad.',
     ),
     mk(
       'content-duplicates', 'Sin páginas duplicadas entre sí', 'content', 5,
-      ctx.extraPages.length < 2 || !home ? 'unknown' : (() => {
-        const base = shingles(text);
-        const max = Math.max(...ctx.extraPages.map((p) => overlap(base, p.shingles)));
-        return max > 0.4 ? 'fail' : max > 0.25 ? 'warn' : 'pass';
+      (() => {
+        const pages = ctx.extraPages.filter((p) => !p.utility);
+        return pages.length < 2 || !home ? 'unknown' : (() => {
+          const base = shingles(text);
+          const max = Math.max(...pages.map((p) => overlap(base, p.shingles)));
+          return max > 0.4 ? 'fail' : max > 0.25 ? 'warn' : 'pass';
+        })();
       })(),
-      ctx.extraPages.length >= 2 && home ? (() => { const base = shingles(text); const max = Math.max(...ctx.extraPages.map((p) => overlap(base, p.shingles))); return `solapamiento máximo ${pct(max)}`; })() : null,
+      (() => {
+        const pages = ctx.extraPages.filter((p) => !p.utility);
+        return pages.length >= 2 && home ? (() => { const base = shingles(text); const max = Math.max(...pages.map((p) => overlap(base, p.shingles))); return `solapamiento máximo ${pct(max)}`; })() : null;
+      })(),
       'El contenido duplicado o "spinning" es una de las causas frecuentes de rechazo.',
       'Reescribe o consolida las páginas que repiten el mismo texto. Usa canonical solo para variantes legítimas.',
     ),
@@ -283,6 +315,25 @@ export function buildSignals(ctx: AuditContext): RawSignal[] {
     legal('about', 'Página "sobre el sitio" o autor', 3, false),
     legal('contact', 'Página de contacto operativa', 2, false),
   );
+
+  // Indicador estructural: propiedad del dominio. Peso 0: informa, no puntúa.
+  const owned = ctx.normalized.ownership === 'owned';
+  const blogspot = ctx.normalized.platform === 'blogspot';
+  out.push(
+    mk(
+      'monetization-domain', 'Dominio verificable para AdSense', 'essential', 0,
+      owned || blogspot ? 'pass' : 'warn',
+      owned ? ctx.normalized.host : ctx.normalized.subject,
+      owned
+        ? 'Dominio propio: AdSense puede verificar la propiedad a nivel de dominio.'
+        : blogspot
+          ? 'Blogger está integrado con AdSense: el blog se puede monetizar desde la cuenta de Blogger.'
+          : `Subdominio de plataforma (${ctx.normalized.platform}): el dominio raíz no es tuyo y AdSense no puede verificar la propiedad a nivel de sitio.`,
+      owned
+        ? 'Mantén el dominio y su DNS bajo tu control.'
+        : 'Publica el sitio en un dominio propio (o en Blogger) antes de solicitar AdSense. La auditoría de contenido sigue siendo válida.',
+    ),
+  );
   // ---------- C4 Navegacion y UX ----------
   const internal = home?.internalLinks.length ?? 0;
   out.push(
@@ -308,7 +359,7 @@ export function buildSignals(ctx: AuditContext): RawSignal[] {
       'Añade <meta name="viewport" content="width=device-width, initial-scale=1"> y revisa el diseño en pantalla pequeña.',
     ),
     mk(
-      'ux-broken-links', 'Sin enlaces roto en la muestra', 'ux', 3,
+      'ux-broken-links', 'Sin enlaces rotos en la muestra', 'ux', 3,
       ctx.brokenLinks.length === 0 && ctx.extraPages.length === 0 ? 'unknown'
         : ctx.brokenLinks.length === 0 ? 'pass' : ctx.brokenLinks.length <= 1 ? 'warn' : 'fail',
       ctx.brokenLinks.length ? `${ctx.brokenLinks.length} enlaces roto` : ctx.extraPages.length ? 'muestra sin roturas' : null,
@@ -318,9 +369,17 @@ export function buildSignals(ctx: AuditContext): RawSignal[] {
   );
 
   // ---------- C5 Rastreo tecnico ----------
-  const robotsFile = ctx.robots?.found ? parseRobots(ctx.robots.text) : null;
-  const mpAllowed = robotsFile ? isAllowed(robotsFile, ADSENSE_CRAWLERS[0], '/') : ctx.robots?.found ? true : true;
+  const robotsKnown = !!ctx.robots && ctx.robots.reachable;
+  const robotsFile = robotsKnown && ctx.robots?.found ? parseRobots(ctx.robots.text) : null;
+  const mpAllowed = robotsFile ? isAllowed(robotsFile, ADSENSE_CRAWLERS[0], '/') : true;
   const adsBotAllowed = robotsFile ? isAllowed(robotsFile, ADSENSE_CRAWLERS[1], '/') : true;
+  const robotsState = !ctx.robots
+    ? null
+    : !ctx.robots.reachable
+      ? `robots.txt no respondió (${ctx.robots.status ?? 'sin respuesta'}): no se puede afirmar que permita el acceso`
+      : ctx.robots.found
+        ? 'robots.txt leído'
+        : 'sin robots.txt (se permite todo)';
 
   out.push(
     mk(
@@ -332,24 +391,24 @@ export function buildSignals(ctx: AuditContext): RawSignal[] {
     ),
     mk(
       'crawl-mediapartners', 'El rastreador de AdSense puede entrar', 'crawl', 5,
-      !ctx.robots ? 'unknown' : mpAllowed ? 'pass' : 'fail',
-      ctx.robots?.found ? (mpAllowed ? 'robots.txt permite Mediapartners-Google' : 'robots.txt BLOQUEA Mediapartners-Google') : ctx.robots ? 'sin robots.txt (se permite todo)' : null,
-      'Si robots.txt bloquea a Mediapartners-Google, Google no puede evaluar el contenido y el sitio se rechaza.',
-      'Elimina el bloqueo para Mediapartners-Google y AdsBot-Google en robots.txt.',
+      !robotsKnown ? 'unknown' : mpAllowed ? 'pass' : 'fail',
+      ctx.robots?.found ? (mpAllowed ? 'robots.txt permite Mediapartners-Google' : 'robots.txt BLOQUEA Mediapartners-Google') : robotsState,
+      'Si robots.txt bloquea a Mediapartners-Google, Google no puede evaluar el contenido y el sitio se rechaza. Un error 5xx o 429 en robots.txt no demuestra permiso: se marca sin datos.',
+      'Elimina el bloqueo para Mediapartners-Google y AdsBot-Google en robots.txt, y asegúrate de que robots.txt responde 200.',
     ),
     mk(
       'crawl-adsbot', 'El rastreador de anuncios (AdsBot) puede entrar', 'crawl', 2,
-      !ctx.robots ? 'unknown' : adsBotAllowed ? 'pass' : 'warn',
-      ctx.robots?.found ? (adsBotAllowed ? 'permitido' : 'bloqueado') : null,
+      !robotsKnown ? 'unknown' : adsBotAllowed ? 'pass' : 'warn',
+      ctx.robots?.found ? (adsBotAllowed ? 'permitido' : 'bloqueado') : robotsState,
       'AdsBot comprueba la calidad de las páginas donde se muestran anuncios.',
       'Permite AdsBot-Google en robots.txt.',
     ),
     mk(
       'crawl-noindex', 'La portada es indexable', 'crawl', 4,
-      !home ? 'unknown' : home.robotsMeta.includes('noindex') ? 'fail' : 'pass',
-      home ? (home.robotsMeta.length ? home.robotsMeta.join(',') : 'indexable') : null,
-      'Una portada con noindex es invisible para Google: no habrá tráfico ni evaluación positiva.',
-      'Elimina <meta name="robots" content="noindex"> de la portada.',
+      !home ? 'unknown' : home.robotsMeta.includes('noindex') || /noindex|\bnone\b/i.test(home.xRobotsTag) ? 'fail' : 'pass',
+      home ? (home.robotsMeta.length ? home.robotsMeta.join(',') : home.xRobotsTag ? `X-Robots-Tag: ${home.xRobotsTag}` : 'indexable') : null,
+      'Una portada con noindex (en meta o en la cabecera X-Robots-Tag) es invisible para Google: no habrá tráfico ni evaluación positiva.',
+      'Elimina <meta name="robots" content="noindex"> y la cabecera X-Robots-Tag: noindex de la portada.',
     ),
     mk(
       'crawl-sitemap', 'Sitemap XML localizable', 'crawl', 2,

@@ -57,8 +57,8 @@ export async function dispatchDeepAudit(
     if (file.status === 200) {
       const text = await file.text();
       try {
-        const report = JSON.parse(text) as AuditReport;
-        if (report.schema === 'report.v1') return report;
+        const parsed = JSON.parse(text) as { schema?: string };
+        if (parsed.schema === 'report.v1' || parsed.schema === 'report.v2') return parsed as AuditReport;
       } catch {
         return await waitFallback(text);
       }

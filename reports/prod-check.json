@@ -1,0 +1,2674 @@
+{
+  "schema": "report.v2",
+  "createdAt": "2026-11-24T17:22:08.510Z",
+  "engine": "deep",
+  "target": {
+    "input": "https://cha0smagick.github.io/adsense-potential-money-web/",
+    "url": "https://cha0smagick.github.io/adsense-potential-money-web/",
+    "href": "https://cha0smagick.github.io/adsense-potential-money-web/",
+    "host": "cha0smagick.github.io",
+    "tld": "io",
+    "path": "/adsense-potential-money-web/",
+    "https": true,
+    "registrable": "cha0smagick.github.io",
+    "platform": "github-pages",
+    "ownership": "platform",
+    "siteRoot": "https://cha0smagick.github.io/adsense-potential-money-web/",
+    "basePath": "/adsense-potential-money-web/",
+    "subject": "cha0smagick.github.io/adsense-potential-money-web",
+    "slug": "cha0smagick-github-io-adsense-potential-money-web"
+  },
+  "title": "Auditor AdSense — puntuación, bloqueadores y proyección de ingresos",
+  "score": {
+    "score": 15,
+    "confidence": 0.47,
+    "verdict": {
+      "band": "insufficient",
+      "label": "Faltan datos para un veredicto",
+      "summary": "Solo se pudo evaluar el 47 % del peso. Las señales sin datos no penalizan: vuelve a analizar o revisa manualmente lo que no se pudo medir.",
+      "capApplied": 15
+    },
+    "categories": [
+      {
+        "id": "content",
+        "label": "Contenido y originalidad",
+        "weight": 30,
+        "score": 0.19642857142857142,
+        "resolved": 0.7,
+        "signals": [
+          {
+            "id": "content-reachable",
+            "label": "La página devuelve contenido legible",
+            "category": "content",
+            "weight": 3,
+            "status": "fail",
+            "value": "0 palabras",
+            "evidence": "HTML de 920 caracteres con 0 palabras visibles.",
+            "advice": "Comprueba que el dominio responde, no está aparcado y no bloquea a los rastreadores.",
+            "fix": {
+              "url": "https://developers.google.com/search/docs/crawling-indexing/http-network-errors",
+              "label": "Comprobar errores HTTP y de red"
+            },
+            "impact": 48.2
+          },
+          {
+            "id": "content-words",
+            "label": "Volumen de contenido en la portada",
+            "category": "content",
+            "weight": 8,
+            "status": "fail",
+            "value": "0 palabras",
+            "evidence": "Criterio: Google rechaza por \"contenido de bajo valor\" cuando no hay sustancia suficiente. 600+ palabras visibles en portada es la zona segura; por debajo de 300 el riesgo es alto.",
+            "advice": "Amplía la portada con contenido propio y útil. Si la portada es un índice, enlaza a artículos largos y añade una introducción real.",
+            "fix": {
+              "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+              "label": "Crear contenido útil y original"
+            },
+            "impact": 0
+          },
+          {
+            "id": "content-text-ratio",
+            "label": "Densidad de texto frente a código",
+            "category": "content",
+            "weight": 4,
+            "status": "fail",
+            "value": "0.0%",
+            "evidence": "Páginas construidas solo con scripts suelen ser webs vacías para el rastreador de AdSense.",
+            "advice": "Sirve el contenido en el HTML inicial (SSR o prerender) o reduce plantillas y scripts innecesarios.",
+            "fix": {
+              "url": "https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics",
+              "label": "Servir contenido en el HTML inicial"
+            },
+            "impact": 0
+          },
+          {
+            "id": "content-h1",
+            "label": "Encabezado principal único",
+            "category": "content",
+            "weight": 3,
+            "status": "fail",
+            "value": "0 H1",
+            "evidence": "Un H1 claro indica de qué trata la página; su ausencia es señal de plantilla vacía.",
+            "advice": "Deja exactamente un H1 por página con una frase descriptiva.",
+            "fix": {
+              "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+              "label": "Guía de estructura y encabezados"
+            },
+            "impact": 0
+          },
+          {
+            "id": "content-structure",
+            "label": "Estructura editorial",
+            "category": "content",
+            "weight": 3,
+            "status": "fail",
+            "value": "0 H2 · 0 párrafos",
+            "evidence": "Secciones y párrafos son la huella de un artículo real frente a una página de relleno.",
+            "advice": "Divide el contenido en secciones con H2 y párrafos de 3-5 frases.",
+            "fix": {
+              "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+              "label": "Guía de estructura de página"
+            },
+            "impact": 0
+          },
+          {
+            "id": "content-keyword-stuffing",
+            "label": "Sin repetición artificial de palabras clave",
+            "category": "content",
+            "weight": 4,
+            "status": "pass",
+            "value": "sin repetición anómala",
+            "evidence": "La repetición forzada entra en \"contenido engañoso\" y degrada la calidad percibida.",
+            "advice": "Escribe con sinónimos y variantes naturales; revisa el término más repetido.",
+            "fix": {
+              "url": "https://developers.google.com/search/docs/essentials/spam-policies",
+              "label": "Evitar el relleno de palabras clave"
+            },
+            "impact": 0
+          },
+          {
+            "id": "content-authoring",
+            "label": "Autoría y fecha visibles",
+            "category": "content",
+            "weight": 3,
+            "status": "warn",
+            "value": "Schema: ninguno",
+            "evidence": "E-E-A-T: quién escribe y cuándo se actualizó el contenido. Google lo valora al revisar sitios.",
+            "advice": "Añade autor con página de perfil y fecha de publicación/actualización. Marca el artículo con schema Article.",
+            "fix": {
+              "url": "https://developers.google.com/search/docs/appearance/structured-data/article",
+              "label": "Marcar autoría con datos estructurados"
+            },
+            "impact": 0
+          },
+          {
+            "id": "content-readability",
+            "label": "Frases de longitud legible",
+            "category": "content",
+            "weight": 2,
+            "status": "unknown",
+            "value": null,
+            "evidence": "Frases de 8 a 30 palabras se leen bien en móvil, donde está la mayoría del tráfico.",
+            "advice": "Acorta las frases largas y separa ideas en párrafos.",
+            "fix": {
+              "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+              "label": "Escribir para personas"
+            },
+            "impact": 0
+          },
+          {
+            "id": "content-thin-pages",
+            "label": "Las páginas internas no son finas",
+            "category": "content",
+            "weight": 5,
+            "status": "unknown",
+            "value": null,
+            "evidence": "Una web con muchas páginas de 50 palabras se rechaza por contenido de bajo valor aunque la portada esté bien.",
+            "advice": "Amplía o elimina las páginas con menos de 250 palabras. La cantidad no sustituye a la profundidad.",
+            "fix": {
+              "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+              "label": "Ampliar o retirar páginas finas"
+            },
+            "impact": 0
+          },
+          {
+            "id": "content-duplicates",
+            "label": "Sin páginas duplicadas entre sí",
+            "category": "content",
+            "weight": 5,
+            "status": "unknown",
+            "value": null,
+            "evidence": "El contenido duplicado o \"spinning\" es una de las causas frecuentes de rechazo.",
+            "advice": "Reescribe o consolida las páginas que repiten el mismo texto. Usa canonical solo para variantes legítimas.",
+            "fix": {
+              "url": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls",
+              "label": "Consolidar contenido duplicado"
+            },
+            "impact": 0
+          }
+        ]
+      },
+      {
+        "id": "policy",
+        "label": "Cumplimiento de políticas",
+        "weight": 20,
+        "score": 1,
+        "resolved": 0.22727272727272727,
+        "signals": [
+          {
+            "id": "policy-adult",
+            "label": "Contenido sexual",
+            "category": "policy",
+            "weight": 5,
+            "status": "unknown",
+            "value": null,
+            "evidence": "Sin texto suficiente para evaluar esta política.",
+            "advice": "Revisa manualmente la política \"Sexual content\" antes de solicitar AdSense.",
+            "fix": {
+              "url": "https://support.google.com/adsense/answer/10502938",
+              "label": "Políticas para editores de Google"
+            },
+            "impact": 0
+          },
+          {
+            "id": "policy-violence",
+            "label": "Violencia y contenido peligroso",
+            "category": "policy",
+            "weight": 3,
+            "status": "unknown",
+            "value": null,
+            "evidence": "Sin texto suficiente para evaluar esta política.",
+            "advice": "Revisa manualmente la política \"Dangerous or derogatory content\" antes de solicitar AdSense.",
+            "fix": {
+              "url": "https://support.google.com/adsense/answer/10502938",
+              "label": "Políticas para editores de Google"
+            },
+            "impact": 0
+          },
+          {
+            "id": "policy-weapons",
+            "label": "Armas y explosivos",
+            "category": "policy",
+            "weight": 3,
+            "status": "unknown",
+            "value": null,
+            "evidence": "Sin texto suficiente para evaluar esta política.",
+            "advice": "Revisa manualmente la política \"Dangerous products or services (weapons)\" antes de solicitar AdSense.",
+            "fix": {
+              "url": "https://support.google.com/adsense/answer/10502938",
+              "label": "Políticas para editores de Google"
+            },
+            "impact": 0
+          },
+          {
+            "id": "policy-drugs",
+            "label": "Drogas y sustancias",
+            "category": "policy",
+            "weight": 3,
+            "status": "unknown",
+            "value": null,
+            "evidence": "Sin texto suficiente para evaluar esta política.",
+            "advice": "Revisa manualmente la política \"Recreational drugs / Drug paraphernalia\" antes de solicitar AdSense.",
+            "fix": {
+              "url": "https://support.google.com/adsense/answer/10502938",
+              "label": "Políticas para editores de Google"
+            },
+            "impact": 0
+          },
+          {
+            "id": "policy-gambling",
+            "label": "Apuestas y juegos de azar",
+            "category": "policy",
+            "weight": 3,
+            "status": "unknown",
+            "value": null,
+            "evidence": "Sin texto suficiente para evaluar esta política.",
+            "advice": "Revisa manualmente la política \"Gambling and games\" antes de solicitar AdSense.",
+            "fix": {
+              "url": "https://support.google.com/adsense/answer/10502938",
+              "label": "Políticas para editores de Google"
+            },
+            "impact": 0
+          },
+          {
+            "id": "policy-pharma",
+            "label": "Farmacia y suplementos",
+            "category": "policy",
+            "weight": 3,
+            "status": "unknown",
+            "value": null,
+            "evidence": "Sin texto suficiente para evaluar esta política.",
+            "advice": "Revisa manualmente la política \"Healthcare and medicines (prescription drugs)\" antes de solicitar AdSense.",
+            "fix": {
+              "url": "https://support.google.com/adsense/answer/10502938",
+              "label": "Políticas para editores de Google"
+            },
+            "impact": 0
+          },
+          {
+            "id": "policy-dishonest",
+            "label": "Conducta deshonesta y piratería",
+            "category": "policy",
+            "weight": 3,
+            "status": "unknown",
+            "value": null,
+            "evidence": "Sin texto suficiente para evaluar esta política.",
+            "advice": "Revisa manualmente la política \"Enabling dishonest behavior\" antes de solicitar AdSense.",
+            "fix": {
+              "url": "https://support.google.com/adsense/answer/10502938",
+              "label": "Políticas para editores de Google"
+            },
+            "impact": 0
+          },
+          {
+            "id": "policy-misrepresentative",
+            "label": "Contenido engañoso o clickbait",
+            "category": "policy",
+            "weight": 3,
+            "status": "unknown",
+            "value": null,
+            "evidence": "Sin texto suficiente para evaluar esta política.",
+            "advice": "Revisa manualmente la política \"Misrepresentative content\" antes de solicitar AdSense.",
+            "fix": {
+              "url": "https://support.google.com/adsense/answer/10502938",
+              "label": "Políticas para editores de Google"
+            },
+            "impact": 0
+          },
+          {
+            "id": "policy-illegal",
+            "label": "Contenido ilegal",
+            "category": "policy",
+            "weight": 5,
+            "status": "unknown",
+            "value": null,
+            "evidence": "Sin texto suficiente para evaluar esta política.",
+            "advice": "Revisa manualmente la política \"Illegal content\" antes de solicitar AdSense.",
+            "fix": {
+              "url": "https://support.google.com/adsense/answer/10502938",
+              "label": "Políticas para editores de Google"
+            },
+            "impact": 0
+          },
+          {
+            "id": "policy-intellectual-property",
+            "label": "Propiedad intelectual",
+            "category": "policy",
+            "weight": 3,
+            "status": "unknown",
+            "value": null,
+            "evidence": "Sin texto suficiente para evaluar esta política.",
+            "advice": "Revisa manualmente la política \"Intellectual property abuse\" antes de solicitar AdSense.",
+            "fix": {
+              "url": "https://support.google.com/adsense/answer/10502938",
+              "label": "Políticas para editores de Google"
+            },
+            "impact": 0
+          },
+          {
+            "id": "policy-language",
+            "label": "Idioma soportado por AdSense",
+            "category": "policy",
+            "weight": 2,
+            "status": "pass",
+            "value": "es (declarado)",
+            "evidence": "AdSense no sirve anuncios en idiomas no soportados; publicar en uno de ellos impide monetizar.",
+            "advice": "Publica en un idioma soportado o añade una versión en un idioma con demanda publicitaria.",
+            "fix": {
+              "url": "https://support.google.com/adsense/answer/48182",
+              "label": "Políticas del programa AdSense"
+            },
+            "impact": 0
+          },
+          {
+            "id": "policy-parked",
+            "label": "El dominio no está aparcado ni en construcción",
+            "category": "policy",
+            "weight": 5,
+            "status": "pass",
+            "value": "sin señales",
+            "evidence": "Dominios aparcados o \"en construcción\" se rechazan de forma automática.",
+            "advice": "Publica el sitio real antes de solicitar. Si es un proyecto en curso, espera a tener contenido completo.",
+            "fix": {
+              "url": "https://support.google.com/adsense/answer/48182",
+              "label": "Políticas del programa AdSense"
+            },
+            "impact": 0
+          },
+          {
+            "id": "policy-ad-density",
+            "label": "Anuncios proporcionados al contenido",
+            "category": "policy",
+            "weight": 3,
+            "status": "pass",
+            "value": "sin código de anuncios · 0 palabras",
+            "evidence": "Anuncios sobre páginas sin contenido (\"ads on screens without publisher content\") es motivo de suspensión, no solo de rechazo.",
+            "advice": "Retira los bloques de anuncios de páginas vacías, de error o de agradecimiento.",
+            "fix": {
+              "url": "https://support.google.com/adsense/answer/1348737",
+              "label": "Políticas de emplazamiento de anuncios"
+            },
+            "impact": 0
+          }
+        ]
+      },
+      {
+        "id": "essential",
+        "label": "Páginas esenciales y confianza",
+        "weight": 15,
+        "score": null,
+        "resolved": 0,
+        "signals": [
+          {
+            "id": "essential-privacy",
+            "label": "Política de privacidad publicada",
+            "category": "essential",
+            "weight": 7,
+            "status": "unknown",
+            "value": "no verificable",
+            "evidence": "La comprobación no terminó por errores de red: no se puede afirmar que falte.",
+            "advice": "Es requisito de las políticas de AdSense: una política de privacidad que informe del uso de cookies y de la publicidad personalizada.",
+            "fix": {
+              "url": "https://support.google.com/adsense/answer/13554116",
+              "label": "Privacidad, cookies y consentimiento"
+            },
+            "impact": 0
+          },
+          {
+            "id": "essential-terms",
+            "label": "Términos y aviso legal",
+            "category": "essential",
+            "weight": 3,
+            "status": "unknown",
+            "value": "no verificable",
+            "evidence": "La comprobación no terminó por errores de red: no se puede afirmar que falte.",
+            "advice": "Refuerza la confianza del revisor: quién está detrás del sitio y cómo contactar.",
+            "fix": {
+              "url": "https://support.google.com/adsense/answer/48182",
+              "label": "Políticas del programa AdSense"
+            },
+            "impact": 0
+          },
+          {
+            "id": "essential-about",
+            "label": "Página \"sobre el sitio\" o autor",
+            "category": "essential",
+            "weight": 3,
+            "status": "unknown",
+            "value": "no verificable",
+            "evidence": "La comprobación no terminó por errores de red: no se puede afirmar que falte.",
+            "advice": "Refuerza la confianza del revisor: quién está detrás del sitio y cómo contactar.",
+            "fix": {
+              "url": "https://support.google.com/adsense/answer/48182",
+              "label": "Políticas del programa AdSense"
+            },
+            "impact": 0
+          },
+          {
+            "id": "essential-contact",
+            "label": "Página de contacto operativa",
+            "category": "essential",
+            "weight": 2,
+            "status": "unknown",
+            "value": "no verificable",
+            "evidence": "La comprobación no terminó por errores de red: no se puede afirmar que falte.",
+            "advice": "Refuerza la confianza del revisor: quién está detrás del sitio y cómo contactar.",
+            "fix": {
+              "url": "https://support.google.com/adsense/answer/48182",
+              "label": "Políticas del programa AdSense"
+            },
+            "impact": 0
+          },
+          {
+            "id": "monetization-domain",
+            "label": "Dominio verificable para AdSense",
+            "category": "essential",
+            "weight": 0,
+            "status": "warn",
+            "value": "cha0smagick.github.io/adsense-potential-money-web",
+            "evidence": "Subdominio de plataforma (github-pages): el dominio raíz no es tuyo y AdSense no puede verificar la propiedad a nivel de sitio.",
+            "advice": "Publica el sitio en un dominio propio (o en Blogger) antes de solicitar AdSense. La auditoría de contenido sigue siendo válida.",
+            "fix": {
+              "url": "https://support.google.com/adsense/answer/48182",
+              "label": "Políticas del programa AdSense"
+            },
+            "impact": 0
+          }
+        ]
+      },
+      {
+        "id": "ux",
+        "label": "Navegación y experiencia",
+        "weight": 15,
+        "score": 0.6363636363636364,
+        "resolved": 0.7857142857142857,
+        "signals": [
+          {
+            "id": "ux-nav",
+            "label": "Navegación interna suficiente",
+            "category": "ux",
+            "weight": 4,
+            "status": "fail",
+            "value": "0 enlaces internos",
+            "evidence": "Un sitio de una sola página sin enlaces internos se percibe como thin content.",
+            "advice": "Añade un menú con las secciones principales y enlaza cada artículo desde índices o relacionados.",
+            "fix": {
+              "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+              "label": "Navegación clara"
+            },
+            "impact": 0
+          },
+          {
+            "id": "ux-interstitials",
+            "label": "Sin capas que tapen el contenido",
+            "category": "ux",
+            "weight": 3,
+            "status": "pass",
+            "value": "0 capas fijas detectadas",
+            "evidence": "Los intersticiales que bloquean el contenido en móvil incumplen los estándares de experiencia publicitaria.",
+            "advice": "Comprueba manualmente en móvil: si al entrar aparece una capa a pantalla completa, elimínala o hazla descartable al instante.",
+            "fix": {
+              "url": "https://www.betterads.org/standards/",
+              "label": "Estándares Better Ads"
+            },
+            "impact": 0
+          },
+          {
+            "id": "ux-mobile",
+            "label": "Adaptado a móvil",
+            "category": "ux",
+            "weight": 4,
+            "status": "pass",
+            "value": "viewport declarado",
+            "evidence": "La mayoría del tráfico y de los ingresos viene de móvil; sin viewport el sitio no es usable ahí.",
+            "advice": "Añade <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> y revisa el diseño en pantalla pequeña.",
+            "fix": {
+              "url": "https://web.dev/articles/responsive-web-design-basics",
+              "label": "Diseño adaptable a móvil"
+            },
+            "impact": 0
+          },
+          {
+            "id": "ux-broken-links",
+            "label": "Sin enlaces rotos en la muestra",
+            "category": "ux",
+            "weight": 3,
+            "status": "unknown",
+            "value": null,
+            "evidence": "Los enlaces roto degradan la experiencia y son señal de abandono.",
+            "advice": "Corrige o elimina los enlaces que devuelven 404/410.",
+            "fix": {
+              "url": "https://developers.google.com/search/docs/crawling-indexing/http-network-errors",
+              "label": "Corregir enlaces roto"
+            },
+            "impact": 0
+          }
+        ]
+      },
+      {
+        "id": "crawl",
+        "label": "Rastreo técnico",
+        "weight": 10,
+        "score": 0.875,
+        "resolved": 1,
+        "signals": [
+          {
+            "id": "crawl-https",
+            "label": "HTTPS activo",
+            "category": "crawl",
+            "weight": 3,
+            "status": "pass",
+            "value": "https",
+            "evidence": "Sin HTTPS el navegador marca el sitio como no seguro y muchos anunciantes no pujan.",
+            "advice": "Instala un certificado (Let's Encrypt o el del hosting) y redirige todo el tráfico http a https.",
+            "fix": {
+              "url": "https://web.dev/articles/why-https-matters",
+              "label": "Por qué HTTPS importa"
+            },
+            "impact": 0
+          },
+          {
+            "id": "crawl-mediapartners",
+            "label": "El rastreador de AdSense puede entrar",
+            "category": "crawl",
+            "weight": 5,
+            "status": "pass",
+            "value": "sin robots.txt (se permite todo)",
+            "evidence": "Si robots.txt bloquea a Mediapartners-Google, Google no puede evaluar el contenido y el sitio se rechaza. Un error 5xx o 429 en robots.txt no demuestra permiso: se marca sin datos.",
+            "advice": "Elimina el bloqueo para Mediapartners-Google y AdsBot-Google en robots.txt, y asegúrate de que robots.txt responde 200.",
+            "fix": {
+              "url": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers",
+              "label": "Rastreadores de Google y robots.txt"
+            },
+            "impact": 0
+          },
+          {
+            "id": "crawl-adsbot",
+            "label": "El rastreador de anuncios (AdsBot) puede entrar",
+            "category": "crawl",
+            "weight": 2,
+            "status": "pass",
+            "value": "sin robots.txt (se permite todo)",
+            "evidence": "AdsBot comprueba la calidad de las páginas donde se muestran anuncios.",
+            "advice": "Permite AdsBot-Google en robots.txt.",
+            "fix": {
+              "url": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers",
+              "label": "Rastreadores de Google y robots.txt"
+            },
+            "impact": 0
+          },
+          {
+            "id": "crawl-noindex",
+            "label": "La portada es indexable",
+            "category": "crawl",
+            "weight": 4,
+            "status": "pass",
+            "value": "indexable",
+            "evidence": "Una portada con noindex (en meta o en la cabecera X-Robots-Tag) es invisible para Google: no habrá tráfico ni evaluación positiva.",
+            "advice": "Elimina <meta name=\"robots\" content=\"noindex\"> y la cabecera X-Robots-Tag: noindex de la portada.",
+            "fix": {
+              "url": "https://developers.google.com/search/docs/crawling-indexing/block-indexing",
+              "label": "Quitar noindex"
+            },
+            "impact": 0
+          },
+          {
+            "id": "crawl-sitemap",
+            "label": "Sitemap XML localizable",
+            "category": "crawl",
+            "weight": 2,
+            "status": "fail",
+            "value": "no encontrado",
+            "evidence": "El sitemap es la forma en que Google descubre todas las páginas que debe evaluar.",
+            "advice": "Genera sitemap.xml y decláralo en robots.txt con la línea Sitemap:.",
+            "fix": {
+              "url": "https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap",
+              "label": "Crear un sitemap"
+            },
+            "impact": 0
+          },
+          {
+            "id": "crawl-canonical",
+            "label": "Canonical declarado",
+            "category": "crawl",
+            "weight": 1,
+            "status": "warn",
+            "value": null,
+            "evidence": "Evita duplicados por parámetros y variantes de URL.",
+            "advice": "Añade <link rel=\"canonical\"> apuntando a la URL definitiva de cada página.",
+            "fix": {
+              "url": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls",
+              "label": "Declarar canonical"
+            },
+            "impact": 0
+          },
+          {
+            "id": "crawl-meta-description",
+            "label": "Meta description presente",
+            "category": "crawl",
+            "weight": 1,
+            "status": "pass",
+            "value": "146 caracteres",
+            "evidence": "No es requisito de AdSense, pero define cómo aparece el sitio en Google y su CTR orgánico.",
+            "advice": "Escribe descripciones de 120-155 caracteres por página.",
+            "fix": {
+              "url": "https://developers.google.com/search/docs/appearance/snippet",
+              "label": "Escribir meta descripciones"
+            },
+            "impact": 0
+          },
+          {
+            "id": "crawl-lang",
+            "label": "Idioma declarado en el HTML",
+            "category": "crawl",
+            "weight": 1,
+            "status": "pass",
+            "value": "es",
+            "evidence": "Ayuda a Google a segmentar el contenido y a servir anuncios en el idioma correcto.",
+            "advice": "Añade el atributo lang en <html>, por ejemplo lang=\"es\".",
+            "fix": {
+              "url": "https://www.w3.org/International/questions/qa-html-language-declarations",
+              "label": "Declarar el idioma del HTML"
+            },
+            "impact": 0
+          },
+          {
+            "id": "crawl-favicon",
+            "label": "Favicon",
+            "category": "crawl",
+            "weight": 1,
+            "status": "pass",
+            "value": "present",
+            "evidence": "Detalle de acabado: refuerza la percepción de sitio cuidado.",
+            "advice": "Añade un favicon enlazado desde el <head>.",
+            "fix": {
+              "url": "https://developers.google.com/search/docs/appearance/favicon-in-search",
+              "label": "Añadir favicon"
+            },
+            "impact": 0
+          }
+        ]
+      },
+      {
+        "id": "performance",
+        "label": "Page experience",
+        "weight": 10,
+        "score": null,
+        "resolved": 0,
+        "signals": [
+          {
+            "id": "perf-score",
+            "label": "Puntuación de rendimiento (Lighthouse, móvil)",
+            "category": "performance",
+            "weight": 4,
+            "status": "unknown",
+            "value": null,
+            "evidence": "La velocidad afecta a la experiencia y, con ella, a la tasa de visualización de anuncios.",
+            "advice": "Optimiza imágenes, elimina JavaScript no usado y sirve en CDN.",
+            "fix": {
+              "url": "https://web.dev/articles/vitals",
+              "label": "Core Web Vitals"
+            },
+            "impact": 0
+          },
+          {
+            "id": "perf-lcp",
+            "label": "LCP dentro de objetivo (2,5 s)",
+            "category": "performance",
+            "weight": 3,
+            "status": "unknown",
+            "value": null,
+            "evidence": "El LCP mide cuándo aparece el contenido principal; es la métrica que más pesa en Core Web Vitals.",
+            "advice": "Prioriza la imagen de cabecera, precarga la fuente principal y reduce el trabajo del servidor.",
+            "fix": {
+              "url": "https://web.dev/articles/vitals",
+              "label": "Mejorar el LCP"
+            },
+            "impact": 0
+          },
+          {
+            "id": "perf-cls",
+            "label": "CLS dentro de objetivo (0,1)",
+            "category": "performance",
+            "weight": 2,
+            "status": "unknown",
+            "value": null,
+            "evidence": "Los saltos de diseño provocan clics accidentales en anuncios y bajan el rendimiento.",
+            "advice": "Reserva espacio (width/height o aspect-ratio) para imágenes, anuncios y fuentes.",
+            "fix": {
+              "url": "https://web.dev/articles/vitals",
+              "label": "Evitar saltos de diseño (CLS)"
+            },
+            "impact": 0
+          },
+          {
+            "id": "perf-tbt",
+            "label": "Bloqueo del hilo principal bajo control",
+            "category": "performance",
+            "weight": 2,
+            "status": "unknown",
+            "value": null,
+            "evidence": "Demasiado JavaScript bloquea la interacción y reduce impresiones visibles.",
+            "advice": "Divide el JavaScript, carga los scripts de terceros en diferido y revisa etiquetas antiguas.",
+            "fix": {
+              "url": "https://web.dev/articles/vitals",
+              "label": "Reducir el bloqueo del hilo principal"
+            },
+            "impact": 0
+          }
+        ]
+      }
+    ],
+    "gates": [
+      {
+        "id": "unreachable",
+        "label": "Sin contenido accesible",
+        "cap": 15,
+        "why": "No se obtuvo HTML con texto de la portada: no hay nada que Google pueda evaluar.",
+        "triggered": true,
+        "fix": {
+          "url": "https://developers.google.com/search/docs/crawling-indexing/http-network-errors",
+          "label": "Comprobar que el sitio responde"
+        }
+      },
+      {
+        "id": "parked",
+        "label": "Dominio aparcado o en construcción",
+        "cap": 15,
+        "why": "Las páginas de parking o \"coming soon\" se rechazan automáticamente.",
+        "triggered": false,
+        "fix": {
+          "url": "https://support.google.com/adsense/answer/48182",
+          "label": "Requisitos de contenido del programa"
+        }
+      },
+      {
+        "id": "severe-policy",
+        "label": "Infracción grave de políticas",
+        "cap": 20,
+        "why": "Contenido ilegal o sexual explícito: la solicitud se rechaza y puede afectar a la cuenta.",
+        "triggered": false,
+        "fix": {
+          "url": "https://support.google.com/adsense/answer/10502938",
+          "label": "Políticas para editores de Google"
+        }
+      },
+      {
+        "id": "mediapartners",
+        "label": "El rastreador de AdSense está bloqueado",
+        "cap": 40,
+        "why": "Si Mediapartners-Google no puede leer el sitio, la revisión no llega a producirse.",
+        "triggered": false,
+        "fix": {
+          "url": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers",
+          "label": "Permitir Mediapartners-Google"
+        }
+      },
+      {
+        "id": "thin",
+        "label": "Contenido insuficiente en la portada",
+        "cap": 65,
+        "why": "Menos de 300 palabras visibles: motivo típico de \"contenido de bajo valor\".",
+        "triggered": true,
+        "fix": {
+          "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+          "label": "Ampliar el contenido de la portada"
+        }
+      },
+      {
+        "id": "no-privacy",
+        "label": "Sin política de privacidad verificada",
+        "cap": 70,
+        "why": "AdSense exige informar del uso de cookies y publicidad personalizada.",
+        "triggered": false,
+        "fix": {
+          "url": "https://support.google.com/adsense/answer/13554116",
+          "label": "Añadir política de privacidad y consentimiento"
+        }
+      }
+    ],
+    "signals": [
+      {
+        "id": "content-reachable",
+        "label": "La página devuelve contenido legible",
+        "category": "content",
+        "weight": 3,
+        "status": "fail",
+        "value": "0 palabras",
+        "evidence": "HTML de 920 caracteres con 0 palabras visibles.",
+        "advice": "Comprueba que el dominio responde, no está aparcado y no bloquea a los rastreadores.",
+        "fix": {
+          "url": "https://developers.google.com/search/docs/crawling-indexing/http-network-errors",
+          "label": "Comprobar errores HTTP y de red"
+        },
+        "impact": 48.2
+      },
+      {
+        "id": "content-words",
+        "label": "Volumen de contenido en la portada",
+        "category": "content",
+        "weight": 8,
+        "status": "fail",
+        "value": "0 palabras",
+        "evidence": "Criterio: Google rechaza por \"contenido de bajo valor\" cuando no hay sustancia suficiente. 600+ palabras visibles en portada es la zona segura; por debajo de 300 el riesgo es alto.",
+        "advice": "Amplía la portada con contenido propio y útil. Si la portada es un índice, enlaza a artículos largos y añade una introducción real.",
+        "fix": {
+          "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+          "label": "Crear contenido útil y original"
+        },
+        "impact": 0
+      },
+      {
+        "id": "content-text-ratio",
+        "label": "Densidad de texto frente a código",
+        "category": "content",
+        "weight": 4,
+        "status": "fail",
+        "value": "0.0%",
+        "evidence": "Páginas construidas solo con scripts suelen ser webs vacías para el rastreador de AdSense.",
+        "advice": "Sirve el contenido en el HTML inicial (SSR o prerender) o reduce plantillas y scripts innecesarios.",
+        "fix": {
+          "url": "https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics",
+          "label": "Servir contenido en el HTML inicial"
+        },
+        "impact": 0
+      },
+      {
+        "id": "content-h1",
+        "label": "Encabezado principal único",
+        "category": "content",
+        "weight": 3,
+        "status": "fail",
+        "value": "0 H1",
+        "evidence": "Un H1 claro indica de qué trata la página; su ausencia es señal de plantilla vacía.",
+        "advice": "Deja exactamente un H1 por página con una frase descriptiva.",
+        "fix": {
+          "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+          "label": "Guía de estructura y encabezados"
+        },
+        "impact": 0
+      },
+      {
+        "id": "content-structure",
+        "label": "Estructura editorial",
+        "category": "content",
+        "weight": 3,
+        "status": "fail",
+        "value": "0 H2 · 0 párrafos",
+        "evidence": "Secciones y párrafos son la huella de un artículo real frente a una página de relleno.",
+        "advice": "Divide el contenido en secciones con H2 y párrafos de 3-5 frases.",
+        "fix": {
+          "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+          "label": "Guía de estructura de página"
+        },
+        "impact": 0
+      },
+      {
+        "id": "content-keyword-stuffing",
+        "label": "Sin repetición artificial de palabras clave",
+        "category": "content",
+        "weight": 4,
+        "status": "pass",
+        "value": "sin repetición anómala",
+        "evidence": "La repetición forzada entra en \"contenido engañoso\" y degrada la calidad percibida.",
+        "advice": "Escribe con sinónimos y variantes naturales; revisa el término más repetido.",
+        "fix": {
+          "url": "https://developers.google.com/search/docs/essentials/spam-policies",
+          "label": "Evitar el relleno de palabras clave"
+        },
+        "impact": 0
+      },
+      {
+        "id": "content-authoring",
+        "label": "Autoría y fecha visibles",
+        "category": "content",
+        "weight": 3,
+        "status": "warn",
+        "value": "Schema: ninguno",
+        "evidence": "E-E-A-T: quién escribe y cuándo se actualizó el contenido. Google lo valora al revisar sitios.",
+        "advice": "Añade autor con página de perfil y fecha de publicación/actualización. Marca el artículo con schema Article.",
+        "fix": {
+          "url": "https://developers.google.com/search/docs/appearance/structured-data/article",
+          "label": "Marcar autoría con datos estructurados"
+        },
+        "impact": 0
+      },
+      {
+        "id": "content-readability",
+        "label": "Frases de longitud legible",
+        "category": "content",
+        "weight": 2,
+        "status": "unknown",
+        "value": null,
+        "evidence": "Frases de 8 a 30 palabras se leen bien en móvil, donde está la mayoría del tráfico.",
+        "advice": "Acorta las frases largas y separa ideas en párrafos.",
+        "fix": {
+          "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+          "label": "Escribir para personas"
+        },
+        "impact": 0
+      },
+      {
+        "id": "content-thin-pages",
+        "label": "Las páginas internas no son finas",
+        "category": "content",
+        "weight": 5,
+        "status": "unknown",
+        "value": null,
+        "evidence": "Una web con muchas páginas de 50 palabras se rechaza por contenido de bajo valor aunque la portada esté bien.",
+        "advice": "Amplía o elimina las páginas con menos de 250 palabras. La cantidad no sustituye a la profundidad.",
+        "fix": {
+          "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+          "label": "Ampliar o retirar páginas finas"
+        },
+        "impact": 0
+      },
+      {
+        "id": "content-duplicates",
+        "label": "Sin páginas duplicadas entre sí",
+        "category": "content",
+        "weight": 5,
+        "status": "unknown",
+        "value": null,
+        "evidence": "El contenido duplicado o \"spinning\" es una de las causas frecuentes de rechazo.",
+        "advice": "Reescribe o consolida las páginas que repiten el mismo texto. Usa canonical solo para variantes legítimas.",
+        "fix": {
+          "url": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls",
+          "label": "Consolidar contenido duplicado"
+        },
+        "impact": 0
+      },
+      {
+        "id": "policy-adult",
+        "label": "Contenido sexual",
+        "category": "policy",
+        "weight": 5,
+        "status": "unknown",
+        "value": null,
+        "evidence": "Sin texto suficiente para evaluar esta política.",
+        "advice": "Revisa manualmente la política \"Sexual content\" antes de solicitar AdSense.",
+        "fix": {
+          "url": "https://support.google.com/adsense/answer/10502938",
+          "label": "Políticas para editores de Google"
+        },
+        "impact": 0
+      },
+      {
+        "id": "policy-violence",
+        "label": "Violencia y contenido peligroso",
+        "category": "policy",
+        "weight": 3,
+        "status": "unknown",
+        "value": null,
+        "evidence": "Sin texto suficiente para evaluar esta política.",
+        "advice": "Revisa manualmente la política \"Dangerous or derogatory content\" antes de solicitar AdSense.",
+        "fix": {
+          "url": "https://support.google.com/adsense/answer/10502938",
+          "label": "Políticas para editores de Google"
+        },
+        "impact": 0
+      },
+      {
+        "id": "policy-weapons",
+        "label": "Armas y explosivos",
+        "category": "policy",
+        "weight": 3,
+        "status": "unknown",
+        "value": null,
+        "evidence": "Sin texto suficiente para evaluar esta política.",
+        "advice": "Revisa manualmente la política \"Dangerous products or services (weapons)\" antes de solicitar AdSense.",
+        "fix": {
+          "url": "https://support.google.com/adsense/answer/10502938",
+          "label": "Políticas para editores de Google"
+        },
+        "impact": 0
+      },
+      {
+        "id": "policy-drugs",
+        "label": "Drogas y sustancias",
+        "category": "policy",
+        "weight": 3,
+        "status": "unknown",
+        "value": null,
+        "evidence": "Sin texto suficiente para evaluar esta política.",
+        "advice": "Revisa manualmente la política \"Recreational drugs / Drug paraphernalia\" antes de solicitar AdSense.",
+        "fix": {
+          "url": "https://support.google.com/adsense/answer/10502938",
+          "label": "Políticas para editores de Google"
+        },
+        "impact": 0
+      },
+      {
+        "id": "policy-gambling",
+        "label": "Apuestas y juegos de azar",
+        "category": "policy",
+        "weight": 3,
+        "status": "unknown",
+        "value": null,
+        "evidence": "Sin texto suficiente para evaluar esta política.",
+        "advice": "Revisa manualmente la política \"Gambling and games\" antes de solicitar AdSense.",
+        "fix": {
+          "url": "https://support.google.com/adsense/answer/10502938",
+          "label": "Políticas para editores de Google"
+        },
+        "impact": 0
+      },
+      {
+        "id": "policy-pharma",
+        "label": "Farmacia y suplementos",
+        "category": "policy",
+        "weight": 3,
+        "status": "unknown",
+        "value": null,
+        "evidence": "Sin texto suficiente para evaluar esta política.",
+        "advice": "Revisa manualmente la política \"Healthcare and medicines (prescription drugs)\" antes de solicitar AdSense.",
+        "fix": {
+          "url": "https://support.google.com/adsense/answer/10502938",
+          "label": "Políticas para editores de Google"
+        },
+        "impact": 0
+      },
+      {
+        "id": "policy-dishonest",
+        "label": "Conducta deshonesta y piratería",
+        "category": "policy",
+        "weight": 3,
+        "status": "unknown",
+        "value": null,
+        "evidence": "Sin texto suficiente para evaluar esta política.",
+        "advice": "Revisa manualmente la política \"Enabling dishonest behavior\" antes de solicitar AdSense.",
+        "fix": {
+          "url": "https://support.google.com/adsense/answer/10502938",
+          "label": "Políticas para editores de Google"
+        },
+        "impact": 0
+      },
+      {
+        "id": "policy-misrepresentative",
+        "label": "Contenido engañoso o clickbait",
+        "category": "policy",
+        "weight": 3,
+        "status": "unknown",
+        "value": null,
+        "evidence": "Sin texto suficiente para evaluar esta política.",
+        "advice": "Revisa manualmente la política \"Misrepresentative content\" antes de solicitar AdSense.",
+        "fix": {
+          "url": "https://support.google.com/adsense/answer/10502938",
+          "label": "Políticas para editores de Google"
+        },
+        "impact": 0
+      },
+      {
+        "id": "policy-illegal",
+        "label": "Contenido ilegal",
+        "category": "policy",
+        "weight": 5,
+        "status": "unknown",
+        "value": null,
+        "evidence": "Sin texto suficiente para evaluar esta política.",
+        "advice": "Revisa manualmente la política \"Illegal content\" antes de solicitar AdSense.",
+        "fix": {
+          "url": "https://support.google.com/adsense/answer/10502938",
+          "label": "Políticas para editores de Google"
+        },
+        "impact": 0
+      },
+      {
+        "id": "policy-intellectual-property",
+        "label": "Propiedad intelectual",
+        "category": "policy",
+        "weight": 3,
+        "status": "unknown",
+        "value": null,
+        "evidence": "Sin texto suficiente para evaluar esta política.",
+        "advice": "Revisa manualmente la política \"Intellectual property abuse\" antes de solicitar AdSense.",
+        "fix": {
+          "url": "https://support.google.com/adsense/answer/10502938",
+          "label": "Políticas para editores de Google"
+        },
+        "impact": 0
+      },
+      {
+        "id": "policy-language",
+        "label": "Idioma soportado por AdSense",
+        "category": "policy",
+        "weight": 2,
+        "status": "pass",
+        "value": "es (declarado)",
+        "evidence": "AdSense no sirve anuncios en idiomas no soportados; publicar en uno de ellos impide monetizar.",
+        "advice": "Publica en un idioma soportado o añade una versión en un idioma con demanda publicitaria.",
+        "fix": {
+          "url": "https://support.google.com/adsense/answer/48182",
+          "label": "Políticas del programa AdSense"
+        },
+        "impact": 0
+      },
+      {
+        "id": "policy-parked",
+        "label": "El dominio no está aparcado ni en construcción",
+        "category": "policy",
+        "weight": 5,
+        "status": "pass",
+        "value": "sin señales",
+        "evidence": "Dominios aparcados o \"en construcción\" se rechazan de forma automática.",
+        "advice": "Publica el sitio real antes de solicitar. Si es un proyecto en curso, espera a tener contenido completo.",
+        "fix": {
+          "url": "https://support.google.com/adsense/answer/48182",
+          "label": "Políticas del programa AdSense"
+        },
+        "impact": 0
+      },
+      {
+        "id": "policy-ad-density",
+        "label": "Anuncios proporcionados al contenido",
+        "category": "policy",
+        "weight": 3,
+        "status": "pass",
+        "value": "sin código de anuncios · 0 palabras",
+        "evidence": "Anuncios sobre páginas sin contenido (\"ads on screens without publisher content\") es motivo de suspensión, no solo de rechazo.",
+        "advice": "Retira los bloques de anuncios de páginas vacías, de error o de agradecimiento.",
+        "fix": {
+          "url": "https://support.google.com/adsense/answer/1348737",
+          "label": "Políticas de emplazamiento de anuncios"
+        },
+        "impact": 0
+      },
+      {
+        "id": "essential-privacy",
+        "label": "Política de privacidad publicada",
+        "category": "essential",
+        "weight": 7,
+        "status": "unknown",
+        "value": "no verificable",
+        "evidence": "La comprobación no terminó por errores de red: no se puede afirmar que falte.",
+        "advice": "Es requisito de las políticas de AdSense: una política de privacidad que informe del uso de cookies y de la publicidad personalizada.",
+        "fix": {
+          "url": "https://support.google.com/adsense/answer/13554116",
+          "label": "Privacidad, cookies y consentimiento"
+        },
+        "impact": 0
+      },
+      {
+        "id": "essential-terms",
+        "label": "Términos y aviso legal",
+        "category": "essential",
+        "weight": 3,
+        "status": "unknown",
+        "value": "no verificable",
+        "evidence": "La comprobación no terminó por errores de red: no se puede afirmar que falte.",
+        "advice": "Refuerza la confianza del revisor: quién está detrás del sitio y cómo contactar.",
+        "fix": {
+          "url": "https://support.google.com/adsense/answer/48182",
+          "label": "Políticas del programa AdSense"
+        },
+        "impact": 0
+      },
+      {
+        "id": "essential-about",
+        "label": "Página \"sobre el sitio\" o autor",
+        "category": "essential",
+        "weight": 3,
+        "status": "unknown",
+        "value": "no verificable",
+        "evidence": "La comprobación no terminó por errores de red: no se puede afirmar que falte.",
+        "advice": "Refuerza la confianza del revisor: quién está detrás del sitio y cómo contactar.",
+        "fix": {
+          "url": "https://support.google.com/adsense/answer/48182",
+          "label": "Políticas del programa AdSense"
+        },
+        "impact": 0
+      },
+      {
+        "id": "essential-contact",
+        "label": "Página de contacto operativa",
+        "category": "essential",
+        "weight": 2,
+        "status": "unknown",
+        "value": "no verificable",
+        "evidence": "La comprobación no terminó por errores de red: no se puede afirmar que falte.",
+        "advice": "Refuerza la confianza del revisor: quién está detrás del sitio y cómo contactar.",
+        "fix": {
+          "url": "https://support.google.com/adsense/answer/48182",
+          "label": "Políticas del programa AdSense"
+        },
+        "impact": 0
+      },
+      {
+        "id": "monetization-domain",
+        "label": "Dominio verificable para AdSense",
+        "category": "essential",
+        "weight": 0,
+        "status": "warn",
+        "value": "cha0smagick.github.io/adsense-potential-money-web",
+        "evidence": "Subdominio de plataforma (github-pages): el dominio raíz no es tuyo y AdSense no puede verificar la propiedad a nivel de sitio.",
+        "advice": "Publica el sitio en un dominio propio (o en Blogger) antes de solicitar AdSense. La auditoría de contenido sigue siendo válida.",
+        "fix": {
+          "url": "https://support.google.com/adsense/answer/48182",
+          "label": "Políticas del programa AdSense"
+        },
+        "impact": 0
+      },
+      {
+        "id": "ux-nav",
+        "label": "Navegación interna suficiente",
+        "category": "ux",
+        "weight": 4,
+        "status": "fail",
+        "value": "0 enlaces internos",
+        "evidence": "Un sitio de una sola página sin enlaces internos se percibe como thin content.",
+        "advice": "Añade un menú con las secciones principales y enlaza cada artículo desde índices o relacionados.",
+        "fix": {
+          "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+          "label": "Navegación clara"
+        },
+        "impact": 0
+      },
+      {
+        "id": "ux-interstitials",
+        "label": "Sin capas que tapen el contenido",
+        "category": "ux",
+        "weight": 3,
+        "status": "pass",
+        "value": "0 capas fijas detectadas",
+        "evidence": "Los intersticiales que bloquean el contenido en móvil incumplen los estándares de experiencia publicitaria.",
+        "advice": "Comprueba manualmente en móvil: si al entrar aparece una capa a pantalla completa, elimínala o hazla descartable al instante.",
+        "fix": {
+          "url": "https://www.betterads.org/standards/",
+          "label": "Estándares Better Ads"
+        },
+        "impact": 0
+      },
+      {
+        "id": "ux-mobile",
+        "label": "Adaptado a móvil",
+        "category": "ux",
+        "weight": 4,
+        "status": "pass",
+        "value": "viewport declarado",
+        "evidence": "La mayoría del tráfico y de los ingresos viene de móvil; sin viewport el sitio no es usable ahí.",
+        "advice": "Añade <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> y revisa el diseño en pantalla pequeña.",
+        "fix": {
+          "url": "https://web.dev/articles/responsive-web-design-basics",
+          "label": "Diseño adaptable a móvil"
+        },
+        "impact": 0
+      },
+      {
+        "id": "ux-broken-links",
+        "label": "Sin enlaces rotos en la muestra",
+        "category": "ux",
+        "weight": 3,
+        "status": "unknown",
+        "value": null,
+        "evidence": "Los enlaces roto degradan la experiencia y son señal de abandono.",
+        "advice": "Corrige o elimina los enlaces que devuelven 404/410.",
+        "fix": {
+          "url": "https://developers.google.com/search/docs/crawling-indexing/http-network-errors",
+          "label": "Corregir enlaces roto"
+        },
+        "impact": 0
+      },
+      {
+        "id": "crawl-https",
+        "label": "HTTPS activo",
+        "category": "crawl",
+        "weight": 3,
+        "status": "pass",
+        "value": "https",
+        "evidence": "Sin HTTPS el navegador marca el sitio como no seguro y muchos anunciantes no pujan.",
+        "advice": "Instala un certificado (Let's Encrypt o el del hosting) y redirige todo el tráfico http a https.",
+        "fix": {
+          "url": "https://web.dev/articles/why-https-matters",
+          "label": "Por qué HTTPS importa"
+        },
+        "impact": 0
+      },
+      {
+        "id": "crawl-mediapartners",
+        "label": "El rastreador de AdSense puede entrar",
+        "category": "crawl",
+        "weight": 5,
+        "status": "pass",
+        "value": "sin robots.txt (se permite todo)",
+        "evidence": "Si robots.txt bloquea a Mediapartners-Google, Google no puede evaluar el contenido y el sitio se rechaza. Un error 5xx o 429 en robots.txt no demuestra permiso: se marca sin datos.",
+        "advice": "Elimina el bloqueo para Mediapartners-Google y AdsBot-Google en robots.txt, y asegúrate de que robots.txt responde 200.",
+        "fix": {
+          "url": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers",
+          "label": "Rastreadores de Google y robots.txt"
+        },
+        "impact": 0
+      },
+      {
+        "id": "crawl-adsbot",
+        "label": "El rastreador de anuncios (AdsBot) puede entrar",
+        "category": "crawl",
+        "weight": 2,
+        "status": "pass",
+        "value": "sin robots.txt (se permite todo)",
+        "evidence": "AdsBot comprueba la calidad de las páginas donde se muestran anuncios.",
+        "advice": "Permite AdsBot-Google en robots.txt.",
+        "fix": {
+          "url": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers",
+          "label": "Rastreadores de Google y robots.txt"
+        },
+        "impact": 0
+      },
+      {
+        "id": "crawl-noindex",
+        "label": "La portada es indexable",
+        "category": "crawl",
+        "weight": 4,
+        "status": "pass",
+        "value": "indexable",
+        "evidence": "Una portada con noindex (en meta o en la cabecera X-Robots-Tag) es invisible para Google: no habrá tráfico ni evaluación positiva.",
+        "advice": "Elimina <meta name=\"robots\" content=\"noindex\"> y la cabecera X-Robots-Tag: noindex de la portada.",
+        "fix": {
+          "url": "https://developers.google.com/search/docs/crawling-indexing/block-indexing",
+          "label": "Quitar noindex"
+        },
+        "impact": 0
+      },
+      {
+        "id": "crawl-sitemap",
+        "label": "Sitemap XML localizable",
+        "category": "crawl",
+        "weight": 2,
+        "status": "fail",
+        "value": "no encontrado",
+        "evidence": "El sitemap es la forma en que Google descubre todas las páginas que debe evaluar.",
+        "advice": "Genera sitemap.xml y decláralo en robots.txt con la línea Sitemap:.",
+        "fix": {
+          "url": "https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap",
+          "label": "Crear un sitemap"
+        },
+        "impact": 0
+      },
+      {
+        "id": "crawl-canonical",
+        "label": "Canonical declarado",
+        "category": "crawl",
+        "weight": 1,
+        "status": "warn",
+        "value": null,
+        "evidence": "Evita duplicados por parámetros y variantes de URL.",
+        "advice": "Añade <link rel=\"canonical\"> apuntando a la URL definitiva de cada página.",
+        "fix": {
+          "url": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls",
+          "label": "Declarar canonical"
+        },
+        "impact": 0
+      },
+      {
+        "id": "crawl-meta-description",
+        "label": "Meta description presente",
+        "category": "crawl",
+        "weight": 1,
+        "status": "pass",
+        "value": "146 caracteres",
+        "evidence": "No es requisito de AdSense, pero define cómo aparece el sitio en Google y su CTR orgánico.",
+        "advice": "Escribe descripciones de 120-155 caracteres por página.",
+        "fix": {
+          "url": "https://developers.google.com/search/docs/appearance/snippet",
+          "label": "Escribir meta descripciones"
+        },
+        "impact": 0
+      },
+      {
+        "id": "crawl-lang",
+        "label": "Idioma declarado en el HTML",
+        "category": "crawl",
+        "weight": 1,
+        "status": "pass",
+        "value": "es",
+        "evidence": "Ayuda a Google a segmentar el contenido y a servir anuncios en el idioma correcto.",
+        "advice": "Añade el atributo lang en <html>, por ejemplo lang=\"es\".",
+        "fix": {
+          "url": "https://www.w3.org/International/questions/qa-html-language-declarations",
+          "label": "Declarar el idioma del HTML"
+        },
+        "impact": 0
+      },
+      {
+        "id": "crawl-favicon",
+        "label": "Favicon",
+        "category": "crawl",
+        "weight": 1,
+        "status": "pass",
+        "value": "present",
+        "evidence": "Detalle de acabado: refuerza la percepción de sitio cuidado.",
+        "advice": "Añade un favicon enlazado desde el <head>.",
+        "fix": {
+          "url": "https://developers.google.com/search/docs/appearance/favicon-in-search",
+          "label": "Añadir favicon"
+        },
+        "impact": 0
+      },
+      {
+        "id": "perf-score",
+        "label": "Puntuación de rendimiento (Lighthouse, móvil)",
+        "category": "performance",
+        "weight": 4,
+        "status": "unknown",
+        "value": null,
+        "evidence": "La velocidad afecta a la experiencia y, con ella, a la tasa de visualización de anuncios.",
+        "advice": "Optimiza imágenes, elimina JavaScript no usado y sirve en CDN.",
+        "fix": {
+          "url": "https://web.dev/articles/vitals",
+          "label": "Core Web Vitals"
+        },
+        "impact": 0
+      },
+      {
+        "id": "perf-lcp",
+        "label": "LCP dentro de objetivo (2,5 s)",
+        "category": "performance",
+        "weight": 3,
+        "status": "unknown",
+        "value": null,
+        "evidence": "El LCP mide cuándo aparece el contenido principal; es la métrica que más pesa en Core Web Vitals.",
+        "advice": "Prioriza la imagen de cabecera, precarga la fuente principal y reduce el trabajo del servidor.",
+        "fix": {
+          "url": "https://web.dev/articles/vitals",
+          "label": "Mejorar el LCP"
+        },
+        "impact": 0
+      },
+      {
+        "id": "perf-cls",
+        "label": "CLS dentro de objetivo (0,1)",
+        "category": "performance",
+        "weight": 2,
+        "status": "unknown",
+        "value": null,
+        "evidence": "Los saltos de diseño provocan clics accidentales en anuncios y bajan el rendimiento.",
+        "advice": "Reserva espacio (width/height o aspect-ratio) para imágenes, anuncios y fuentes.",
+        "fix": {
+          "url": "https://web.dev/articles/vitals",
+          "label": "Evitar saltos de diseño (CLS)"
+        },
+        "impact": 0
+      },
+      {
+        "id": "perf-tbt",
+        "label": "Bloqueo del hilo principal bajo control",
+        "category": "performance",
+        "weight": 2,
+        "status": "unknown",
+        "value": null,
+        "evidence": "Demasiado JavaScript bloquea la interacción y reduce impresiones visibles.",
+        "advice": "Divide el JavaScript, carga los scripts de terceros en diferido y revisa etiquetas antiguas.",
+        "fix": {
+          "url": "https://web.dev/articles/vitals",
+          "label": "Reducir el bloqueo del hilo principal"
+        },
+        "impact": 0
+      }
+    ],
+    "unknowns": [
+      "Frases de longitud legible",
+      "Las páginas internas no son finas",
+      "Sin páginas duplicadas entre sí",
+      "Contenido sexual",
+      "Violencia y contenido peligroso",
+      "Armas y explosivos",
+      "Drogas y sustancias",
+      "Apuestas y juegos de azar",
+      "Farmacia y suplementos",
+      "Conducta deshonesta y piratería",
+      "Contenido engañoso o clickbait",
+      "Contenido ilegal",
+      "Propiedad intelectual",
+      "Política de privacidad publicada",
+      "Términos y aviso legal",
+      "Página \"sobre el sitio\" o autor",
+      "Página de contacto operativa",
+      "Sin enlaces rotos en la muestra",
+      "Puntuación de rendimiento (Lighthouse, móvil)",
+      "LCP dentro de objetivo (2,5 s)",
+      "CLS dentro de objetivo (0,1)",
+      "Bloqueo del hilo principal bajo control"
+    ]
+  },
+  "blocked": true,
+  "facts": {
+    "host": "cha0smagick.github.io",
+    "subject": "cha0smagick.github.io/adsense-potential-money-web",
+    "ownership": "platform",
+    "canMonetize": false,
+    "https": true,
+    "platform": "github-pages",
+    "title": "Auditor AdSense — puntuación, bloqueadores y proyección de ingresos",
+    "lang": "es",
+    "words": 0,
+    "paragraphs": 0,
+    "internalLinks": 0,
+    "images": 0,
+    "imagesWithoutAlt": 0,
+    "scripts": 1,
+    "wordsPerPage": 0,
+    "sitemapUrls": 0,
+    "sitemapPages": 0,
+    "sampleSeed": 3590050630,
+    "sampledUrls": null,
+    "niche": "General / blog personal",
+    "adsTxt": false,
+    "adsCodeDetected": false,
+    "pubId": null,
+    "requests": 12,
+    "expectedMonthly": 22.4,
+    "gapMonthly": 22.4,
+    "approvalBase": 2
+  },
+  "monetization": {
+    "rpm": {
+      "low": 1.6,
+      "base": 3.2,
+      "high": 4.81
+    },
+    "ctr": 0.0159,
+    "pageviewsMonth": 7000,
+    "impressionsMonth": 21000,
+    "clicksMonth": 334,
+    "impliedCpc": 0.07,
+    "scenarios": [
+      {
+        "id": "pessimistic",
+        "label": "Pesimista",
+        "points": [
+          {
+            "month": 1,
+            "sessions": 5428,
+            "revenue": 20
+          },
+          {
+            "month": 2,
+            "sessions": 5872,
+            "revenue": 21
+          },
+          {
+            "month": 3,
+            "sessions": 6328,
+            "revenue": 23
+          },
+          {
+            "month": 4,
+            "sessions": 6793,
+            "revenue": 25
+          },
+          {
+            "month": 5,
+            "sessions": 7263,
+            "revenue": 26
+          },
+          {
+            "month": 6,
+            "sessions": 7736,
+            "revenue": 28
+          },
+          {
+            "month": 7,
+            "sessions": 8206,
+            "revenue": 30
+          },
+          {
+            "month": 8,
+            "sessions": 8671,
+            "revenue": 32
+          },
+          {
+            "month": 9,
+            "sessions": 9127,
+            "revenue": 33
+          },
+          {
+            "month": 10,
+            "sessions": 9571,
+            "revenue": 35
+          },
+          {
+            "month": 11,
+            "sessions": 9999,
+            "revenue": 37
+          },
+          {
+            "month": 12,
+            "sessions": 10410,
+            "revenue": 38
+          },
+          {
+            "month": 13,
+            "sessions": 10801,
+            "revenue": 40
+          },
+          {
+            "month": 14,
+            "sessions": 11171,
+            "revenue": 41
+          },
+          {
+            "month": 15,
+            "sessions": 11519,
+            "revenue": 43
+          },
+          {
+            "month": 16,
+            "sessions": 11845,
+            "revenue": 44
+          },
+          {
+            "month": 17,
+            "sessions": 12147,
+            "revenue": 45
+          },
+          {
+            "month": 18,
+            "sessions": 12427,
+            "revenue": 47
+          },
+          {
+            "month": 19,
+            "sessions": 12685,
+            "revenue": 48
+          },
+          {
+            "month": 20,
+            "sessions": 12921,
+            "revenue": 49
+          },
+          {
+            "month": 21,
+            "sessions": 13136,
+            "revenue": 50
+          },
+          {
+            "month": 22,
+            "sessions": 13332,
+            "revenue": 51
+          },
+          {
+            "month": 23,
+            "sessions": 13510,
+            "revenue": 51
+          },
+          {
+            "month": 24,
+            "sessions": 13671,
+            "revenue": 52
+          },
+          {
+            "month": 25,
+            "sessions": 13816,
+            "revenue": 53
+          },
+          {
+            "month": 26,
+            "sessions": 13946,
+            "revenue": 53
+          },
+          {
+            "month": 27,
+            "sessions": 14063,
+            "revenue": 54
+          },
+          {
+            "month": 28,
+            "sessions": 14168,
+            "revenue": 54
+          },
+          {
+            "month": 29,
+            "sessions": 14262,
+            "revenue": 55
+          },
+          {
+            "month": 30,
+            "sessions": 14345,
+            "revenue": 55
+          },
+          {
+            "month": 31,
+            "sessions": 14420,
+            "revenue": 56
+          },
+          {
+            "month": 32,
+            "sessions": 14486,
+            "revenue": 56
+          },
+          {
+            "month": 33,
+            "sessions": 14545,
+            "revenue": 57
+          },
+          {
+            "month": 34,
+            "sessions": 14597,
+            "revenue": 57
+          },
+          {
+            "month": 35,
+            "sessions": 14644,
+            "revenue": 57
+          },
+          {
+            "month": 36,
+            "sessions": 14685,
+            "revenue": 58
+          },
+          {
+            "month": 37,
+            "sessions": 14722,
+            "revenue": 58
+          },
+          {
+            "month": 38,
+            "sessions": 14754,
+            "revenue": 58
+          },
+          {
+            "month": 39,
+            "sessions": 14783,
+            "revenue": 58
+          },
+          {
+            "month": 40,
+            "sessions": 14808,
+            "revenue": 59
+          },
+          {
+            "month": 41,
+            "sessions": 14831,
+            "revenue": 59
+          },
+          {
+            "month": 42,
+            "sessions": 14851,
+            "revenue": 59
+          },
+          {
+            "month": 43,
+            "sessions": 14868,
+            "revenue": 59
+          },
+          {
+            "month": 44,
+            "sessions": 14884,
+            "revenue": 60
+          },
+          {
+            "month": 45,
+            "sessions": 14897,
+            "revenue": 60
+          },
+          {
+            "month": 46,
+            "sessions": 14909,
+            "revenue": 60
+          },
+          {
+            "month": 47,
+            "sessions": 14920,
+            "revenue": 60
+          },
+          {
+            "month": 48,
+            "sessions": 14929,
+            "revenue": 60
+          },
+          {
+            "month": 49,
+            "sessions": 14938,
+            "revenue": 60
+          },
+          {
+            "month": 50,
+            "sessions": 14945,
+            "revenue": 61
+          },
+          {
+            "month": 51,
+            "sessions": 14952,
+            "revenue": 61
+          },
+          {
+            "month": 52,
+            "sessions": 14957,
+            "revenue": 61
+          },
+          {
+            "month": 53,
+            "sessions": 14962,
+            "revenue": 61
+          },
+          {
+            "month": 54,
+            "sessions": 14967,
+            "revenue": 61
+          },
+          {
+            "month": 55,
+            "sessions": 14971,
+            "revenue": 62
+          },
+          {
+            "month": 56,
+            "sessions": 14974,
+            "revenue": 62
+          },
+          {
+            "month": 57,
+            "sessions": 14977,
+            "revenue": 62
+          },
+          {
+            "month": 58,
+            "sessions": 14980,
+            "revenue": 62
+          },
+          {
+            "month": 59,
+            "sessions": 14982,
+            "revenue": 62
+          },
+          {
+            "month": 60,
+            "sessions": 14984,
+            "revenue": 62
+          }
+        ]
+      },
+      {
+        "id": "base",
+        "label": "Base",
+        "points": [
+          {
+            "month": 1,
+            "sessions": 5796,
+            "revenue": 26
+          },
+          {
+            "month": 2,
+            "sessions": 6684,
+            "revenue": 30
+          },
+          {
+            "month": 3,
+            "sessions": 7665,
+            "revenue": 35
+          },
+          {
+            "month": 4,
+            "sessions": 8737,
+            "revenue": 40
+          },
+          {
+            "month": 5,
+            "sessions": 9892,
+            "revenue": 45
+          },
+          {
+            "month": 6,
+            "sessions": 11119,
+            "revenue": 51
+          },
+          {
+            "month": 7,
+            "sessions": 12406,
+            "revenue": 57
+          },
+          {
+            "month": 8,
+            "sessions": 13732,
+            "revenue": 63
+          },
+          {
+            "month": 9,
+            "sessions": 15079,
+            "revenue": 69
+          },
+          {
+            "month": 10,
+            "sessions": 16425,
+            "revenue": 76
+          },
+          {
+            "month": 11,
+            "sessions": 17748,
+            "revenue": 82
+          },
+          {
+            "month": 12,
+            "sessions": 19028,
+            "revenue": 88
+          },
+          {
+            "month": 13,
+            "sessions": 20248,
+            "revenue": 94
+          },
+          {
+            "month": 14,
+            "sessions": 21393,
+            "revenue": 99
+          },
+          {
+            "month": 15,
+            "sessions": 22455,
+            "revenue": 105
+          },
+          {
+            "month": 16,
+            "sessions": 23425,
+            "revenue": 109
+          },
+          {
+            "month": 17,
+            "sessions": 24303,
+            "revenue": 114
+          },
+          {
+            "month": 18,
+            "sessions": 25087,
+            "revenue": 118
+          },
+          {
+            "month": 19,
+            "sessions": 25783,
+            "revenue": 121
+          },
+          {
+            "month": 20,
+            "sessions": 26394,
+            "revenue": 124
+          },
+          {
+            "month": 21,
+            "sessions": 26927,
+            "revenue": 127
+          },
+          {
+            "month": 22,
+            "sessions": 27389,
+            "revenue": 130
+          },
+          {
+            "month": 23,
+            "sessions": 27788,
+            "revenue": 132
+          },
+          {
+            "month": 24,
+            "sessions": 28129,
+            "revenue": 134
+          },
+          {
+            "month": 25,
+            "sessions": 28421,
+            "revenue": 136
+          },
+          {
+            "month": 26,
+            "sessions": 28670,
+            "revenue": 137
+          },
+          {
+            "month": 27,
+            "sessions": 28881,
+            "revenue": 138
+          },
+          {
+            "month": 28,
+            "sessions": 29059,
+            "revenue": 140
+          },
+          {
+            "month": 29,
+            "sessions": 29210,
+            "revenue": 141
+          },
+          {
+            "month": 30,
+            "sessions": 29337,
+            "revenue": 142
+          },
+          {
+            "month": 31,
+            "sessions": 29445,
+            "revenue": 143
+          },
+          {
+            "month": 32,
+            "sessions": 29535,
+            "revenue": 143
+          },
+          {
+            "month": 33,
+            "sessions": 29610,
+            "revenue": 144
+          },
+          {
+            "month": 34,
+            "sessions": 29674,
+            "revenue": 145
+          },
+          {
+            "month": 35,
+            "sessions": 29727,
+            "revenue": 145
+          },
+          {
+            "month": 36,
+            "sessions": 29772,
+            "revenue": 146
+          },
+          {
+            "month": 37,
+            "sessions": 29809,
+            "revenue": 146
+          },
+          {
+            "month": 38,
+            "sessions": 29840,
+            "revenue": 147
+          },
+          {
+            "month": 39,
+            "sessions": 29867,
+            "revenue": 147
+          },
+          {
+            "month": 40,
+            "sessions": 29888,
+            "revenue": 148
+          },
+          {
+            "month": 41,
+            "sessions": 29907,
+            "revenue": 148
+          },
+          {
+            "month": 42,
+            "sessions": 29922,
+            "revenue": 149
+          },
+          {
+            "month": 43,
+            "sessions": 29935,
+            "revenue": 149
+          },
+          {
+            "month": 44,
+            "sessions": 29946,
+            "revenue": 150
+          },
+          {
+            "month": 45,
+            "sessions": 29955,
+            "revenue": 150
+          },
+          {
+            "month": 46,
+            "sessions": 29962,
+            "revenue": 151
+          },
+          {
+            "month": 47,
+            "sessions": 29968,
+            "revenue": 151
+          },
+          {
+            "month": 48,
+            "sessions": 29973,
+            "revenue": 151
+          },
+          {
+            "month": 49,
+            "sessions": 29978,
+            "revenue": 152
+          },
+          {
+            "month": 50,
+            "sessions": 29981,
+            "revenue": 152
+          },
+          {
+            "month": 51,
+            "sessions": 29985,
+            "revenue": 153
+          },
+          {
+            "month": 52,
+            "sessions": 29987,
+            "revenue": 153
+          },
+          {
+            "month": 53,
+            "sessions": 29989,
+            "revenue": 153
+          },
+          {
+            "month": 54,
+            "sessions": 29991,
+            "revenue": 154
+          },
+          {
+            "month": 55,
+            "sessions": 29992,
+            "revenue": 154
+          },
+          {
+            "month": 56,
+            "sessions": 29994,
+            "revenue": 154
+          },
+          {
+            "month": 57,
+            "sessions": 29995,
+            "revenue": 155
+          },
+          {
+            "month": 58,
+            "sessions": 29996,
+            "revenue": 155
+          },
+          {
+            "month": 59,
+            "sessions": 29996,
+            "revenue": 156
+          },
+          {
+            "month": 60,
+            "sessions": 29997,
+            "revenue": 156
+          }
+        ]
+      },
+      {
+        "id": "optimistic",
+        "label": "Optimista",
+        "points": [
+          {
+            "month": 1,
+            "sessions": 6101,
+            "revenue": 34
+          },
+          {
+            "month": 2,
+            "sessions": 7403,
+            "revenue": 42
+          },
+          {
+            "month": 3,
+            "sessions": 8924,
+            "revenue": 50
+          },
+          {
+            "month": 4,
+            "sessions": 10675,
+            "revenue": 60
+          },
+          {
+            "month": 5,
+            "sessions": 12658,
+            "revenue": 72
+          },
+          {
+            "month": 6,
+            "sessions": 14863,
+            "revenue": 85
+          },
+          {
+            "month": 7,
+            "sessions": 17265,
+            "revenue": 98
+          },
+          {
+            "month": 8,
+            "sessions": 19822,
+            "revenue": 113
+          },
+          {
+            "month": 9,
+            "sessions": 22481,
+            "revenue": 129
+          },
+          {
+            "month": 10,
+            "sessions": 25178,
+            "revenue": 145
+          },
+          {
+            "month": 11,
+            "sessions": 27845,
+            "revenue": 160
+          },
+          {
+            "month": 12,
+            "sessions": 30419,
+            "revenue": 176
+          },
+          {
+            "month": 13,
+            "sessions": 32843,
+            "revenue": 190
+          },
+          {
+            "month": 14,
+            "sessions": 35074,
+            "revenue": 204
+          },
+          {
+            "month": 15,
+            "sessions": 37086,
+            "revenue": 216
+          },
+          {
+            "month": 16,
+            "sessions": 38867,
+            "revenue": 227
+          },
+          {
+            "month": 17,
+            "sessions": 40416,
+            "revenue": 236
+          },
+          {
+            "month": 18,
+            "sessions": 41745,
+            "revenue": 245
+          },
+          {
+            "month": 19,
+            "sessions": 42871,
+            "revenue": 252
+          },
+          {
+            "month": 20,
+            "sessions": 43814,
+            "revenue": 258
+          },
+          {
+            "month": 21,
+            "sessions": 44598,
+            "revenue": 263
+          },
+          {
+            "month": 22,
+            "sessions": 45244,
+            "revenue": 268
+          },
+          {
+            "month": 23,
+            "sessions": 45773,
+            "revenue": 272
+          },
+          {
+            "month": 24,
+            "sessions": 46205,
+            "revenue": 275
+          },
+          {
+            "month": 25,
+            "sessions": 46556,
+            "revenue": 278
+          },
+          {
+            "month": 26,
+            "sessions": 46840,
+            "revenue": 280
+          },
+          {
+            "month": 27,
+            "sessions": 47069,
+            "revenue": 282
+          },
+          {
+            "month": 28,
+            "sessions": 47254,
+            "revenue": 284
+          },
+          {
+            "month": 29,
+            "sessions": 47402,
+            "revenue": 285
+          },
+          {
+            "month": 30,
+            "sessions": 47521,
+            "revenue": 287
+          },
+          {
+            "month": 31,
+            "sessions": 47617,
+            "revenue": 288
+          },
+          {
+            "month": 32,
+            "sessions": 47694,
+            "revenue": 289
+          },
+          {
+            "month": 33,
+            "sessions": 47755,
+            "revenue": 290
+          },
+          {
+            "month": 34,
+            "sessions": 47804,
+            "revenue": 291
+          },
+          {
+            "month": 35,
+            "sessions": 47844,
+            "revenue": 292
+          },
+          {
+            "month": 36,
+            "sessions": 47875,
+            "revenue": 293
+          },
+          {
+            "month": 37,
+            "sessions": 47900,
+            "revenue": 294
+          },
+          {
+            "month": 38,
+            "sessions": 47920,
+            "revenue": 295
+          },
+          {
+            "month": 39,
+            "sessions": 47936,
+            "revenue": 296
+          },
+          {
+            "month": 40,
+            "sessions": 47949,
+            "revenue": 297
+          },
+          {
+            "month": 41,
+            "sessions": 47959,
+            "revenue": 297
+          },
+          {
+            "month": 42,
+            "sessions": 47968,
+            "revenue": 298
+          },
+          {
+            "month": 43,
+            "sessions": 47974,
+            "revenue": 299
+          },
+          {
+            "month": 44,
+            "sessions": 47979,
+            "revenue": 300
+          },
+          {
+            "month": 45,
+            "sessions": 47983,
+            "revenue": 301
+          },
+          {
+            "month": 46,
+            "sessions": 47987,
+            "revenue": 301
+          },
+          {
+            "month": 47,
+            "sessions": 47989,
+            "revenue": 302
+          },
+          {
+            "month": 48,
+            "sessions": 47992,
+            "revenue": 303
+          },
+          {
+            "month": 49,
+            "sessions": 47993,
+            "revenue": 304
+          },
+          {
+            "month": 50,
+            "sessions": 47995,
+            "revenue": 304
+          },
+          {
+            "month": 51,
+            "sessions": 47996,
+            "revenue": 305
+          },
+          {
+            "month": 52,
+            "sessions": 47997,
+            "revenue": 306
+          },
+          {
+            "month": 53,
+            "sessions": 47997,
+            "revenue": 307
+          },
+          {
+            "month": 54,
+            "sessions": 47998,
+            "revenue": 307
+          },
+          {
+            "month": 55,
+            "sessions": 47998,
+            "revenue": 308
+          },
+          {
+            "month": 56,
+            "sessions": 47999,
+            "revenue": 309
+          },
+          {
+            "month": 57,
+            "sessions": 47999,
+            "revenue": 310
+          },
+          {
+            "month": 58,
+            "sessions": 47999,
+            "revenue": 310
+          },
+          {
+            "month": 59,
+            "sessions": 47999,
+            "revenue": 311
+          },
+          {
+            "month": 60,
+            "sessions": 47999,
+            "revenue": 312
+          }
+        ]
+      }
+    ],
+    "horizons": [
+      {
+        "months": 1,
+        "base": 26,
+        "pessimistic": 20,
+        "optimistic": 34,
+        "cumulative": 26
+      },
+      {
+        "months": 6,
+        "base": 51,
+        "pessimistic": 28,
+        "optimistic": 85,
+        "cumulative": 227
+      },
+      {
+        "months": 12,
+        "base": 88,
+        "pessimistic": 38,
+        "optimistic": 176,
+        "cumulative": 662
+      },
+      {
+        "months": 60,
+        "base": 156,
+        "pessimistic": 62,
+        "optimistic": 312,
+        "cumulative": 7403
+      }
+    ],
+    "inverse": {
+      "revenueTarget": 1000,
+      "sessionsNeeded": 222936,
+      "pagesNeeded": 558
+    },
+    "assumptions": [
+      "RPM base: 6 USD/1000 vistas (General / blog personal, rango de industria).",
+      "Factor geográfico (ES): ×0.60.",
+      "Mezcla de dispositivos: 60% móvil, ×0.89.",
+      "Sin RPM propio no se aplica ajuste por rendimiento (neutro).",
+      "3 bloques de anuncio por página, CTR 1.59%, inflación de CPM 3% anual.",
+      "Crecimiento logístico con techo de 30.000 sesiones/mes (6× el tráfico actual).",
+      "Los tres escenarios (pesimista ×0.8 RPM, base, optimista ×1.25 RPM) no son intervalos de confianza estadística."
+    ]
+  },
+  "economics": {
+    "grossMonthly": 202.02,
+    "expectedMonthly": 22.4,
+    "currentMonthly": 0,
+    "gapMonthly": 22.4,
+    "gapRatio": 1,
+    "capacitySessions": 30000,
+    "contentPages": 0,
+    "avgWords": 0,
+    "drivers": [
+      "5000 sesiones/mes × 1.4 páginas/vista.",
+      "RPM base 3.20 USD y techo 4.81 USD (nicho, país y dispositivo).",
+      "Sin páginas de sitemap: capacidad estimada como 6× el tráfico actual.",
+      "El sitio no es monetizable con AdSense tal como está (dominio no verificable o idioma no admitido): ingreso actual 0."
+    ]
+  },
+  "attribution": {
+    "items": [
+      {
+        "id": "gate-unreachable",
+        "label": "Bloqueador: Sin contenido accesible",
+        "mechanism": "binary",
+        "monthlyLoss": {
+          "low": 22.4,
+          "base": 22.4,
+          "high": 22.4
+        },
+        "severity": 5,
+        "effort": 2,
+        "hours": 2,
+        "fix": {
+          "url": "https://developers.google.com/search/docs/crawling-indexing/http-network-errors",
+          "label": "Comprobar que el sitio responde"
+        },
+        "basis": "No se obtuvo HTML con texto de la portada: no hay nada que Google pueda evaluar."
+      }
+    ],
+    "totals": {
+      "certain": 22.4,
+      "measured": 0,
+      "expected": 0,
+      "all": 22.4
+    },
+    "gateId": "unreachable",
+    "subsumedByGate": true,
+    "narrative": [
+      "El bloqueador «Sin contenido accesible» explica la pérdida principal: mientras esté activo, el sitio no puede generar los 22 USD/mes esperados.",
+      "Los demás hallazgos no se suman a la pérdida hasta resolver este bloqueador."
+    ]
+  },
+  "approval": {
+    "readiness": 0,
+    "probability": {
+      "low": 0.01,
+      "base": 0.02,
+      "high": 0.1
+    },
+    "days": {
+      "p50": 54,
+      "p80": 110,
+      "p90": 150
+    },
+    "drivers": [
+      {
+        "label": "Bloqueador: Sin contenido accesible",
+        "delta": -51,
+        "note": "Tope 15/100 mientras esté activo."
+      },
+      {
+        "label": "Sin dominio verificable",
+        "delta": -20,
+        "note": "Subdominio de plataforma: AdSense trabaja a nivel de dominio; hace falta dominio propio."
+      },
+      {
+        "label": "Sin sitemap de páginas",
+        "delta": -15,
+        "note": "No se puede demostrar volumen de contenido."
+      },
+      {
+        "label": "Confianza baja",
+        "delta": -8,
+        "note": "Solo se resolvió el 47 % del peso evaluable."
+      }
+    ],
+    "applyNow": {
+      "expectedDays": 55,
+      "expectedCost": 41,
+      "rejectionP": 0.98
+    },
+    "prepareFirst": {
+      "expectedDays": 55,
+      "expectedCost": 41,
+      "fixDays": 1
+    },
+    "recommendation": "prepare-first",
+    "calibrated": false,
+    "notes": [
+      "Estimación, no probabilidad oficial: Google no publica tasas de aprobación.",
+      "Anclas del modelo: 95→80 %, 85→72 %, 70→45 %, 55→18 %, 40→7 %. Rango ±8 puntos.",
+      "Tiempo anclado a la única cifra oficial: «unos días; en algunos casos, 2-4 semanas».",
+      "Falta el código de AdSense en la página: es requisito previo a la revisión del sitio.",
+      "Mientras no haya dominio propio, la solicitud no puede aprobarse a nivel de sitio."
+    ]
+  },
+  "meta": {
+    "requests": 12,
+    "durationMs": 2031,
+    "providers": [
+      "direct"
+    ],
+    "notes": [],
+    "unknowns": [
+      "Frases de longitud legible",
+      "Las páginas internas no son finas",
+      "Sin páginas duplicadas entre sí",
+      "Contenido sexual",
+      "Violencia y contenido peligroso",
+      "Armas y explosivos",
+      "Drogas y sustancias",
+      "Apuestas y juegos de azar",
+      "Farmacia y suplementos",
+      "Conducta deshonesta y piratería",
+      "Contenido engañoso o clickbait",
+      "Contenido ilegal",
+      "Propiedad intelectual",
+      "Política de privacidad publicada",
+      "Términos y aviso legal",
+      "Página \"sobre el sitio\" o autor",
+      "Página de contacto operativa",
+      "Sin enlaces rotos en la muestra",
+      "Puntuación de rendimiento (Lighthouse, móvil)",
+      "LCP dentro de objetivo (2,5 s)",
+      "CLS dentro de objetivo (0,1)",
+      "Bloqueo del hilo principal bajo control"
+    ]
+  }
+}

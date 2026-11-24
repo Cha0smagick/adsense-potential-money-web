@@ -1,0 +1,9 @@
+# ads.txt del proyecto.
+# AdSense exige que el archivo esté en la raíz del dominio verificado.
+# En GitHub Pages la raíz del host pertenece a GitHub: mientras el sitio viva en
+# cha0smagick.github.io/adsense-potential-money-web/, este archivo no sirve para
+# autorizar inventario. Tras mover el sitio a un dominio propio, añade aquí:
+#
+# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+#
+# (sustituye pub-... por tu identificador real cuando AdSense lo asigne)

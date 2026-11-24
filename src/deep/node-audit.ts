@@ -2,6 +2,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import type { Fetcher, FetchResult } from '../core/types.ts';
 import { runAudit } from '../core/audit.ts';
 import { normalizeUrl } from '../core/normalize.ts';
+import { safeFetch } from './ssrf.ts';
 
 // Ejecutor del motor profundo. Corre en GitHub Actions (o en local) sin CORS,
 // sin proxies y sin dependencias: fetch nativo de Node 22+.
@@ -14,8 +15,7 @@ const direct: Fetcher = async (url, kind) => {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 15000);
     try {
-      const res = await fetch(url, {
-        redirect: 'follow',
+      const res = await safeFetch(url, {
         signal: controller.signal,
         headers: {
           'user-agent': UA,
@@ -24,6 +24,7 @@ const direct: Fetcher = async (url, kind) => {
         },
       });
       const body = await res.text();
+      const xRobots = res.headers.get('x-robots-tag') ?? '';
       return {
         ok: res.ok,
         status: res.status,
@@ -31,6 +32,8 @@ const direct: Fetcher = async (url, kind) => {
         provider: 'direct',
         ms: Date.now() - started,
         bytes: Buffer.byteLength(body),
+        finalUrl: res.url,
+        headers: xRobots ? { 'x-robots-tag': xRobots } : {},
       } satisfies FetchResult;
     } catch (error) {
       return {
@@ -83,6 +86,7 @@ async function main() {
     nicheId: arg('niche', 'auto'),
     country: arg('country', 'US'),
     maxExtraPages: pages,
+    publicData: true,
   });
 
   const stamp = new Date().toISOString().replace(/[:.]/g, '-');
@@ -97,6 +101,14 @@ async function main() {
   const blockers = s.gates.filter((g) => g.triggered);
   if (blockers.length) console.log(`bloqueadores: ${blockers.map((b) => `${b.label} (tope ${b.cap})`).join('; ')}`);
   console.log(`nicho detectado: ${report.facts.niche}  ·  RPM base ${report.monetization.rpm.base} USD`);
+  const e = report.economics;
+  const a = report.approval;
+  console.log(
+    `dinero: esperado ${e.expectedMonthly} USD/mes · brecha ${e.gapMonthly} (${e.gapLabel}) · ` +
+      `aprobación ${(a.probability.base * 100).toFixed(0)}% (${(a.probability.low * 100).toFixed(0)}-${(a.probability.high * 100).toFixed(0)}%) · ` +
+      `P50 ${a.days.p50} d (P80 ${a.days.p80}, P90 ${a.days.p90}) · recomienda ${a.recommendation}`,
+  );
+  console.log(`propiedad: ${report.target.ownership}${report.target.platform === 'unknown' ? '' : ` · plataforma ${report.target.platform}`} · monetizable: ${report.facts.canMonetize ? 'sí' : 'no'}`);
   console.log(`peticiones: ${report.meta.requests} en ${report.meta.durationMs} ms  ·  ${out}\n`);
 
   const top = [...s.signals].filter((x) => x.status !== 'pass' && x.status !== 'unknown').sort((a, b) => b.impact - a.impact).slice(0, 5);

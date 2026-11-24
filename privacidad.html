@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacidad — Auditor AdSense</title>
+    <meta name="description" content="Qué datos procesa el Auditor AdSense, dónde se quedan y qué terceros intervienen. Sin backend propio y sin cuentas de usuario." />
+    <link rel="canonical" href="https://cha0smagick.github.io/adsense-potential-money-web/privacidad.html" />
+    <meta name="theme-color" content="#0b1210" />
+    <link rel="stylesheet" href="./src/pages.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="./index.html"><span>Auditor AdSense</span></a>
+        <nav class="main-nav" aria-label="Navegación principal">
+          <a href="./metodologia.html">Metodología</a>
+          <a href="./guias/por-que-adsense-rechaza.html">Guías</a>
+          <a href="./contacto.html">Contacto</a>
+          <a class="nav-cta" href="mailto:magiadelcaospractica@gmail.com?subject=Quiero%20adquirir%20el%20Auditor%20AdSense">¿Quieres adquirirlo?</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <div class="page-title">
+        <h1>Política de privacidad</h1>
+        <p>Última actualización: 24 de noviembre de 2026. Responsable: Cha0sMagick Labs · <a href="mailto:magiadelcaospractica@gmail.com">magiadelcaospractica@gmail.com</a>.</p>
+      </div>
+
+      <article class="prose">
+        <h2>Qué datos se procesan</h2>
+        <p>El auditor no tiene backend propio, ni cuentas, ni base de datos. Todo el análisis se ejecuta en tu navegador. Los datos que introduces son:</p>
+        <ul>
+          <li>La URL que decides auditar.</li>
+          <li>Sesiones/mes, nicho, país, porcentaje móvil, RPM y CTR, si los aportas.</li>
+          <li>Tu API key de PageSpeed y, si usas el motor profundo, el repositorio y el token de GitHub.</li>
+        </ul>
+        <p>Se guardan en el <code>localStorage</code> de tu navegador para no tener que reescribirlos. No se envían a ningún servidor nuestro. Puedes borrarlos con el botón «Limpiar» o borrando los datos del sitio en tu navegador.</p>
+
+        <h2>Qué terceros intervienen</h2>
+        <p>Para leer el sitio auditado y obtener datos públicos, el navegador hace peticiones directas a servicios externos. Cada uno recibe la URL o el dominio consultado y tu dirección IP, como en cualquier petición web:</p>
+        <table>
+          <thead><tr><th>Servicio</th><th>Para qué</th><th>Política</th></tr></thead>
+          <tbody>
+            <tr><td>r.jina.ai y api.allorigins.win</td><td>Leer el HTML del sitio auditado sin bloqueo CORS.</td><td>Sus políticas respectivas</td></tr>
+            <tr><td>Google PageSpeed Insights</td><td>Métricas de rendimiento, solo si aportas una clave.</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google</a></td></tr>
+            <tr><td>RDAP y dns.google</td><td>Registro del dominio y DNS público.</td><td>Público</td></tr>
+            <tr><td>Tranco y Wayback</td><td>Popularidad y archivo histórico.</td><td>Público</td></tr>
+            <tr><td>api.github.com</td><td>Motor profundo, solo si aportas tu token.</td><td><a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">GitHub</a></td></tr>
+          </tbody>
+        </table>
+        <p>El token de GitHub se guarda solo en tu navegador y se usa para lanzar el workflow que tú elijas. No lo recibimos nosotros.</p>
+
+        <h2>Cookies</h2>
+        <p>La herramienta no instala cookies propias. Usa <code>localStorage</code> para recordar tus ajustes. Si en el futuro se activan anuncios de Google en este sitio, se mostrará un aviso de consentimiento certificado y la política se actualizará antes de servir publicidad personalizada en el EEE, Reino Unido o Suiza.</p>
+
+        <h2>Conservación y derechos</h2>
+        <p>No conservamos datos en servidores. Los ajustes viven en tu navegador hasta que los borres. Para ejercer acceso, rectificación, supresión u oposición sobre cualquier dato que nos hayas enviado por correo, escribe a <a href="mailto:magiadelcaospractica@gmail.com">magiadelcaospractica@gmail.com</a>.</p>
+        <p>Base jurídica: interés legítimo en responder a tu consulta y, cuando corresponda, tu consentimiento. No se elaboran perfiles ni se venden datos.</p>
+
+        <h2>Menores</h2>
+        <p>La herramienta no está dirigida a menores de 14 años y no recoge datos de forma consciente de menores.</p>
+
+        <h2>Cambios</h2>
+        <p>Si cambia el tratamiento de datos, se actualizará esta página con la fecha. El uso continuado después del cambio implica aceptación de la versión vigente.</p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <p>Herramienta independiente, sin afiliación con Google. Creada por Frater Alek0s para Cha0sMagick Labs. Licencia MIT.</p>
+        <nav aria-label="Enlaces legales"><a href="./privacidad.html">Privacidad</a><a href="./terminos.html">Términos</a><a href="./sobre.html">Sobre</a><a href="./contacto.html">Contacto</a></nav>
+      </div>
+    </footer>
+  </body>
+</html>

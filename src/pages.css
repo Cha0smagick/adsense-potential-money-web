@@ -1,0 +1,7 @@
+@import './styles.css';
+
+/* Páginas editoriales: solo ajustes de lectura. */
+article.prose { max-width: 78ch; }
+article.prose h2 { font-size: 20px; }
+article.prose table { margin-top: 12px; }
+article.prose th, article.prose td { font-size: 12.5px; }

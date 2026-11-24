@@ -1,9 +1,13 @@
 import type { Fetcher, FetchResult } from '../core/types.ts';
 
 // Motor rapido del navegador. Un sitio estatico no puede leer otro dominio: se usa
-// una cadena de proxies con CORS verificado (2026-11-23) y presupuesto de peticiones.
+// una cadena de proxies con CORS verificado (2026-11-24) y presupuesto de peticiones.
 //   html  -> jina (HTML renderizado) -> allorigins (HTML crudo) -> jina (texto)
 //   texto -> allorigins -> jina (texto)
+//
+// El presupuesto cuenta PETICIONES LOGICAS, no intentos de proveedor: antes se agotaba
+// a la mitad cuando jina fallaba. Un proveedor con dos fallos seguidos se salta el resto
+// de la auditoria (disyuntor) para no gastar tiempo ni cuota.
 
 const JINA = 'https://r.jina.ai/';
 const ALLORIGINS = 'https://api.allorigins.win/raw?url=';
@@ -55,6 +59,8 @@ async function attempt(provider: Provider, url: string, kind: 'html' | 'text'): 
       provider: provider.id,
       ms,
       bytes: body.length,
+      // No se propaga `res.url` ni las cabeceras: son del proxy, no del sitio auditado.
+      // El motor directo (Node) sí las aporta y con ellas resuelve redirecciones y X-Robots-Tag.
     };
     if (!res.ok) {
       let note = `HTTP ${res.status}`;
@@ -86,15 +92,24 @@ async function attempt(provider: Provider, url: string, kind: 'html' | 'text'): 
 }
 
 export interface BrowserFetcherState {
+  /** Peticiones logicas consumidas. */
   used: number;
   budget: number;
   cached: number;
   lastError: string | null;
+  /** Intentos reales contra proveedores (diagnostico). */
+  attempts: number;
+  /** Proveedores saltados por el disyuntor. */
+  skipped: string[];
 }
 
-export function createBrowserFetcher(budget = 16): { fetcher: Fetcher; state: BrowserFetcherState } {
+const BREAKER_THRESHOLD = 2;
+
+export function createBrowserFetcher(budget = 24): { fetcher: Fetcher; state: BrowserFetcherState } {
   const cache = new Map<string, FetchResult>();
-  const state: BrowserFetcherState = { used: 0, budget, cached: 0, lastError: null };
+  const failures = new Map<string, number>();
+  const disabled = new Set<string>();
+  const state: BrowserFetcherState = { used: 0, budget, cached: 0, lastError: null, attempts: 0, skipped: [] };
 
   const fetcher: Fetcher = async (url, kind) => {
     const key = `${kind}|${url}`;
@@ -108,18 +123,26 @@ export function createBrowserFetcher(budget = 16): { fetcher: Fetcher; state: Br
       return { ok: false, status: 0, body: '', provider: 'budget', ms: 0, bytes: 0, note: 'presupuesto agotado' };
     }
 
+    state.used++;
     let last: FetchResult | null = null;
     for (const provider of PROVIDERS) {
       if (!provider.kinds.includes(kind)) continue;
-      state.used++;
+      if (disabled.has(provider.id)) continue;
+      state.attempts++;
       const result = await attempt(provider, url, kind);
       if (result.ok) {
+        failures.delete(provider.id);
         cache.set(key, result);
         return result;
       }
       last = result;
       state.lastError = `${provider.id}: ${result.note ?? 'sin detalle'}`;
-      if (state.used >= state.budget) break;
+      const count = (failures.get(provider.id) ?? 0) + 1;
+      failures.set(provider.id, count);
+      if (count >= BREAKER_THRESHOLD && !disabled.has(provider.id)) {
+        disabled.add(provider.id);
+        state.skipped.push(provider.id);
+      }
     }
     const failed = last ?? { ok: false, status: 0, body: '', provider: 'none', ms: 0, bytes: 0, note: 'sin proveedores' };
     cache.set(key, failed);

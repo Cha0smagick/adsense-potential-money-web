@@ -1,5 +1,6 @@
 import type { Category, CategoryMeta, CategoryScore, GateResult, ScoreResult, SignalResult, Verdict } from './types.ts';
 import type { RawSignal } from './signals.ts';
+import { GATE_FIX } from './remediation.ts';
 
 export const CATEGORY_META: CategoryMeta[] = [
   { id: 'content', label: 'Contenido y originalidad', weight: 30, why: 'Es la causa número uno de rechazo ("contenido de bajo valor").' },
@@ -12,8 +13,8 @@ export const CATEGORY_META: CategoryMeta[] = [
 
 const GATE_DEFS: { id: string; label: string; cap: number; why: string; signals: string[] }[] = [
   {
-    id: 'unreachable', label: 'Sin contenido accesible', cap: 15,
-    why: 'No se obtuvo HTML con texto de la portada: no hay nada que Google pueda evaluar.',
+    id: 'unreachable', label: 'Sin contenido legible', cap: 15,
+    why: 'El HTML de la portada no tiene texto visible. O el sitio no responde, o es una SPA que inyecta el contenido con JavaScript: Google no tendrá nada que evaluar.',
     signals: ['content-reachable'],
   },
   {
@@ -102,7 +103,15 @@ function computeTotal(signals: SignalResult[]): { score: number; confidence: num
   };
 }
 
-function verdictOf(score: number): Verdict {
+function verdictOf(score: number, confidence: number): Verdict {
+  if (confidence < 0.6) {
+    return {
+      band: 'insufficient',
+      label: 'Faltan datos para un veredicto',
+      summary: `Solo se pudo evaluar el ${Math.round(confidence * 100)} % del peso. Las señales sin datos no penalizan: vuelve a analizar o revisa manualmente lo que no se pudo medir.`,
+      capApplied: null,
+    };
+  }
   if (score >= 85) {
     return {
       band: 'ready',
@@ -145,6 +154,7 @@ export function scoreSignals(raw: RawSignal[]): ScoreResult {
     cap: g.cap,
     why: g.why,
     triggered: signals.some((s) => g.signals.includes(s.id) && s.status === 'fail'),
+    fix: GATE_FIX[g.id] ?? null,
   }));
 
   const base = computeTotal(signals);
@@ -161,10 +171,10 @@ export function scoreSignals(raw: RawSignal[]): ScoreResult {
     s.impact = Math.max(0, Math.round((after.score - base.score) * 10) / 10);
   }
 
-  const verdict = verdictOf(score);
+  const verdict = verdictOf(score, base.confidence);
   const triggeredCaps = gates.filter((g) => g.triggered).map((g) => g.cap);
   verdict.capApplied = base.capBound && triggeredCaps.length ? Math.min(...triggeredCaps) : null;
-  if (verdict.capApplied !== null) {
+  if (verdict.capApplied !== null && verdict.band !== 'insufficient') {
     verdict.summary = `${verdict.summary} Puntuación limitada por un bloqueador (tope ${verdict.capApplied}/100).`;
   }
 

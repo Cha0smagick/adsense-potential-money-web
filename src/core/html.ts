@@ -1,5 +1,5 @@
 import type { LinkRef, PageDoc } from './types.ts';
-import { absolute } from './normalize.ts';
+import { absolute, isInternalUrl } from './normalize.ts';
 
 // Extractor de HTML sin dependencias. No es un navegador: cubre solo lo que el
 // auditor necesita (metadatos, texto visible, enlaces, senales de anuncios).
@@ -88,7 +88,12 @@ function metaMap(html: string): { names: Record<string, string>; og: Record<stri
   return { names, og };
 }
 
-export function parseHtml(html: string, pageUrl: string): PageDoc {
+function isTrackingPixel(src: string, attrs: Record<string, string>): boolean {
+  if (/1x1|pixel|spacer|transparent|blank\.(?:gif|png)|beacon/i.test(src)) return true;
+  return attrs.width === '1' && attrs.height === '1';
+}
+
+export function parseHtml(html: string, pageUrl: string, headers: Record<string, string> = {}): PageDoc {
   const source = String(html ?? '');
   const lower = source.toLowerCase();
 
@@ -111,12 +116,7 @@ export function parseHtml(html: string, pageUrl: string): PageDoc {
     if (!href || /^(?:#|javascript:|mailto:|tel:)/i.test(href)) continue;
     const text = toText(lm[2]).slice(0, 120);
     const abs = absolute(pageUrl, href);
-    let internal = true;
-    try {
-      internal = new URL(abs).hostname.replace(/^www\./, '') === new URL(pageUrl).hostname.replace(/^www\./, '');
-    } catch {
-      internal = false;
-    }
+    const internal = isInternalUrl(pageUrl, abs);
     links.push({ href: abs, text, rel: a.rel ?? '', target: a.target ?? '', internal });
   }
 
@@ -125,7 +125,9 @@ export function parseHtml(html: string, pageUrl: string): PageDoc {
   let im: RegExpExecArray | null;
   while ((im = imgRe.exec(scope))) {
     const a = parseAttrs(im[1]);
-    images.push({ src: (a.src ?? a['data-src'] ?? '').slice(0, 300), alt: (a.alt ?? '').slice(0, 200) });
+    const src = (a.src ?? a['data-src'] ?? '').slice(0, 300);
+    if (src && isTrackingPixel(src, a)) continue;
+    images.push({ src, alt: (a.alt ?? '').slice(0, 200) });
   }
 
   const text = toText(scope);
@@ -171,7 +173,11 @@ export function parseHtml(html: string, pageUrl: string): PageDoc {
 
   const emails = Array.from(new Set(Array.from(source.matchAll(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/gi)).map((x) => x[0].toLowerCase()))).slice(0, 5);
 
-  const noindex = /noindex|none/i.test(names.robots ?? '');
+  const robotsRaw = (names.robots ?? '').toLowerCase();
+  const robotsMeta: string[] = [];
+  if (/noindex|\bnone\b/.test(robotsRaw)) robotsMeta.push('noindex');
+  if (/nofollow|\bnone\b/.test(robotsRaw)) robotsMeta.push('nofollow');
+  const xRobotsTag = (headers['x-robots-tag'] ?? '').slice(0, 300);
 
   return {
     url: pageUrl,
@@ -181,7 +187,8 @@ export function parseHtml(html: string, pageUrl: string): PageDoc {
     canonical: (/<link\b[^>]*rel\s*=\s*["']canonical["'][^>]*>/i.exec(headMatch?.[1] ?? source)?.[0] ?? '')
       ? parseAttrs(/<link\b([^>]*rel\s*=\s*["']canonical["'][^>]*)>/i.exec(headMatch?.[1] ?? source)?.[1] ?? '').href ?? ''
       : '',
-    robotsMeta: noindex ? ['noindex'] : [],
+    robotsMeta,
+    xRobotsTag,
     h1: allText(scope, /<h1\b[^>]*>([\s\S]*?)<\/h1>/i).map((t) => toText(t)).filter(Boolean),
     h2: allText(scope, /<h2\b[^>]*>([\s\S]*?)<\/h2>/i).map((t) => toText(t)).filter(Boolean),
     h3: allText(scope, /<h3\b[^>]*>([\s\S]*?)<\/h3>/i).map((t) => toText(t)).filter(Boolean),

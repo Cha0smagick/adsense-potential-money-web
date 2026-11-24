@@ -44,7 +44,7 @@ export const POLICY_CATEGORIES: PolicyCategory[] = [
     hard: [
       'como fabricar una bomba', 'como hacer una bomba', 'instrucciones para matar',
       'how to make a bomb', 'build a bomb', 'kill yourself instructions',
-      'apologia del terrorismo', 'enaltace al terrorismo', 'glorificacion del terrorismo',
+      'apologia del terrorismo', 'enaltece al terrorismo', 'glorificacion del terrorismo',
     ],
     soft: [
       'decapitacion', 'gore', 'snuff', 'tortura', 'mutilacion', 'asesinato brutal',
@@ -173,7 +173,7 @@ export const PARKED_PATTERNS = [
 
 /** Nombres de secciones legales por idioma (para descubrir enlaces). */
 export const LEGAL_HINTS: Record<'privacy' | 'terms' | 'about' | 'contact', string[]> = {
-  privacy: ['privacidad', 'privacy', 'poli­tica de privacidad', 'aviso de privacidad', 'proteccion de datos', 'datenschutz'],
+  privacy: ['privacidad', 'privacy', 'politica de privacidad', 'aviso de privacidad', 'proteccion de datos', 'datenschutz'],
   terms: ['terminos', 'condiciones', 'aviso legal', 'legal notice', 'terms', 'tos', 'terminos de uso'],
   about: ['sobre nosotros', 'sobre mi', 'quienes somos', 'about', 'acerca de', 'quien soy', 'company'],
   contact: ['contacto', 'contact', 'kontakt', 'escribenos'],

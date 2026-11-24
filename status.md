@@ -1,38 +1,45 @@
-﻿# Estado del proyecto â€” adsense-auditor
+﻿# Estado del proyecto — adsense-auditor v2
 
-Actualizado: 2026-11-23 Â· RaÃ­z: `D:\Paginas web\Validador de adsense web`
+Actualizado: 2026-11-24 · Raíz: `D:\Paginas web\Validador de adsense web`
+Producción actual: `https://cha0smagick.github.io/adsense-potential-money-web/`
 
 ## Hecho y verificado
 
-| Fase | Entrega | VerificaciÃ³n real |
+| Fase | Entrega | Verificación real |
 |---|---|---|
-| 0 | Vite + TS + Vitest, sin runtime deps | `npm run build` â†’ `dist/` 73 KB JS (29 KB gzip) |
-| 1 | NÃºcleo: normalize, html, robots, lexicon, signals, score, projection | `npm test` â†’ 44 pruebas en verde |
-| 2 | Motor rÃ¡pido: cadena jina â†’ allorigins â†’ jina-text, presupuesto 16, PSI opcional | `npm run probe -- https://www.xataka.com` â†’ jina-html, 8 peticiones, fallback 502 resuelto |
-| 3 | UI, gauge, barras, grÃ¡fico 60 meses, PDF por impresiÃ³n, JSON, CSV | `npm run build` verde; **render visual pendiente de navegador** |
-| 4 | `deploy.yml` + `deep-audit.yml` + disparo con PAT | workflows escritos; **ejecuciÃ³n pendiente de publicar el repo** |
-| 5 | BaterÃ­a de 7 sitios, 3 falsos positivos corregidos | `test/calibration.md` con puntuaciones reales |
+| F1 | 15 defectos del plan v2: robots 5xx, URL final, fallback HTTP, confianza mínima, presupuesto lógico, X-Robots-Tag, marca en keyword stuffing, píxeles, enlaces rotos, SSRF, topes, RPM/CTR inválidos, muestreo, typos | `npm test` → **97 pruebas en verde** (9 archivos) |
+| F2 | Economía (bruto/esperado/actual/brecha), atribución por mecanismo, aprobación con probabilidad y P50/P80/P90, decisión aplicar/preparar, estadística descriptiva e inferencial | `test/money.test.ts`, `test/stats.test.ts`, `test/pipeline.test.ts` |
+| F3 | Datos públicos: RDAP, DNS (A/NS/MX/TXT/SPF/DMARC), Tranco, Wayback, con timeout y degradación | CORS verificado el 2026-11-24; `xataka-v2.json` con datos reales |
+| F6 | 9 páginas estáticas (home + metodología + 3 guías + legales + sobre/contacto), CTA de adquisición, créditos, `robots.txt`, `sitemap.xml`, `ads.txt`, `og.png` | `npm run build` → 9 HTML; `dist/index.html` con **688 palabras**, 1 H1, 6 H2, 0 mojibake |
+| — | Soporte de subdominios y project pages (`blogspot`, `wordpress.com`, `usuario.github.io/repo/`) | `test/pipeline.test.ts`: `siteRoot`, `basePath`, `subject`, `slug` y enlaces internos por carpeta |
+| — | Enlace «¿Cómo lo corrijo?» en cada señal, gate y plan | Test que exige URL `https` de dominio permitido en las 46 señales |
 
-BaterÃ­a final: xataka 93.3 Â· wikipedia 92.1 Â· blogspot 86.6 Â· bbc 88.6 Â· mozilla 93.9 Â·
-shopify 87.5 Â· dominio inexistente 15 (confianza 11 %).
+## Batería real
 
-## Pendiente (bloqueado por el usuario)
+| Sitio | Resultado | Observación |
+|---|---|---|
+| xataka.com (profundo, 3 páginas) | **95/100**, confianza 90 %, aprobación 80 % (72-85 %), P50 5 d, esperado 269 USD/mes | La brecha se marca «potencial» porque no se aportó RPM real |
+| Producción actual (antes de este cambio) | 15/100, «faltan datos», 0 palabras visibles | El HTML era una SPA vacía: por eso F6 era obligatorio |
 
-1. **VerificaciÃ³n visual en BrowserOS neo**: el MCP no estÃ¡ conectado en esta sesiÃ³n (solo aparece
-   `blender`). No se ha podido revisar la interfaz, el PDF ni el estado de carga en un navegador real.
-2. **Publicar el repositorio** para confirmar despliegue en Pages y una ejecuciÃ³n real de
-   `deep-audit.yml`. Sin `gh` instalado ni sesiÃ³n, lo hace el usuario con `git push`.
-3. **API key de PageSpeed** para activar el bloque de rendimiento (sin ella queda `unknown`).
-4. **RPM/CTR propios** para que las proyecciones usen datos reales en vez de rangos de industria.
+Los informes completos están en `reports/`.
 
-## Riesgos conocidos
+## Pendiente
 
-- Los proxies gratuitos son el punto frÃ¡gil del motor rÃ¡pido: jina limita a 20 peticiones/min y
-  veta dominios por abuso ajeno. Mitigado con cadena de 3, presupuesto y `unknown` en vez de `fail`.
-- El modelo de ingresos es condicional a sus supuestos (impresos en el informe).
-- El PDF depende del diÃ¡logo de impresiÃ³n del navegador.
+1. **Desplegar** (commit + push a `main`) y volver a auditar la URL de producción. Sin desplegar, la web sigue siendo la SPA de 15/100.
+2. **Verificación visual en navegador real**: el MCP de BrowserOS no está conectado en esta sesión. Revisar formulario, informe, waterfall y PDF A4.
+3. **F4 cohorte de referencia** (B7): 8 nichos × 8 sitios medidos con el parser; percentiles honestos.
+4. **GSC CSV** (B8/B9): import local de consultas, CTR y posiciones.
+5. **Checklist por tipo de sitio** (B10) y heatmap de políticas (B11).
+6. **CMP y consentimiento** (C9) antes de activar anuncios; **hosting con dominio propio** (C10).
+7. **AdSense**: la URL actual es `github.io`, un subdominio de plataforma. AdSense trabaja a nivel de dominio y no se puede verificar la raíz. Para monetizar este sitio hace falta dominio propio (Cloudflare Pages/Netlify) o publicar en Blogger.
 
-## PrÃ³ximo paso
+## Riesgos
 
-Publicar el repo y abrir la URL de Pages con BrowserOS neo conectado: comprobar una auditorÃ­a
-completa, la vista de impresiÃ³n y la descarga de JSON/CSV.
+- **Aprobación**: el modelo es una estimación con anclas declaradas; Google no publica tasas. Se etiqueta «sin calibrar» hasta tener resultados reales.
+- **Datos públicos**: Common Crawl devolvió 504 en la primera prueba; RDAP/Tranco/Wayback responden. Todo degrada a `unknown`, nunca a `fail`.
+- **Proxies del motor rápido**: disyuntor + presupuesto lógico; si caen, el informe pierde confianza pero no inventa.
+- **PDF**: sigue siendo el diálogo de impresión del navegador (A4), no un archivo generado.
+
+## Próximo paso
+
+Commit y push. Después, auditar la URL publicada y comprobar que el contenido estático aparece con ≥600 palabras y que la privacidad se detecta desde el menú.
